@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 
 import {
     AppBar,
@@ -14,6 +14,8 @@ import {
     ListItemIcon
 } from '@material-ui/core'
 
+import MobilRightMenuSlider from '@material-ui/core/Drawer'
+
 import {
     ArrowBack,
     AssignmentInd,
@@ -23,7 +25,8 @@ import {
 } from '@material-ui/icons'
 
 import {
-    // red, deepPurple, indigo, 
+    red,
+    // deepPurple, indigo, 
     blue,
     // teal, cyan, lightBlue, grey
 } from '@material-ui/core/colors'
@@ -39,7 +42,7 @@ import { makeStyles } from '@material-ui/core/styles'
 const useStyles = makeStyles(theme => ({
     menuSliderContainer: {
         width: 250,
-        height: "30rem",
+        height: "100%",
         background: blue[900]
     }
     ,
@@ -48,6 +51,9 @@ const useStyles = makeStyles(theme => ({
         margin: '0.5rem auto',
         width: theme.spacing(13),
         height: theme.spacing(13)
+    },
+    listItem: {
+        color: red[100]
     }
 }))
 
@@ -69,32 +75,49 @@ const menuList = [
 ]
 
 const Navbar = () => {
+    const [state, setState] = useState({
+        right: false
+    })
+
+    const toggleSlider = (slider, open) => () => {
+        setState({ ...state, [slider]: open })
+    }
+
     const classes = useStyles()
+
+    const SideList = (slider) => (
+        <Box
+            onClick={toggleSlider(slider, false)}
+            className={classes.menuSliderContainer}>
+            <Avatar src={myAvatar} className={classes.avatar} alt="avatar" />
+            <Divider />
+            <List>
+                {menuList.map((item, key) => (
+                    <ListItem button key={key}>
+                        <ListItemIcon className={classes.listItem}>
+                            {item.icon}
+                        </ListItemIcon>
+                        <ListItemText className={classes.listItem} primary={item.text} />
+                    </ListItem>
+                ))}
+            </List>
+        </Box>)
     return (
         <Fragment>
-            <Box className={classes.menuSliderContainer}>
-                <Avatar src={myAvatar} className={classes.avatar} alt="avatar" />
-                <Divider />
-                <List>
-                    {menuList.map((item, key) => (
-                        <ListItem button key={key}>
-                            <ListItemIcon >
-                                {item.icon}
-                            </ListItemIcon>
-                            <ListItemText primary={item.text} />
-                        </ListItem>
-                    ))}
-                </List>
-            </Box>
+
             <Box component="nav">
                 <AppBar position="static" style={{ background: '#222' }}>
                     <Toolbar>
-                        <IconButton>
+                        <IconButton onClick={toggleSlider('right', true)}>
                             <ArrowBack style={{ color: blue[500] }} />
                         </IconButton>
                         <Typography variant="h5" style={{ color: blue[200] }}>
                             Portfolio
                     </Typography>
+                        <MobilRightMenuSlider
+                            onClose={toggleSlider('right', false)} anchor="right" open={state.right}>
+                            {SideList('right')}
+                        </MobilRightMenuSlider>
                     </Toolbar>
                 </AppBar>
             </Box >
