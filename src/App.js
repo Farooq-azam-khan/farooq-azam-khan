@@ -1,14 +1,17 @@
 import React, { Fragment } from 'react';
-import Home from './pages/Home';
 
-// import './App.css';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { Route } from 'react-router-dom';
+
+import Home from './pages/Home';
+import Resume from './pages/Resume';
 
 function App() {
   return (
     <Fragment>
       <CssBaseline />
-      <Home />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/resume" component={Resume} />
     </Fragment>
   );
 }
