@@ -10,6 +10,7 @@ import Header from '../components/Header';
 const useStyles = makeStyles({
   particlesCanvas: {
     position: 'absolute',
+    opacity: 0.4,
   },
 });
 
