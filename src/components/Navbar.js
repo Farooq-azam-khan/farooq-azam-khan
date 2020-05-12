@@ -10,7 +10,8 @@ import {
     Divider,
     List,
     Typography,
-    Box
+    Box,
+    ListItemIcon
 } from '@material-ui/core'
 
 import {
@@ -18,50 +19,72 @@ import {
     AssignmentInd,
     Home,
     Apps,
-    ContactMail
+    // ContactMail
 } from '@material-ui/icons'
 
 import {
-    red, deepPurple, indigo, blue, teal, cyan, lightBlue, grey
+    // red, deepPurple, indigo, 
+    blue,
+    // teal, cyan, lightBlue, grey
 } from '@material-ui/core/colors'
 
+
+import myAvatar from '../assets/avataaars.svg'
 
 import { makeStyles } from '@material-ui/core/styles'
 
 
-import MyAvatar from 'avataaars'
+// import MyAvatar from 'avataaars'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     menuSliderContainer: {
         width: 250,
         height: "30rem",
         background: blue[900]
     }
     ,
-    avatar: {}
-})
+    avatar: {
+        display: 'block',
+        margin: '0.5rem auto',
+        width: theme.spacing(13),
+        height: theme.spacing(13)
+    }
+}))
 
+const menuList = [
+    {
+        icon: <Home />,
+        text: "Home"
+    }, {
+        icon: <AssignmentInd />,
+        text: "Resume"
+    }, {
+        icon: <Apps />,
+        text: "Portfolio"
+    },
+    // {
+    //     icon: <Home />,
+    //     text: "Home"
+    // }
+]
 
 const Navbar = () => {
     const classes = useStyles()
     return (
         <Fragment>
             <Box className={classes.menuSliderContainer}>
-                <Avatar className={classes.avatar} alt="avatar">
-                    <MyAvatar
-                        avatarStyle='Circle'
-                        topType='ShortHairShortWaved'
-                        accessoriesType='Prescription02'
-                        hairColor='Black'
-                        facialHairType='BeardLight'
-                        facialHairColor='Black'
-                        clotheType='BlazerShirt'
-                        eyeType='Default'
-                        eyebrowType='Default'
-                        mouthType='Default'
-                        skinColor='Brown'
-                    />
-                </Avatar>
+                <Avatar src={myAvatar} className={classes.avatar} alt="avatar" />
+                <Divider />
+                <List>
+                    {menuList.map((item, key) => (
+                        <ListItem button key={key}>
+                            <ListItemIcon >
+                                {item.icon}
+                            </ListItemIcon>
+                            <ListItemText primary={item.text} />
+                        </ListItem>
+                    ))}
+                </List>
             </Box>
             <Box component="nav">
                 <AppBar position="static" style={{ background: '#222' }}>
