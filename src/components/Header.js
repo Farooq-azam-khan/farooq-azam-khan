@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: '100vw',
+    width: '100%',
     textAlign: 'center',
     zIndex: 1,
   },
