@@ -19,18 +19,21 @@ import {
 import MobilRightMenuSlider from '@material-ui/core/Drawer';
 
 import {
-  ArrowBack,
+  // ArrowBack,
   AssignmentInd,
   Home,
   Apps,
-  // ContactMail
-} from '@material-ui/icons';
+  // ContactMail, 
 
+} from '@material-ui/icons';
+import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import {
   red,
   // deepPurple, indigo,
   blue,
-  // teal, cyan, lightBlue, grey
+  // teal, cyan, 
+  lightBlue,
+  // grey
 } from '@material-ui/core/colors';
 
 import myAvatar from '../assets/avataaars.svg';
@@ -43,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   menuSliderContainer: {
     width: 250,
     height: '100%',
-    background: blue[900],
+    background: lightBlue[900],
   },
   avatar: {
     display: 'block',
@@ -110,13 +113,13 @@ const Navbar = () => {
   );
   return (
     <Fragment>
-      <Box component="nav">
-        <AppBar position="static" style={{ background: '#222' }}>
+      <Box component="nav" >
+        <AppBar position="absolute" style={{ background: '#222' }}>
           <Toolbar>
             <IconButton onClick={toggleSlider('right', true)}>
-              <ArrowBack style={{ color: blue[500] }} />
+              <MenuRoundedIcon style={{ color: lightBlue[200] }} />
             </IconButton>
-            <Typography variant="h5" style={{ color: blue[200] }}>
+            <Typography variant="h5" style={{ color: lightBlue[200] }}>
               Portfolio
             </Typography>
             <MobilRightMenuSlider
