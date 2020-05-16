@@ -25,7 +25,7 @@ const Home = () => {
         params={{
           particles: {
             number: {
-              value: 25,
+              value: 50,
               density: {
                 enable: true,
                 value_area: 900,
@@ -54,7 +54,7 @@ const Home = () => {
               animation: {
                 enable: true,
                 speed: 1,
-                opacity_min: 0.1,
+                opacity_min: 0.3,
                 sync: true,
               },
             },
@@ -69,6 +69,7 @@ const Home = () => {
         }}
         style={{
           width: '100%',
+          // backgroundColor: 'green'
         }}
       />
     </Fragment>
