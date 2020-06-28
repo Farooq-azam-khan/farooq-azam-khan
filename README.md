@@ -11,3 +11,7 @@
 - [vercel deployment](https://vercel.com/) or github pages
 - [react router dom](https://reacttraining.com/react-router/web/guides/quick-start): `npm install react-router-dom`
 - [react avataaars](https://getavataaars.com/)
+
+## TODO
+* [ ] create a section for ui clones (twitch, spotify, twitter, etc.)
+* [ ] create a section for machine learning algorithms
