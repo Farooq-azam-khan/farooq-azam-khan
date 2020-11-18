@@ -1,0 +1,25 @@
+{
+  "name": "farooq-azam-khan",
+  "version": "1.0.0",
+  "description": "My personal portfolio website",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Farooq-azam-khan/farooq-azam-khan.git"
+  },
+  "author": "Farooq Azam Khan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Farooq-azam-khan/farooq-azam-khan/issues"
+  },
+  "homepage": "https://github.com/Farooq-azam-khan/farooq-azam-khan#readme",
+  "dependencies": {
+    "next": "^10.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
