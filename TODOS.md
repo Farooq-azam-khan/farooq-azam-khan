@@ -13,7 +13,7 @@
 
 ## Project Features
 * [ ] List of projects
-* [ ] Rojects detail page
+* [ ] pojects detail page
 * [ ] list of programming languages / frameworks 
-* [ ] use 
 * [ ] programming languge example details page 
+* [ ] wtf happend in 2020 (in elm)
