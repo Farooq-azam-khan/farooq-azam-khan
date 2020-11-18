@@ -8,6 +8,9 @@
 * [ ] `jest`
 * [ ] `storybook`
 
+## Misc
+* [ ] turn on typescrip `strict` when comfortable 
+
 ## Project Features
 * [ ] List of projects
 * [ ] Rojects detail page
