@@ -7,14 +7,11 @@ module.exports = {
     setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
     testPathIgnorePatterns: ['/node_modules/', '/.next/'],
     transform: {
-        '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
-        '^.+\\.css$': '<rootDir>/config/jest/cssTransform.js',
+        '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest'
     },
     transformIgnorePatterns: [
         '/node_modules/',
-        '^.+\\.module\\.(css|sass|scss)$',
     ],
     moduleNameMapper: {
-        '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
     },
 }
