@@ -1,2 +1,5 @@
 node_modules
+
+# nextjs build output
+.next
 .env
