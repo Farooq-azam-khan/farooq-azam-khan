@@ -1,7 +1,7 @@
 # TODOS
 
 ## Packages to Integrate
-* [ ] `nextjs`
+* [ ] `nextjs`, [nextjs.org/](nextjs.org/)
 * [ ] `typescript`
 * [ ] `redux`
 * [ ] `elm`
