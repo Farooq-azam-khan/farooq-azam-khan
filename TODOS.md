@@ -2,7 +2,7 @@
 
 ## Packages to Integrate
 * [ ] `nextjs`, [nextjs.org/](nextjs.org/)
-* [ ] `typescript`
+* [ ] `typescript`, [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
 * [ ] `redux`
 * [ ] `elm`
 * [ ] `jest`
