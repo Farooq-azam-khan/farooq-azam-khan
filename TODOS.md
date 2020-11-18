@@ -7,6 +7,8 @@
 * [ ] `elm`
 * [ ] `jest`
 * [ ] `storybook`
+* [ ] `eslint`
+* [ ] `prettier`
 
 ## Misc
 * [ ] turn on typescrip `strict` when comfortable 
