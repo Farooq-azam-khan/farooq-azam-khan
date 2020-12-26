@@ -5,25 +5,25 @@ import Html.Attributes exposing (..)
 import Types exposing (..)
 
 
-laguagesList : Html Msg
-laguagesList =
-    div []
-        [ h2 [] [ text "Languages" ]
-        , ul []
-            [ li [] [ a [ href "#" ] [ text "Elm" ] ]
-            , li [] [ a [ href "#" ] [ text "Python" ] ]
-            , li [] [ a [ href "#" ] [ text "C" ] ]
-            , li [] [ a [ href "#" ] [ text "Rust" ] ]
-            , li [] [ a [ href "#" ] [ text "JavaScript / Typescript" ] ]
-            , li [] [ a [ href "#" ] [ text "Elm" ] ]
-            , li [] [ a [ href "#" ] [ text "Bash" ] ]
-            , li [] [ a [ href "#" ] [ text "C++" ] ]
-            , li [] [ a [ href "#" ] [ text "Haskell" ] ]
-            , li [] [ a [ href "#" ] [ text "Java" ] ]
-            , li [] [ a [ href "#" ] [ text "Matlab" ] ]
-            , li [] [ a [ href "#" ] [ text "Prolog" ] ]
-            , li [] [ a [ href "#" ] [ text "R" ] ]
-            , li [] [ a [ href "#" ] [ text "Smalltalk" ] ]
-            , li [] [ a [ href "#" ] [ text "SQL" ] ]
+languageDisplay : Language -> Html Msg
+languageDisplay lang =
+    li [ class "rounded-lg bg-white min-w-xl px-2 py-3 shadow-lg" ]
+        [ a
+            [ href lang.href
+            , class "hover:text-gray-600 cursor-pointer text-gray-800"
             ]
+            [ span [ class "underline" ] [ text lang.name ]
+            ]
+        , div [ class "flex flex-col" ]
+            [ span [ class "pt-2" ] [ text "asdfasdfasd asdf" ]
+            ]
+        ]
+
+
+laguagesView : List Language -> Html Msg
+laguagesView languages =
+    div [ class "mt-3 px-1 bg-orange-200 text-orange-900" ]
+        [ h2 [ class "text-center text-lg" ] [ text "Languages" ]
+        , ul [ class "grid grid-cols-1 sm:grid-cols-3 pt-3 gap-x-2 gap-y-3" ]
+            (List.map languageDisplay languages)
         ]
