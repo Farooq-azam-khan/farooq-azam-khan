@@ -5,24 +5,26 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import ListOfLanguages exposing (laguagesView)
 import Types exposing (..)
+import Projects exposing (..)
 
-
+logos_base : String 
+logos_base = "./src/logos"
 languages : List Language
 languages =
-    [ { href = "#", name = "Elm" }
-    , { href = "#", name = "Python" }
-    , Language "#" "C"
-    , Language "#" "Rust"
-    , Language "#" "Javascript / Typescript"
-    , Language "#" "Bash"
-    , Language "#" "C++"
-    , Language "#" "Haskell"
-    , Language "#" "Java"
-    , Language "#" "Matlab"
-    , Language "#" "Prolog"
-    , Language "#" "R"
-    , Language "#" "Smalltalk"
-    , Language "#" "SQL"
+    [ { href = "#", name = "Elm" , image = Just (logos_base ++ "/elm.svg")}
+    , { href = "#", name = "Python" , image = Just (logos_base ++ "/python.svg")}
+    , Language "#" "C" Nothing 
+    , Language "#" "Rust" (Just (logos_base ++ "/rust.svg") )
+    , Language "#" "Javascript / Typescript" Nothing 
+    , Language "#" "Bash" Nothing
+    , Language "#" "C++" Nothing
+    , Language "#" "Haskell" Nothing
+    , Language "#" "Java" Nothing
+    , Language "#" "Matlab" Nothing
+    , Language "#" "Prolog" Nothing
+    , Language "#" "R" Nothing
+    , Language "#" "Smalltalk" Nothing
+    , Language "#" "SQL" Nothing
     ]
 
 
@@ -45,7 +47,8 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ h1 [ class "font-bold text-lg" ] [ text "Farooq A. Khan" ]
+    div [class "bg-gray-100"]
+        [ h1 [ class "ftext-center text-3xl font-semibold" ] [ text "Farooq A. Khan" ]
+        , projectsView model
         , laguagesView model.languages
         ]
