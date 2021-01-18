@@ -9,6 +9,7 @@ type alias Model =
 type alias Language =
     { href : String
     , name : String
+    , image : Maybe String
     }
 
 
