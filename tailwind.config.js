@@ -1,12 +1,16 @@
 module.exports = {
-  purge: [
-    './src/**/*.elm'
-    , './src/**/*.js'
-    , './src/**/*.jsx'
-    , './src/**/*.ts'
-    , './src/**/*.tsx'
-    , './src/**/*.html'
-  ],
+  purge: {
+    enabled: false,
+    content: [
+      './src/**/*.elm'
+      , './src/**/*.js'
+      , './src/**/*.jsx'
+      , './src/**/*.ts'
+      , './src/**/*.tsx'
+      , './src/**/*.html'
+    ]
+  },
+
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
