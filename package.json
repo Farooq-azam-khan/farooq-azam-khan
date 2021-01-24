@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/Farooq-azam-khan/farooq-azam-khan#readme",
   "devDependencies": {
-    "elm-live": "^4.0.2"
+    "autoprefixer": "^10.2.3",
+    "elm-live": "^4.0.2",
+    "postcss": "^8.2.4",
+    "tailwindcss": "^2.0.2"
   }
 }
