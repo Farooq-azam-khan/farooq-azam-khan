@@ -40,6 +40,7 @@ main =
 init : Model
 init =
     { languages = languages
+    , show_sm_navbar = False
     }
 
 
@@ -48,6 +49,9 @@ update msg model =
     case msg of
         NoOp ->
             model
+
+        ToggleSmNavbar ->
+            { model | show_sm_navbar = not model.show_sm_navbar }
 
 
 view : Model -> Html Msg
