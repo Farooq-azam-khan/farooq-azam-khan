@@ -3,21 +3,24 @@ module Main exposing (main)
 import Browser
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import ListOfLanguages exposing (laguagesView)
-import Types exposing (..)
 import Html.Events exposing (..)
 import Icons exposing (..)
 import Projects exposing (..)
+import Types exposing (..)
 
-logos_base : String 
-logos_base = "./src/logos"
+
+logos_base : String
+logos_base =
+    "./src/logos"
+
+
 languages : List Language
 languages =
-    [ { href = "#", name = "Elm" , image = Just (logos_base ++ "/elm.svg")}
-    , { href = "#", name = "Python" , image = Just (logos_base ++ "/python.svg")}
-    , Language "#" "C" Nothing 
-    , Language "#" "Rust" (Just (logos_base ++ "/rust.svg") )
-    , Language "#" "Javascript / Typescript" Nothing 
+    [ { href = "#", name = "Elm", image = Just (logos_base ++ "/elm.svg") }
+    , { href = "#", name = "Python", image = Just (logos_base ++ "/python.svg") }
+    , Language "#" "C" Nothing
+    , Language "#" "Rust" (Just (logos_base ++ "/rust.svg"))
+    , Language "#" "Javascript / Typescript" Nothing
     , Language "#" "Bash" Nothing
     , Language "#" "C++" Nothing
     , Language "#" "Haskell" Nothing
