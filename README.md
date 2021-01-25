@@ -8,3 +8,4 @@
 * [ ] grid layout for languages for medium and bigger screens
 * [ ] grid layout for the form on medium and bigger screens
 * [ ] figma style for personal projects 
+* [ ] look into gradients 
