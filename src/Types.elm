@@ -3,6 +3,7 @@ module Types exposing (..)
 
 type alias Model =
     { languages : List Language
+    , show_sm_navbar : Bool
     }
 
 
@@ -15,3 +16,4 @@ type alias Language =
 
 type Msg
     = NoOp
+    | ToggleSmNavbar
