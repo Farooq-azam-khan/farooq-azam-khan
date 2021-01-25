@@ -8,12 +8,13 @@ import Types exposing (..)
 languageDisplay : Language -> Html Msg
 languageDisplay lang =
     li [ class "rounded-lg bg-white min-w-xl px-2 py-3 shadow-lg" ]
-        [ case lang.image of 
-            Just img_link -> 
-                img [src img_link, alt lang.name, width 100, height 100] []
-            Nothing -> 
+        [ case lang.image of
+            Just img_link ->
+                img [ src img_link, alt lang.name, width 100, height 100 ] []
+
+            Nothing ->
                 span [] []
-            , a
+        , a
             [ href lang.href
             , class "hover:text-gray-600 cursor-pointer text-gray-800"
             ]
