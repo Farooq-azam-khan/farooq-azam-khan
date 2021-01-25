@@ -5,6 +5,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import ListOfLanguages exposing (laguagesView)
 import Types exposing (..)
+import Html.Events exposing (..)
 import Icons exposing (..)
 import Projects exposing (..)
 
