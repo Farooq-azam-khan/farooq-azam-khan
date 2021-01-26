@@ -147,26 +147,28 @@ languages_section =
 -- TODO: Handle Form Submit
 -- TODO: Looking into focus ring
 
-
+form_label : String -> Html Msg 
+form_label txt = label [class "text-indigo-100 font-semibold"] [text txt]
 sm_form_section : Html Msg
 sm_form_section =
-    div [ class "md:hidden text-gray-900 mt-32 pt-10 shadow-xl" ]
-        [ Html.form [ action "#", class "bg-white flex flex-col space-y-10" ]
-            [ div [ class "flex flex-col" ]
-                [ label [] [ text "Full Name" ]
-                , input [ class "" ] []
+    div [ class "bg-indigo-600 md:hidden text-gray-400 mt-32 shadow-2xl rounded-lg mx-2 py-16" ]
+        [ h3 [class "text-white font-bold text-xl tracking-wide text-center"] [text "Contact Me"]
+        , Html.form [ action "#", class "max-w-xl  mx-auto flex flex-col space-y-10" ]
+            [ div [ class "flex flex-col space-y-2" ]
+                [ form_label "First Name"
+                , input [ class "px-3 py-2 rounded-lg" ] []
                 ]
-            , div [ class "flex flex-col" ]
-                [ label [] [ text "Email" ]
-                , input [ class "" ] []
+            , div [ class "flex flex-col space-y-2" ]
+                [ form_label "Email"
+                , input [ type_ "email", class "px-3 py-2 rounded-lg" ] []
                 ]
-            , div [ class "flex flex-col" ]
-                [ label [] [ text "Message" ]
-                , textarea [] []
+            , div [ class "flex flex-col space-y-2" ]
+                [ form_label "Message"
+                , textarea [class "rounded-lg px-3 py-2", rows 4] []
                 ]
             , button
                 [ type_ "submit"
-                , class ""
+                , class "bg-white w-full px-4 py-3 rounded-lg font-bold text-indigo-800 tracking-wide hover:bg-indigo-100"
                 ]
                 [ text "Send Message" ]
             ]
@@ -288,7 +290,7 @@ code_btn : String -> Html Msg
 code_btn gh_lnk =
     a
         [ href gh_lnk
-        , class "text-white text-lg rounded-lg shadow-lg px-5 py-2 bg-indigo-700"
+        , class "text-white text-lg rounded-lg tracking-wide px-5 py-2 bg-indigo-600 hover:bg-indigo-700 hover:shadow-lg"
         ]
         [ text "Code" ]
 
