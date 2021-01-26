@@ -127,56 +127,15 @@ languages_section =
             ]
         , div [ class "grid mt-10 gap-y-10" ]
             -- Elm
-            [ div [ class "flex space-x-3 items-start" ]
-                [ img [ class "w-12 h-12", src (logos_base ++ "/elm.svg"), alt "Elm Logo" ] []
-                , div [ class "flex flex-col space-y-3" ]
-                    [ div []
-                        [ h4 [ class "font-semibold text-lg tracking-widest" ] [ text "Elm Lang" ]
-                        , div [] [ a [ href "#" ] [ text "elm-lang.org" ] ]
-                        ]
-                    , p [ class "text-gray-700" ] [ text "Elm is a delightful strictly typed functional programming language that compiles to JS. It is used to create UI. " ]
-                    , div [] [ button [ class "px-4 py-2 text-lg bg-gray-300 text-gray-900 rounded-lg shadow-md" ] [ text "Projects" ] ]
-                    ]
-                ]
+            [ display_language elm_record
 
             -- Python
-            , div [ class "flex space-x-3 items-start" ]
-                [ img [ class "w-12 h-12", src (logos_base ++ "/python.svg"), alt "Python Logo" ] []
-                , div [ class "flex flex-col space-y-3" ]
-                    [ div []
-                        [ h4 [ class "font-semibold text-lg tracking-widest" ] [ text "Python" ]
-                        , div [] [ a [ href "#" ] [ text "python.org" ] ]
-                        ]
-                    , p [ class "text-gray-700" ] [ text "Elm is a delightful strictly typed functional programming language that compiles to JS. It is used to create UI. " ]
-                    , div [] [ button [ class "px-4 py-2 text-lg bg-gray-300 text-gray-900 rounded-lg shadow-md" ] [ text "Projects" ] ]
-                    ]
-                ]
+            , display_language python_record
 
             -- Haskell
-            , div [ class "flex space-x-3 items-start" ]
-                [ img [ class "w-12 h-12", src (logos_base ++ "/haskell.svg"), alt "Haskell Logo" ] []
-                , div [ class "flex flex-col space-y-3" ]
-                    [ div []
-                        [ h4 [ class "font-semibold text-lg tracking-widest" ] [ text "Elm Lang" ]
-                        , div [] [ a [ href "#" ] [ text "elm-lang.org" ] ]
-                        ]
-                    , p [ class "text-gray-700" ] [ text "Elm is a delightful strictly typed functional programming language that compiles to JS. It is used to create UI. " ]
-                    , div [] [ button [ class "px-4 py-2 text-lg bg-gray-300 text-gray-900 rounded-lg shadow-md" ] [ text "Projects" ] ]
-                    ]
-                ]
-
+            , display_language haskell_record
             -- Rust
-            , div [ class "flex space-x-3 items-start" ]
-                [ img [ class "w-12 h-12", src (logos_base ++ "/rust.svg"), alt "Elm Logo" ] []
-                , div [ class "flex flex-col space-y-3" ]
-                    [ div []
-                        [ h4 [ class "font-semibold text-lg tracking-widest" ] [ text "Elm Lang" ]
-                        , div [] [ a [ href "#" ] [ text "elm-lang.org" ] ]
-                        ]
-                    , p [ class "text-gray-700" ] [ text "Elm is a delightful strictly typed functional programming language that compiles to JS. It is used to create UI. " ]
-                    , div [] [ button [ class "px-4 py-2 text-lg bg-gray-300 text-gray-900 rounded-lg shadow-md" ] [ text "Projects" ] ]
-                    ]
-                ]
+            , display_language rust_record
             ]
         , div [ class "grid mt-12" ]
             [ a [ href "#", class "text-gray-700 underline font-bold" ] [ text "More Languages" ] ]
