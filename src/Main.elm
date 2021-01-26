@@ -93,6 +93,21 @@ rust_record =
             , link = "rust-lang.org"
             , image = logos_base ++ "/rust.svg" 
             }
+display_language : Language -> Html Msg 
+display_language lang = 
+                        div [ class "flex space-x-3 items-start" ]
+                            [ img [ class "w-12 h-12", src lang.image, alt (lang.name ++ "Logo") ] []
+                            , div [ class "flex flex-col space-y-3" ]
+                            [ div []
+                            [ h4 [ class "font-semibold text-lg tracking-widest" ] [ text lang.name ]
+                            , div [] [ a [ class "text-indigo-700 hover:underline" 
+                                         , href "#" ] [ text lang.link ] ]
+                            ]
+                            , p [ class "max-w-lg text-gray-700" ] [ text lang.description ]
+                            , div [] [ projects_btn ] 
+                             ]
+                        ]
+
 languages_section : Html Msg
 languages_section =
     div [ class "mt-32 px-3" ]
