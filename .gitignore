@@ -1,6 +1,8 @@
 node_modules
+
 # elm 
 elm-stuff
 elm.js
+
 # tailwind
-tailwind.css
+src/css/tailwind.css
