@@ -108,6 +108,11 @@ display_language lang =
                              ]
                         ]
 
+projects_btn : Html Msg 
+projects_btn = button [
+                      class "px-10 py-2 text-lg text-indigo-100 bg-indigo-500 rounded-lg shadow-md" 
+                      ] [ text "Projects" ] 
+
 languages_section : Html Msg
 languages_section =
     div [ class "mt-32 px-3" ]
