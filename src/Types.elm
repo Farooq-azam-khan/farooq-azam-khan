@@ -2,16 +2,18 @@ module Types exposing (..)
 
 
 type alias Model =
-    { languages : List Language
-    , show_sm_navbar : Bool
+    { show_sm_navbar : Bool
     }
 
 
-type alias Language =
-    { href : String
-    , name : String
-    , image : Maybe String
-    }
+type alias Language = 
+                    { name: String 
+                    , description: String
+                    , link: String 
+                    , image: String 
+                    }
+
+
 
 
 type Msg
