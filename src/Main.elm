@@ -59,8 +59,8 @@ view model =
     div [ class "bg-gray-100 pb-32" ]
         [ navigation model
         , div [ class "px-3 mt-20" ]
-            [ h1 [ class "text-5xl text-3xl font-semibold" ]
-                [ text "Full Stack Developer with a passion for machine learning" ]
+            [ h1 [ class "max-w-2xl text-5xl text-3xl font-extrabold tracking-wider leading-normal" ]
+                [ text "Full Stack Developer with a Passion for Machine Learning" ]
             , div [ class "space-y-6 flex flex-col mt-20 md:flex-row md:items-center md:space-x-10 md:space-y-0" ]
                 [ div []
                     [ button
