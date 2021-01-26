@@ -117,10 +117,10 @@ languages_section : Html Msg
 languages_section =
     div [ class "mt-32 px-3" ]
         [ div [ class "space-y-5" ]
-            [ div [ class "text-xl tracking-widest text-gray-900" ]
+            [ div [ class "text-xl uppercase font-extrabold tracking-widest text-indigo-800" ]
                 [ text "Languages" ]
             , h2
-                [ class "text-gray-900 font-bold tracking-wide leading-relaxed text-3xl" ]
+                [ class "max-w-lg text-gray-900 font-bold tracking-wide leading-relaxed text-3xl" ]
                 [ text "Using the Right Tools for the Right Job"
                 ]
             , p [ class "text-lg text-gray-700" ] [ text "Below is a Highlight of the languages I have Experience with and my preferences for the types of featues these laguages provide." ]
