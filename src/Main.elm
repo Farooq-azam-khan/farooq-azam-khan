@@ -185,12 +185,12 @@ sm_form_section =
 portfolio_section : Html Msg
 portfolio_section =
     div [ class "relative mt-32" ]
-        [ div [ class "absolute inset-0 bg-indigo-700" ] [ text "" ]
+        [ div [ class "absolute inset-0 mb-32 bg-indigo-700" ] [ text "" ]
         , div [ class "relative z-10 mt-32 text-white py-3 px-3 grid gap-y-32 grid-cols-1 " ]
             [ my_songify_card
             , scheming_in_haskell_card
             , jarvis_the_typographer_card
-            ]
+            ] 
         ]
 
 
