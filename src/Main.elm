@@ -205,7 +205,7 @@ my_songify_img className =
 
 my_songify_card : Html Msg
 my_songify_card =
-    div [ class "max-w-2xl bg-white flex flex-col items-center rounded-lg shadow-xl py-5 space-y-10" ]
+    div [ class "mx-auto max-w-2xl bg-white flex flex-col items-center rounded-lg shadow-xl py-5 space-y-10" ]
         [ div
             -- Image
             []
@@ -232,7 +232,7 @@ my_songify_card =
 
 scheming_in_haskell_card : Html Msg
 scheming_in_haskell_card =
-    div [ class "max-w-2xl bg-white flex flex-col items-center rounded-lg shadow-xl py-5 space-y-10" ]
+    div [ class "mx-auto max-w-2xl bg-white flex flex-col items-center rounded-lg shadow-xl py-5 space-y-10" ]
         [ div
             -- Image
             []
@@ -261,7 +261,7 @@ scheming_in_haskell_card =
 
 jarvis_the_typographer_card : Html Msg
 jarvis_the_typographer_card =
-    div [ class "max-w-2xl bg-white flex flex-col items-center rounded-lg shadow-xl py-5 space-y-10" ]
+    div [ class "mx-auto max-w-2xl bg-white flex flex-col items-center rounded-lg shadow-xl py-5 space-y-10" ]
         [ div
             -- Image
             []
