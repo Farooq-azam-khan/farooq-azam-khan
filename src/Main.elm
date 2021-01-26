@@ -299,7 +299,7 @@ live_demo_btn : String -> Html Msg
 live_demo_btn dmo_lnk =
     a
         [ href dmo_lnk
-        , class "border text-lg rounded-lg shadow-lg  px-3 py-2  text-indigo-700 border-indigo-900"
+        , class "text-lg rounded-lg px-3 py-2 text-indigo-700 bg-indigo-100 hover:bg-white hover:shadow-lg hover:border hover:border-indigo-100"
         ]
         [ text "Live Demo" ]
 
