@@ -151,7 +151,7 @@ form_label : String -> Html Msg
 form_label txt = label [class "text-indigo-100 font-semibold"] [text txt]
 sm_form_section : Html Msg
 sm_form_section =
-    div [ class "bg-indigo-600 md:hidden text-gray-400 mt-32 shadow-2xl rounded-lg mx-2 py-16" ]
+    div [ class "bg-indigo-600 md:hidden text-gray-400 mt-32 shadow-2xl rounded-lg mx-2 py-16 px-4" ]
         [ h3 [class "text-white font-bold text-xl tracking-wide text-center"] [text "Contact Me"]
         , Html.form [ action "#", class "max-w-xl  mx-auto flex flex-col space-y-10" ]
             [ div [ class "flex flex-col space-y-2" ]
@@ -290,7 +290,7 @@ code_btn : String -> Html Msg
 code_btn gh_lnk =
     a
         [ href gh_lnk
-        , class "text-white text-lg rounded-lg tracking-wide px-5 py-2 bg-indigo-600 hover:bg-indigo-700 hover:shadow-lg"
+        , class "text-white text-lg rounded-lg tracking-wide px-16 py-2 bg-indigo-600 hover:bg-indigo-700"
         ]
         [ text "Code" ]
 
@@ -299,7 +299,7 @@ live_demo_btn : String -> Html Msg
 live_demo_btn dmo_lnk =
     a
         [ href dmo_lnk
-        , class "text-lg rounded-lg px-3 py-2 text-indigo-700 bg-indigo-100 hover:bg-white hover:shadow-lg hover:border hover:border-indigo-100"
+        , class "text-lg rounded-lg px-10 py-2 text-indigo-700 bg-indigo-100 border border-opacity-1 hover:bg-white hover:border hover:border-indigo-100"
         ]
         [ text "Live Demo" ]
 
