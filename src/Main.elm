@@ -63,6 +63,36 @@ view model =
         ]
 
 
+elm_record : Language 
+elm_record =  
+           { name = "Elm Lang" 
+           , description = "Elm is a delightful strictly typed functional programming language that compiles to JS. It is used to create UI."
+           , link = "elm-lang.org"
+           , image = logos_base ++ "/elm.svg" 
+           }
+python_record : Language
+python_record =  
+            { name = "Python" 
+            , description = "Pyton is a langauge!"
+            , link = "python.org"
+            , image = logos_base ++ "/python.svg" 
+            }
+
+haskell_record : Language 
+haskell_record =  
+            { name = "Haskell" 
+            , description = "Haskell is a langauge!"
+            , link = "haskell.org"
+            , image = logos_base ++ "/haskell.svg" 
+            }
+
+rust_record : Language 
+rust_record = 
+            { name = "Rust" 
+            , description = "Rust is a langauge!"
+            , link = "rust-lang.org"
+            , image = logos_base ++ "/rust.svg" 
+            }
 languages_section : Html Msg
 languages_section =
     div [ class "mt-32 px-3" ]
