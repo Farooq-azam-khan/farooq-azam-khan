@@ -115,7 +115,7 @@ projects_btn = button [
 
 languages_section : Html Msg
 languages_section =
-    div [ class "mt-32 px-3" ]
+    div [ class "mt-32 px-3 bg-white py-20" ]
         [ div [ class "space-y-5" ]
             [ div [ class "text-xl uppercase font-extrabold tracking-widest text-indigo-800" ]
                 [ text "Languages" ]
