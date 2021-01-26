@@ -1,6 +1,6 @@
 # Farooq Azam Khan 
 
-* (Figma Link)[https://www.figma.com/file/Sbh1uZGIs1IHB82ZYOfoX2/Personal-Website?node-id=0%3A1]
+* [Figma Link](https://www.figma.com/file/Sbh1uZGIs1IHB82ZYOfoX2/Personal-Website?node-id=0%3A1)
 ## Elm Version
 * "elm": "^0.19.1-3"
 
