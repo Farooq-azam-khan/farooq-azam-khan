@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:tailwindcss": "tailwindcss build src/css/styles.css -o src/css/tailwind.css",
-    "dev": "elm-live src/Main.elm --open -- --output=elm.js --debug",
+    "dev": "elm-live src/Main.elm -- --output=elm.js --debug",
     "build:elm": "elm make src/Main.elm --output elm.js"
   },
   "repository": {
