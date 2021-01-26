@@ -21,8 +21,7 @@ main =
 
 init : Model
 init =
-    { languages = languages
-    , show_sm_navbar = False
+    {show_sm_navbar = False
     }
 
 
