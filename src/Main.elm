@@ -145,6 +145,7 @@ languages_section =
 
 -- TODO: Style Form
 -- TODO: Handle Form Submit
+-- TODO: Looking into focus ring
 
 
 sm_form_section : Html Msg
