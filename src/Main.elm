@@ -14,14 +14,13 @@ logos_base =
     "./src/logos"
 
 
-
 main =
     Browser.sandbox { init = init, update = update, view = view }
 
 
 init : Model
 init =
-    {show_sm_navbar = False
+    { show_sm_navbar = False
     }
 
 
@@ -63,55 +62,70 @@ view model =
         ]
 
 
-elm_record : Language 
-elm_record =  
-           { name = "Elm Lang" 
-           , description = "Elm is a delightful strictly typed functional programming language that compiles to JS. It is used to create UI."
-           , link = "elm-lang.org"
-           , image = logos_base ++ "/elm.svg" 
-           }
+elm_record : Language
+elm_record =
+    { name = "Elm Lang"
+    , description = "Elm is a delightful strictly typed functional programming language that compiles to JS. It is used to create UI."
+    , link = "elm-lang.org"
+    , image = logos_base ++ "/elm.svg"
+    }
+
+
 python_record : Language
-python_record =  
-            { name = "Python" 
-            , description = "Pyton is a langauge!"
-            , link = "python.org"
-            , image = logos_base ++ "/python.svg" 
-            }
+python_record =
+    { name = "Python"
+    , description = "Pyton is a langauge!"
+    , link = "python.org"
+    , image = logos_base ++ "/python.svg"
+    }
 
-haskell_record : Language 
-haskell_record =  
-            { name = "Haskell" 
-            , description = "Haskell is a langauge!"
-            , link = "haskell.org"
-            , image = logos_base ++ "/haskell.svg" 
-            }
 
-rust_record : Language 
-rust_record = 
-            { name = "Rust" 
-            , description = "Rust is a langauge!"
-            , link = "rust-lang.org"
-            , image = logos_base ++ "/rust.svg" 
-            }
-display_language : Language -> Html Msg 
-display_language lang = 
-                        div [ class "flex space-x-3 items-start" ]
-                            [ img [ class "w-12 h-12", src lang.image, alt (lang.name ++ "Logo") ] []
-                            , div [ class "flex flex-col space-y-3" ]
-                            [ div []
-                            [ h4 [ class "font-semibold text-lg tracking-widest" ] [ text lang.name ]
-                            , div [] [ a [ class "text-indigo-700 hover:underline" 
-                                         , href "#" ] [ text lang.link ] ]
-                            ]
-                            , p [ class "max-w-lg text-gray-700" ] [ text lang.description ]
-                            , div [] [ projects_btn ] 
-                             ]
+haskell_record : Language
+haskell_record =
+    { name = "Haskell"
+    , description = "Haskell is a langauge!"
+    , link = "haskell.org"
+    , image = logos_base ++ "/haskell.svg"
+    }
+
+
+rust_record : Language
+rust_record =
+    { name = "Rust"
+    , description = "Rust is a langauge!"
+    , link = "rust-lang.org"
+    , image = logos_base ++ "/rust.svg"
+    }
+
+
+display_language : Language -> Html Msg
+display_language lang =
+    div [ class "flex space-x-3 items-start" ]
+        [ img [ class "w-12 h-12", src lang.image, alt (lang.name ++ "Logo") ] []
+        , div [ class "flex flex-col space-y-3" ]
+            [ div []
+                [ h4 [ class "font-semibold text-lg tracking-widest" ] [ text lang.name ]
+                , div []
+                    [ a
+                        [ class "text-indigo-700 hover:underline"
+                        , href "#"
                         ]
+                        [ text lang.link ]
+                    ]
+                ]
+            , p [ class "max-w-lg text-gray-700" ] [ text lang.description ]
+            , div [] [ projects_btn ]
+            ]
+        ]
 
-projects_btn : Html Msg 
-projects_btn = button [
-                      class "px-10 py-2 text-lg text-indigo-100 bg-indigo-500 rounded-lg shadow-md" 
-                      ] [ text "Projects" ] 
+
+projects_btn : Html Msg
+projects_btn =
+    button
+        [ class "px-10 py-2 text-lg text-indigo-100 bg-indigo-500 rounded-lg shadow-md"
+        ]
+        [ text "Projects" ]
+
 
 languages_section : Html Msg
 languages_section =
@@ -134,6 +148,7 @@ languages_section =
 
             -- Haskell
             , display_language haskell_record
+
             -- Rust
             , display_language rust_record
             ]
@@ -147,12 +162,16 @@ languages_section =
 -- TODO: Handle Form Submit
 -- TODO: Looking into focus ring
 
-form_label : String -> Html Msg 
-form_label txt = label [class "text-indigo-100 font-semibold"] [text txt]
+
+form_label : String -> Html Msg
+form_label txt =
+    label [ class "text-indigo-100 font-semibold" ] [ text txt ]
+
+
 sm_form_section : Html Msg
 sm_form_section =
     div [ class "bg-indigo-600 md:hidden text-gray-400 mt-32 shadow-2xl rounded-lg mx-2 py-16 px-4" ]
-        [ h3 [class "text-white font-bold text-xl tracking-wide text-center"] [text "Contact Me"]
+        [ h3 [ class "text-white font-bold text-xl tracking-wide text-center" ] [ text "Contact Me" ]
         , Html.form [ action "#", class "max-w-xl  mx-auto flex flex-col space-y-10" ]
             [ div [ class "flex flex-col space-y-2" ]
                 [ form_label "First Name"
@@ -164,7 +183,7 @@ sm_form_section =
                 ]
             , div [ class "flex flex-col space-y-2" ]
                 [ form_label "Message"
-                , textarea [class "rounded-lg px-3 py-2", rows 4] []
+                , textarea [ class "rounded-lg px-3 py-2", rows 4 ] []
                 ]
             , button
                 [ type_ "submit"
@@ -183,7 +202,7 @@ portfolio_section =
             [ my_songify_card
             , scheming_in_haskell_card
             , jarvis_the_typographer_card
-            ] 
+            ]
         ]
 
 
@@ -309,10 +328,10 @@ navigation model =
     nav [ class "relative px-3 py-4 bg-white shadow-lg" ]
         [ div [ class "flex justify-between items-center" ]
             [ div [ class "text-lg hover:underline cursor-pointer" ]
-                [ a [ href "#" ] [ text "Farooq A. Khan" ]
+                [ a [ class "text-indigo-700 font-bold tracking-wider hover:text-indigo-600", href "#" ] [ text "Farooq A. Khan" ]
                 ]
             , div []
-                [ button [ onClick ToggleSmNavbar, class "hover:bg-gray-800 hover:text-white rounded-lg px-1 py-1" ] [ menu_alt3 "w-8 h-8" ]
+                [ button [ onClick ToggleSmNavbar, class "text-indigo-700 hover:bg-indigo-800 hover:text-white rounded-lg px-1 py-1" ] [ menu_alt3 "w-8 h-8" ]
                 ]
             ]
         , if model.show_sm_navbar then
