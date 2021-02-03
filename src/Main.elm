@@ -2,6 +2,8 @@ module Main exposing (main)
 
 import Browser
 import Html exposing (..)
+import Browser.Navigation as Nav exposing (Key)
+import Url exposing (Url)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Icons exposing (..)
@@ -14,54 +16,112 @@ logos_base =
     "./src/logos"
 
 
+main : Program () Model Msg 
 main =
-    Browser.sandbox { init = init, update = update, view = view }
+    Browser.application { init = init
+                        , update = update
+                        , view = view 
+                        , subscriptions = subscriptions
+                        , onUrlChange = UrlChanged
+                        , onUrlRequest = LinkClicked
+                        }
+
+init : () -> Url -> Key ->  (Model, Cmd Msg) 
+init _ url key =
+        let 
+            model = { show_sm_navbar = False, key = key, url = url}
+        in
+            (model, Cmd.none)
 
 
-init : Model
-init =
-    { show_sm_navbar = False
-    }
-
-
-update : Msg -> Model -> Model
+update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
     case msg of
         NoOp ->
-            model
+            (model, Cmd.none)
 
         ToggleSmNavbar ->
-            { model | show_sm_navbar = not model.show_sm_navbar }
+            ({ model | show_sm_navbar = not model.show_sm_navbar }, Cmd.none)
+        
+        LinkClicked urlRequest -> 
+            case urlRequest of 
+                Browser.Internal url -> 
+                    (model, Nav.pushUrl model.key (Url.toString url))
+                
+                Browser.External href -> 
+                    (model, Nav.load href)
+        
+        UrlChanged url -> 
+            ({model | url=url}, Cmd.none)
+
+subscriptions : Model -> Sub Msg 
+subscriptions _ = Sub.none 
 
 
-view : Model -> Html Msg
+
+home_page : Model -> Html Msg 
+home_page model = Html.main_ [ class "bg-gray-100 pb-32" ]
+                [ header [ class "px-3 pt-20" ]
+                                [ h1 [ class "max-w-2xl text-5xl font-bold tracking-wide leading-tight" ]
+                                    [ div [class "text-indigo-700"] [text "Full Stack Developer"]
+                                    , div [] [text "with a Passion tight"] 
+                                    , div [class "text-indigo-700"] [text "Machine Learning"]
+                                    ]
+                                , div [ class "space-y-6 flex flex-col mt-20 md:flex-row md:items-center md:space-x-10 md:space-y-0" ]
+                                    [ div []
+                                        [ button
+                                            [ class "w-full md:px-10 md:py-5 transition duration-500 ease-in-out text-xl tracking-wider font-semibold bg-indigo-700 text-gray-100 px-3 py-3 shadow-lg rounded-lg hover:bg-indigo-600 motion-reduce:transition-none motion-reduce:transform-none"
+                                            ]
+                                            [ text "Portfolio" ]
+                                        ]
+                                    , div []
+                                        [ button
+                                            [ class "w-full px-3 py-3 md:px-10 md:py-5 transition duration-500 ease-in-out text-xl tracking-wider font-semibold bg-indigo-200 text-indigo-800  hover:bg-indigo-400  shadow-lg rounded-lg  motion-reduce:transition-none motion-reduce:transform-none"
+                                            ]
+                                            [ text "Blogs" ]
+                                        ]
+                                    ]
+                                ]
+                            , portfolio_section
+                            , sm_form_section
+                            , design_section
+                            , lessons_section
+                            , languages_section
+                            ]
+            
+language_page : Model -> Html Msg 
+language_page model = Html.main_ [] [text "more languages"]
+view : Model -> Browser.Document Msg
 view model =
-    div [ class "bg-gray-100 pb-32" ]
-        [ navigation model
-        , div [ class "px-3 mt-20" ]
-            [ h1 [ class "max-w-2xl text-5xl text-3xl font-extrabold tracking-wider leading-normal" ]
-                [ text "Full Stack Developer with a Passion for Machine Learning" ]
-            , div [ class "space-y-6 flex flex-col mt-20 md:flex-row md:items-center md:space-x-10 md:space-y-0" ]
-                [ div []
-                    [ button
-                        [ class "w-full md:px-10 md:py-5 transition duration-500 ease-in-out text-xl tracking-wider font-semibold bg-indigo-700 text-gray-100 px-3 py-3 shadow-lg rounded-lg hover:bg-indigo-600 motion-reduce:transition-none motion-reduce:transform-none"
-                        ]
-                        [ text "Portfolio" ]
+        { title = "Farooq A. Khan"
+        , body = let 
+                    _ = Debug.log "url: " model.url
+                 in 
+                    [ navigation model
+                    , case model.url.path of 
+                        "/" -> 
+                            home_page model 
+                        "/more-languages" -> 
+                            language_page model 
+                        _ -> 
+                            text ""
                     ]
-                , div []
-                    [ button
-                        [ class "w-full px-3 py-3 md:px-10 md:py-5 transition duration-500 ease-in-out text-xl tracking-wider font-semibold bg-indigo-200 text-indigo-800  hover:bg-indigo-400  shadow-lg rounded-lg  motion-reduce:transition-none motion-reduce:transform-none"
-                        ]
-                        [ text "Blogs" ]
-                    ]
-                ]
+                              
+        }
+
+lessons_section : Html Msg 
+lessons_section = 
+        div [class "mt-32"]
+            [ un_descriptive_heading "Lessons" 
+            , div [class "mt-32"] [coming_soom]
             ]
-        , portfolio_section
-        , sm_form_section
-        , languages_section
-        ]
+design_section : Html Msg 
+design_section = 
+        div [ class "mt-32 bg-indigo-100 py-10 px-3"]
+            [ un_descriptive_heading "Design"
+            , div [class "mt-32" ] [coming_soom]
 
-
+            ]
 elm_record : Language
 elm_record =
     { name = "Elm Lang"
@@ -126,20 +186,26 @@ projects_btn =
         ]
         [ text "Projects" ]
 
-
+un_descriptive_heading : String -> Html Msg 
+un_descriptive_heading h = 
+                    div [ class "text-center text-xl uppercase font-bold tracking-widest text-indigo-700 py-3" 
+                        ]
+                        [ text h 
+                        ]
 languages_section : Html Msg
 languages_section =
     div [ class "mt-32 px-3 bg-white py-20" ]
-        [ div [ class "space-y-5" ]
-            [ div [ class "text-xl uppercase font-extrabold tracking-widest text-indigo-800" ]
-                [ text "Languages" ]
+        [ div [ class "space-y-5 flex flex-col  " ]
+            [ un_descriptive_heading "Language"
             , h2
-                [ class "max-w-lg text-gray-900 font-bold tracking-wide leading-relaxed text-3xl" ]
-                [ text "Using the Right Tools for the Right Job"
+                [ class "max-w-lg mx-auto md:text-center text-gray-900 font-bold tracking-wide leading-relaxed text-3xl" ]
+                [ div []  [text "Using the Right Tools"], div [] [text "for the Right Job"]
                 ]
-            , p [ class "max-w-lg text-lg text-gray-700" ] [ text "Below is a Highlight of the languages I have Experience with and my preferences for the types of featues these laguages provide." ]
+            , p [ class "max-w-lg mx-auto text-lg text-gray-700" ] 
+                [ text "Below is a Highlight of the languages I have Experience with and my preferences for the types of featues these laguages provide." 
+                ]
             ]
-        , div [ class "grid mt-10 gap-y-10" ]
+        , div [ class "md:mx-auto max-w-xl grid mt-10 gap-y-10 md:grid-cols-2" ]
             -- Elm
             [ display_language elm_record
 
@@ -152,8 +218,8 @@ languages_section =
             -- Rust
             , display_language rust_record
             ]
-        , div [ class "grid mt-12" ]
-            [ a [ href "#", class "text-gray-700 underline font-bold" ] [ text "More Languages" ] ]
+        , div [ class "md:text-center md:mx-auto grid mt-12" ]
+            [ a [ href "/more-languages", class "text-gray-700 underline font-bold" ] [ text "More Languages" ] ]
         ]
 
 
@@ -193,7 +259,11 @@ sm_form_section =
             ]
         ]
 
-
+coming_soom : Html Msg 
+coming_soom = div [class "max-w-2xl mx-auto bg-white shadow-xl rounded-xl px-5 py-10 flex items-center flex-col space-y-5"] 
+                  [img [class "w-80 h-80", src "./src/imgs/undraw_under_construction.svg"] []
+                  , h4 [class "font-bold tracking-wide text-indigo-700 text-2xl"] [text "coming soon"]
+                  ]
 portfolio_section : Html Msg
 portfolio_section =
     div [ class "relative mt-32" ]
@@ -214,6 +284,13 @@ my_songify_img className =
         ]
         []
 
+haskell_img : String -> Html Msg 
+haskell_img className = 
+    img 
+        [class className
+        , src "https://images.unsplash.com/photo-1593642634443-44adaa06623a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=925&q=80"
+        ] 
+        []
 
 my_songify_card : Html Msg
 my_songify_card =
@@ -221,7 +298,7 @@ my_songify_card =
         [ div
             -- Image
             []
-            [ my_songify_img "w-full rounded-lg shadow-lg -mt-20" ]
+            [ my_songify_img "w-full shadow-lg -mt-20" ]
         , div
             -- tags
             [ class "flex space-x-3" ]
@@ -238,7 +315,7 @@ my_songify_card =
             -- links
             [ class "flex space-x-3"
             ]
-            [ code_btn "#", live_demo_btn "#" ]
+            [ code_btn "https://github.com/Farooq-azam-khan/my-songify", live_demo_btn "https://my-songify.herokuapp.com/" ]
         ]
 
 
@@ -248,12 +325,11 @@ scheming_in_haskell_card =
         [ div
             -- Image
             []
-            [ my_songify_img "w-full rounded-lg shadow-lg -mt-20" ]
+            [ haskell_img "w-full rounded-lg shadow-lg -mt-20" ]
         , div
             -- tags
             [ class "flex space-x-3" ]
-            [ lang_tag "python"
-            , lang_tag "react/js"
+            [ lang_tag "Haskell"
             ]
         , div
             -- content
@@ -267,17 +343,22 @@ scheming_in_haskell_card =
             -- links
             [ class "flex space-x-3"
             ]
-            [ code_btn "#", live_demo_btn "#" ]
+            [ code_btn "https://github.com/Farooq-azam-khan/scheme" ]
         ]
 
-
+jarvis_img : String -> Html Msg 
+jarvis_img className = 
+    img [ class className
+        , src "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
+        ]
+        []
 jarvis_the_typographer_card : Html Msg
 jarvis_the_typographer_card =
     div [ class "mx-auto max-w-2xl bg-white flex flex-col items-center rounded-lg shadow-xl py-5 space-y-10" ]
         [ div
             -- Image
             []
-            [ my_songify_img "w-full rounded-lg shadow-lg -mt-20" ]
+            [ jarvis_img "w-full shadow-lg -mt-20" ]
         , div
             -- tags
             [ class "flex space-x-3" ]
@@ -296,13 +377,13 @@ jarvis_the_typographer_card =
             -- links
             [ class "flex space-x-3"
             ]
-            [ code_btn "#", live_demo_btn "#" ]
+            [ code_btn "https://github.com/Farooq-azam-khan/Jarvis-the-Typographer", live_demo_btn "https://farooq-azam-khan.github.io/Jarvis-the-Typographer/" ]
         ]
 
 
 lang_tag : String -> Html Msg
 lang_tag tag_nm =
-    span [ class "inline-flex items-center text-indigo-900 bg-indigo-200 px-4 py-1 rounded-full" ] [ text tag_nm ]
+    span [ class "inline-flex items-center text-indigo-100 bg-indigo-400 px-4 py-1 rounded-full" ] [ text tag_nm ]
 
 
 code_btn : String -> Html Msg
@@ -310,6 +391,7 @@ code_btn gh_lnk =
     a
         [ href gh_lnk
         , class "text-white text-lg rounded-lg tracking-wide px-16 py-2 bg-indigo-600 hover:bg-indigo-700"
+        , target "_blank"
         ]
         [ text "Code" ]
 
@@ -319,6 +401,7 @@ live_demo_btn dmo_lnk =
     a
         [ href dmo_lnk
         , class "text-lg rounded-lg px-10 py-2 text-indigo-700 bg-indigo-100 border border-opacity-1 hover:bg-white hover:border hover:border-indigo-100"
+        , target "_blank"
         ]
         [ text "Live Demo" ]
 
