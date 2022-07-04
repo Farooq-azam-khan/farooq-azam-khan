@@ -1,8 +1,10 @@
 module Main exposing (main)
 
+import Assets.Icons exposing (..)
 import Browser
 import Browser.Navigation as Nav
 import Html exposing (..)
+import Html.Attributes exposing (class, href, target)
 import Url exposing (Url)
 
 
@@ -44,26 +46,55 @@ view : Model -> Browser.Document Msg
 view model =
     { title = "Farooq Azam Khan"
     , body =
-        [ main_ []
-            [ h1 []
-                [ text "Farooq A. Khan Personal Site"
+        [ main_ [ class "mx-auto max-w-3xl lg:max-w-4xl 2xl:max-w-5xl" ]
+            [ h1 [ class "pt-20 px-10 text-indigo-900 text-4xl lg:text-5xl 2xl:text-6xl text-indigo font-bold mb-10" ]
+                [ text "Farooq A. Khan |> Personal Site"
                 ]
-            , p [] [ text "Machine Learning Researcher interested in Artificail Intelligence, Software Engineering, Functional Programming, and Mathematics." ]
-            , section []
-                [ h2 [] [ text "Skills" ]
+            , p
+                [ class "pb-20 px-10 italic font-light text-lg lg:text-xl leading-loose tracking-wider lg:max-w-3xl " ]
+                [ text "Machine Learning Researcher interested in "
+                , span [ class "text-indigo-700" ] [ text "Artificail Intelligence" ]
+                , text ", "
+                , span [ class "text-indigo-700" ] [ text "Software Engineering" ]
+                , text ", "
+                , span [ class "text-indigo-700" ] [ text "Functional Programming" ]
+                , text ", and "
+                , span [ class "text-indigo-700" ] [ text "Mathematics" ]
+                , text "."
                 ]
-            , section []
-                [ h2 [] [ text "Personal Projects" ]
-                , ol []
-                    [ li [] [ text "Blog" ]
-                    , li [] [ text "Hasura, Elm, Graphql Techstack" ]
-                    , li [] [ text "Jarvis the Typographer" ]
-                    , li [] [ text "D3js reference" ]
-                    , li [] [ text "fourier analysis" ]
-                    , li [] [ text "My-Songfigy" ]
+
+            --            , section [ class "py-20 px-10 bg-indigo-200" ]
+            --                [ h2 [] [ text "Skills" ]
+            --               ]
+            , section [ class "flex items-center justify-center py-20 bg-gray-900 text-white" ]
+                [ a
+                    [ class "px-10 py-2 text-indigo-900 bg-indigo-100 hover:bg-indigo-500 hover:text-indigo-100"
+                    , target "blank_"
+                    , href "https://blog-iota-three.vercel.app/"
+                    ]
+                    [ text "Read My Blog" ]
+                ]
+            , section [ class "py-20 px-10 bg-indigo-200" ]
+                [ section_heading_component "Personal Projects"
+                , ol [ class "grid sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-5" ]
+                    [ li [ class "space-x-3 flex items-center " ]
+                        [ span []
+                            [ github_icon ]
+                        , a
+                            [ class "text-indigo-800 hover:text-indigo-900"
+                            , target "blank_"
+                            , href "https://github.com/Farooq-azam-khan/my_tech_stack_sample"
+                            ]
+                            [ text "Hasura, Elm, Graphql Techstack" ]
+                        ]
+                    , personal_project_component { project_name = "Jarvis the Typographer", github_link = "https://github.com/Farooq-azam-khan/Jarvis-the-Typographer" }
+                    , personal_project_component { project_name = "D3Js Reference Tutorial", github_link = "https://github.com/Farooq-azam-khan/d3js-tutorials" }
+                    , personal_project_component
+                        { project_name = "Fourier Analysis Modules", github_link = "https://github.com/Farooq-azam-khan/fourier-analysis-modules" }
+                    , personal_project_component { project_name = "My Sonfigy", github_link = "https://github.com/Farooq-azam-khan/my-songify" }
                     , li []
                         [ text "Website-Cloning w/ Tailwindcss"
-                        , ol []
+                        , ol [ class "ml-10 list-disc" ]
                             [ li [] [ text "twitch-ui" ]
                             , li [] [ text "spotify-ui" ]
                             , li [] [ text "twitter-ui" ]
@@ -71,12 +102,12 @@ view model =
                         ]
                     ]
                 ]
-            , section []
-                [ h2 [] [ text "Interests" ]
-                , ol []
+            , section [ class "py-20 px-10" ]
+                [ h2 [ class "font-semibold text-2xl pb-10" ] [ text "Interests" ]
+                , ol [ class "grid gap-2 sm:gap-5 sm:grid-cols-2 lg:grid-cols-4 list-disc" ]
                     [ li []
                         [ text "Machine Learning"
-                        , ol []
+                        , ol [ class "list-disc ml-5" ]
                             [ li [] [ text "Reinforcement Learning" ]
                             , li [] [ text "NLP" ]
                             , li [] [ text "MLOps" ]
@@ -86,16 +117,18 @@ view model =
                     , li [] [ text "Web Development" ]
                     ]
                 ]
-            , section []
-                [ h2 [] [ text "Programming Languages" ]
-                , ol []
-                    [ li [] [ text "python" ]
-                    , ol []
-                        [ li [] [ text "numpy" ]
-                        , li [] [ text "pandas" ]
-                        , li [] [ text "matplotlib" ]
-                        , li [] [ text "pytorch" ]
-                        , li [] [ text "seaborn" ]
+            , section [ class "py-20 px-10" ]
+                [ h2 [ class "font-semibold text-2xl pb-10" ] [ text "Programming Languages and Tools" ]
+                , ol [ class "grid gap-2 sm:gap-5 sm:grid-cols-2 lg:grid-cols-4 list-disc" ]
+                    [ li []
+                        [ text "python"
+                        , ol [ class "list-disc ml-5" ]
+                            [ li [] [ text "numpy" ]
+                            , li [] [ text "pandas" ]
+                            , li [] [ text "matplotlib" ]
+                            , li [] [ text "pytorch" ]
+                            , li [] [ text "seaborn" ]
+                            ]
                         ]
                     , li [] [ text "elm" ]
                     , li [] [ text "Rust" ]
@@ -105,11 +138,12 @@ view model =
                     , li [] [ text "PostgreSql/Sqllite" ]
                     ]
                 ]
-            , section []
-                [ h2 [] [ text "Book Recommendations" ]
-                , ol []
+            , section [ class "py-20 px-10" ]
+                [ section_heading_component "Book Recommendations"
+                , ol [ class "grid gap-2 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3 list-disc" ]
+                    -- potential obj: image url, book name, author
                     [ li [] [ text "Elm in Action (difficulty: easy)" ]
-                    , li [] [ text "Category Theory for Programmigers (difficulty: hard)" ]
+                    , li [] [ text "Category Theory for Programmgers (difficulty: hard)" ]
                     , li [] [ text "Deep Learning (difficulty: hard)" ]
                     , li [] [ text "The Clean Coder (difficulty: easy)" ]
                     , li [] [ text "Natural language Process in Action (not read yet)" ]
@@ -119,6 +153,25 @@ view model =
             ]
         ]
     }
+
+
+section_heading_component : String -> Html Msg
+section_heading_component val =
+    h2 [ class "font-semibold text-2xl pb-10 sm:text-3xl" ] [ text val ]
+
+
+personal_project_component : { a | project_name : String, github_link : String } -> Html Msg
+personal_project_component comp_data =
+    li [ class "space-x-3 flex items-center" ]
+        [ span []
+            [ github_icon ]
+        , a
+            [ class "text-indigo-800 hover:text-indigo-900"
+            , target "blank_"
+            , href comp_data.github_link
+            ]
+            [ text comp_data.project_name ]
+        ]
 
 
 subscriptions : Model -> Sub Msg
