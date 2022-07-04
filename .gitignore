@@ -4,7 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
-
+elm-stuff
+build
+build.css 
+elm.js
 # testing
 /coverage
 
