@@ -1,20 +1,19 @@
 {
   "name": "farooq-azam-khan",
   "scripts": {
-    "start": "npm run elm:dev & npm run tailwind:dev",
-    "elm:dev": "elm-live src/Main.elm -p 3000 --pushstate -- --output=elm.js --debug",
-    "elm:build": "elm make src/Main.elm --output=build/elm.js --optimize",
-    "build": "mkdir build & cp index.html build & npm run elm:build && npm run tailwind:build",
-    "tailwind:dev": "tailwindcss -i tailwind.css -o build.css --watch",
-    "tailwind:build": "tailwindcss -i tailwind.css -o build/build.css --minify"
+    "start": "vite --host 0.0.0.0",
+    "build": "vite build"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.1",
+    "autoprefixer": "^10.4.7",
     "elm": "^0.19.1-5",
-    "elm-live": "^4.0.2",
     "elm-review": "^2.5.5",
     "elm-tooling": "^1.4.0",
-    "tailwindcss": "^3.0.17"
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.0.17",
+    "vite": "^2.9.14",
+    "vite-plugin-elm": "^2.6.1", 
+    "typescript": "^4.7.4"
   }
 }
 
