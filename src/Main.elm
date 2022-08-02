@@ -103,6 +103,7 @@ view model =
                                 ]
                             ]
                         ]
+                    , personal_project_component { project_name = "Chat App", github_link = "https://github.com/Farooq-azam-khan/chat-app-elm" }
                     ]
                 ]
             , section [ class "py-20 px-10 " ]
