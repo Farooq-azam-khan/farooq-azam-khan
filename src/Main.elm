@@ -44,7 +44,7 @@ update msg model =
 
 view : Model -> Browser.Document Msg
 view model =
-    { title = "Farooq Azam Khan | Home"
+    { title = "Farooq Azam Khan"
     , body =
         [ main_ [ class "" ]
             -- "mx-auto max-w-3xl lg:max-w-4xl 2xl:max-w-5xl" ]
