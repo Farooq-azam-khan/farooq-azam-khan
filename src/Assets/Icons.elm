@@ -1,8 +1,7 @@
 module Assets.Icons exposing (github_icon)
 
 import Html exposing (..)
-import Html.Attributes as Attr
-import Svg as Svg exposing (..)
+import Svg exposing (..)
 import Svg.Attributes as SvgAttr
 
 
