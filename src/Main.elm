@@ -1,10 +1,12 @@
-module Main exposing (main)
+module Main exposing (main, view)
 
 import Assets.Icons exposing (..)
 import Browser
 import Browser.Navigation as Nav
 import Html exposing (..)
-import Html.Attributes exposing (class, href, target)
+import Html.Attributes exposing (..)
+import Svg exposing (path)
+import Svg.Attributes as SvgAttr
 import Url exposing (Url)
 
 
@@ -30,7 +32,7 @@ update msg model =
         NoOp ->
             ( model, Cmd.none )
 
-        ChangedUrl url ->
+        ChangedUrl _ ->
             ( model, Cmd.none )
 
         ClickedLink broswer_req ->
@@ -42,43 +44,111 @@ update msg model =
                     ( model, Nav.pushUrl model.key (Url.toString url) )
 
 
+
+-- shadow-xl bg-indigo-100 px-5 py-5 rounded-lg
+
+
+blog_card : { blog_title : String, blog_description : String, blog_link : String } -> Html Msg
+blog_card { blog_title, blog_description, blog_link } =
+    div [ class "shadow-xl max-w-sm p-6 bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700" ]
+        [ h3 [ class "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white" ] [ text blog_title ]
+        , p [ class "mb-3 font-normal text-gray-700 dark:text-gray-400" ] [ text blog_description ]
+        , a
+            [ href blog_link
+            , target "blank_"
+            , class "inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
+            ]
+            [ text "Read more"
+            , Svg.svg
+                [ attribute "aria-hidden" "true"
+                , SvgAttr.class "w-4 h-4 ml-2 -mr-1"
+                , SvgAttr.fill "currentColor"
+                , SvgAttr.viewBox "0 0 20 20"
+                ]
+                [ path
+                    [ SvgAttr.fillRule "evenodd"
+                    , SvgAttr.d "M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    , SvgAttr.clipRule "evenodd"
+                    ]
+                    []
+                ]
+            ]
+        ]
+
+
+interest_card : { interest_title : String, interest_detail : String } -> Html Msg
+interest_card { interest_title, interest_detail } =
+    div
+        [ class "flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl dark:border-gray-700 dark:bg-gray-800 "
+        ]
+        [ div
+            [ class "flex flex-col justify-between p-4 leading-normal"
+            ]
+            [ h3
+                [ class "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                ]
+                [ text interest_title ]
+            , p
+                [ class "mb-3 font-normal text-gray-700 dark:text-gray-400"
+                ]
+                [ text interest_detail ]
+            ]
+        ]
+
+
 view : Model -> Browser.Document Msg
-view model =
+view _ =
     { title = "Farooq Azam Khan"
     , body =
-        [ main_ [ class "" ]
-            -- "mx-auto max-w-3xl lg:max-w-4xl 2xl:max-w-5xl" ]
+        [ main_ [ class "font-roboto font-sans" ]
             [ margin_content_component
-                [ h1 [ class "pt-20 px-10 text-indigo-900 text-4xl lg:text-5xl 2xl:text-6xl text-indigo font-bold mb-10" ]
-                    [ text "Farooq A. Khan |> Personal Site"
-                    ]
-                , p
-                    [ class "pb-20 px-10 italic font-light text-lg lg:text-xl leading-loose tracking-wider lg:max-w-3xl " ]
-                    [ text "Machine Learning Researcher interested in "
-                    , span [ class "text-indigo-700" ] [ text "Artificail Intelligence" ]
-                    , text ", "
-                    , span [ class "text-indigo-700" ] [ text "Software Engineering" ]
-                    , text ", "
-                    , span [ class "text-indigo-700" ] [ text "Functional Programming" ]
-                    , text ", and "
-                    , span [ class "text-indigo-700" ] [ text "Mathematics" ]
-                    , text "."
-                    ]
-                ]
-            , section [ class "flex items-center justify-center py-20 bg-gray-900 text-white" ]
-                [ margin_content_component
-                    [ a
-                        [ class "px-10 py-2 text-indigo-900 bg-indigo-100 hover:bg-indigo-500 hover:text-indigo-100"
-                        , target "blank_"
-                        , href "https://blog-iota-three.vercel.app/"
+                [ div [ class "" ]
+                    [ div [ class "pt-20 flex items-center justify-between" ]
+                        [ h2 [ class "text-indigo-700 text-xl md:text-4xl  font-extralight" ]
+                            [ text "Farooq A. Khan"
+                            ]
+                        , div
+                            [ class "flex items-center  space-x-2" ]
+                            [ a [ target "_blank", href "https://github.com/Farooq-azam-khan" ] [ github_icon ]
+                            , a [ target "_blank", href "https://www.linkedin.com/in/farooq-khan-46167bb5/" ]
+                                [ img [ class "w-8 h-8", src "/linkedin-logo-512.webp" ] []
+                                ]
+                            ]
                         ]
-                        [ text "Read My Blog" ]
+                    , h1 [ class " text-indigo-500 text-4xl md:text-7xl font-bold" ] [ text "Software & Machine Learning Engineer" ]
+                    , p
+                        [ class "mt-10 md:mt-24 text-md md:text-xl italic leading-loose tracking-wider lg:max-w-3xl " ]
+                        [ text "Machine Learning Researcher interested in "
+                        , ul
+                            [ class "grid grid-cols-1 md:grid-cols-2 gap-5 mt-5" ]
+                            [ li [ class "text-indigo-500 rounded-md flex justify-center items-center" ]
+                                [ interest_card { interest_title = "Artificial Intelligence", interest_detail = "Machine Learning, Reinforcement Learning, NLP, MLOps." }
+                                ]
+                            , interest_card { interest_title = "Software Engineering", interest_detail = "Prompt Egineering, Backend Development, Rust, Python, etc." }
+                            , interest_card { interest_title = "Functional Programming", interest_detail = "Category Thoery, Elm Programming, Haskell, etc." }
+                            , interest_card { interest_title = "Mathematics", interest_detail = "Fourier Analysis, Linear Albegra, Statistics, Graph Thoery, etc. " }
+                            ]
+                        ]
+                    , div [ class " mt-32 rounded-md" ]
+                        [ h2 [ class "text-indigo-500 text-lg font-semibold tracking-wide uppercase" ]
+                            [ text "Blog Highlights" ]
+                        , div [ class "mt-14 grid grid-cols-1 md:grid-cols-2 gap-10 " ]
+                            [ blog_card { blog_title = "Term Frequency-Inverse Document Frequency", blog_description = "In this tutorial we will look at what TF and IDF are and how they can be use to process text data in Machine learning.", blog_link = "https://blog.farooqkhan.ca/tfidf" }
+                            , blog_card { blog_title = "Large Scale Vector Comparison", blog_description = "In this post, we will look at the quora qna dataset and aim to encode and compare all question pairs. The purpose of is to look at a real dataset.", blog_link = "https://blog.farooqkhan.ca/cosine-similarity-pt-2" }
+                            , blog_card
+                                { blog_title = "Comparing Vectors with Cosine Simlarity Function"
+                                , blog_description = "This tutorial will focus on the math behind text vector similarity using numpy, pytorch, and stentence-transformers libraries in python."
+                                , blog_link = "https://blog.farooqkhan.ca/cosine-similarity"
+                                }
+                            ]
+                        ]
                     ]
                 ]
-            , section [ class "py-20 px-10 bg-indigo-100" ]
+            , section [ class "mt-64 " ]
                 [ margin_content_component
-                    [ section_heading_component "Personal Projects"
-                    , ol [ class "grid sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-5" ]
+                    [ h2 [ class "text-indigo-500 text-lg font-semibold tracking-wide uppercase" ]
+                        [ text "Personal Projects" ]
+                    , ol [ class "mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-5" ]
                         [ li [ class "space-x-3 flex items-center " ]
                             [ span []
                                 [ github_icon ]
@@ -106,37 +176,11 @@ view model =
                     , personal_project_component { project_name = "Chat App", github_link = "https://github.com/Farooq-azam-khan/chat-app-elm" }
                     ]
                 ]
-            , section [ class "py-20 px-10 " ]
+            , section [ class "mt-64" ]
                 [ margin_content_component
-                    [ h2 [ class "font-semibold text-2xl pb-10" ] [ text "Interests" ]
-                    , ol [ class "grid gap-2 sm:gap-5 sm:grid-cols-2 lg:grid-cols-4 list-disc" ]
-                        [ li []
-                            [ text "Machine Learning"
-                            , ol [ class "list-disc ml-5" ]
-                                [ li [] [ text "Reinforcement Learning" ]
-                                , li [] [ text "NLP" ]
-                                , li [] [ text "MLOps" ]
-                                , li [] [ text "Statistics" ]
-                                , li [] [ text "Linear Algebra" ]
-                                ]
-                            ]
-                        , li []
-                            [ text "Functional Programming"
-                            , ol [ class "list-disc ml-5" ]
-                                [ li [] [ text "Category Theory" ] ]
-                            ]
-                        , li [] [ text "Web Development" ]
-                        , li [] [ text "Graph Theory" ]
-                        , li []
-                            [ text "Fourier Analysis"
-                            ]
-                        ]
-                    ]
-                ]
-            , section [ class "py-20 px-10 bg-gray-900 text-white" ]
-                [ margin_content_component
-                    [ h2 [ class "font-semibold text-2xl pb-10" ] [ text "Programming Languages and Tools" ]
-                    , ol [ class "grid gap-2 sm:gap-5 sm:grid-cols-2 lg:grid-cols-4 list-disc" ]
+                    [ h2 [ class "text-indigo-500 text-lg font-semibold tracking-wide uppercase" ]
+                        [ text "Programming Languages and Tools" ]
+                    , ol [ class "mt-14 grid gap-2 sm:gap-5 sm:grid-cols-2 lg:grid-cols-4 list-disc" ]
                         [ li []
                             [ text "python"
                             , ol [ class "list-disc ml-5" ]
@@ -151,24 +195,26 @@ view model =
                             [ text "elm"
                             , ol [ class "list-disc ml-5" ] [ li [] [ text "elm/graphql" ] ]
                             ]
+                        , li []
+                            [ text "graphql / hasura"
+                            ]
                         , li [] [ text "Rust" ]
                         , li [] [ text "Haskell" ]
                         , li [] [ text "C" ]
-                        , li [] [ text "PostgreSql/Sqllite" ]
+                        , li [] [ text "PostgreSql/Sqllite/pocket db" ]
                         ]
                     ]
                 ]
-            , section [ class "py-20 px-10 bg-indigo-100" ]
+            , section [ class "my-64" ]
                 [ margin_content_component
-                    [ section_heading_component "Book Recommendations"
-                    , ol [ class "grid gap-2 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3 list-disc" ]
+                    [ h2 [ class "text-indigo-500 text-lg font-semibold tracking-wide uppercase" ]
+                        [ text "Book Recommendations" ]
+                    , ol [ class "mt-14 grid gap-2 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3 list-disc" ]
                         -- potential obj: image url, book name, author
                         [ li [] [ text "Elm in Action (difficulty: easy)" ]
                         , li [] [ text "Category Theory for Programmgers (difficulty: hard)" ]
                         , li [] [ text "Deep Learning (difficulty: hard)" ]
                         , li [] [ text "The Clean Coder (difficulty: easy)" ]
-                        , li [] [ text "Natural language Process in Action (not read yet)" ]
-                        , li [] [ text "Reinforcement Learning an Introduction (not read yet)" ]
                         ]
                     ]
                 ]
@@ -179,12 +225,7 @@ view model =
 
 margin_content_component : List (Html Msg) -> Html Msg
 margin_content_component =
-    div [ class "mx-auto max-w-3xl" ]
-
-
-section_heading_component : String -> Html Msg
-section_heading_component val =
-    h2 [ class "font-semibold text-2xl pb-10 sm:text-3xl" ] [ text val ]
+    div [ class "px-5 md:px-0 md:mx-auto md:max-w-3xl" ]
 
 
 personal_project_component : { a | project_name : String, github_link : String } -> Html Msg
@@ -202,7 +243,7 @@ personal_project_component comp_data =
 
 
 subscriptions : Model -> Sub Msg
-subscriptions model =
+subscriptions _ =
     Sub.none
 
 
