@@ -45,7 +45,6 @@ update msg model =
 
 
 
--- shadow-xl bg-indigo-100 px-5 py-5 rounded-lg
 
 
 blog_card : { blog_title : String, blog_description : String, blog_link : String } -> Html Msg
@@ -153,7 +152,14 @@ view _ =
                     [ h2 [ class <| section_gradient ++ " text-indigo-500 text-lg font-semibold tracking-wide uppercase" ]
                         [ text "Personal Projects" ]
                     , ol [ class "mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-5" ]
-                        [ li [ class "space-x-3 flex items-center " ]
+                        [ personal_project_component 
+                            { project_description= Just "Development with Hasura, Elm, Python, Tailwindcss, Graphql, Vite", project_name = "Custom Tech Stack"
+                            ,   github_link="https://github.com/Farooq-azam-khan/my_tech_stack_sample" }
+                        , personal_project_component 
+                            { project_name = "Haiku Generator"  , project_description = Nothing 
+                            ,  github_link="https://github.com/Farooq-azam-khan/haiku/" }
+
+                            {-                        li [ class "space-x-3 flex items-center " ]
                             [ span []
                                 [ github_icon ]
                             , a
@@ -162,22 +168,20 @@ view _ =
                                 , href "https://github.com/Farooq-azam-khan/my_tech_stack_sample"
                                 ]
                                 [ text "Hasura, Elm, Graphql Techstack" ]
-                            ]
-                        , personal_project_component { project_name = "Jarvis the Typographer", github_link = "https://github.com/Farooq-azam-khan/Jarvis-the-Typographer" }
-                        , personal_project_component { project_name = "D3Js Reference Tutorial", github_link = "https://github.com/Farooq-azam-khan/d3js-tutorials" }
+                                ]-}
+                        , personal_project_component { project_description = Nothing , project_name = "Jarvis the Typographer", 
+                            github_link = "https://github.com/Farooq-azam-khan/Jarvis-the-Typographer" }
+                        , personal_project_component { project_description = Nothing, project_name = "D3Js Reference Tutorial", github_link = "https://github.com/Farooq-azam-khan/d3js-tutorials" }
                         , personal_project_component
-                            { project_name = "Fourier Analysis Modules", github_link = "https://github.com/Farooq-azam-khan/fourier-analysis-modules" }
-                        , personal_project_component { project_name = "My Sonfigy", github_link = "https://github.com/Farooq-azam-khan/my-songify" }
-                        , li []
-                            [ text "Frontend Practice w/ elm/Tailwindcss"
-                            , ol [ class "ml-10 list-disc" ]
-                                [ li [] [ text "twitch-ui" ]
-                                , li [] [ text "spotify-ui" ]
-                                , li [] [ text "twitter-ui" ]
-                                ]
-                            ]
+                            { project_description = Nothing,  project_name = "Fourier Analysis Modules", github_link = "https://github.com/Farooq-azam-khan/fourier-analysis-modules" }
+                        , personal_project_component { project_description = Nothing, project_name = "My Sonfigy", github_link = "https://github.com/Farooq-azam-khan/my-songify" }
+                        , personal_project_component { project_description = Just "Practice making 'twitter-ui, 'twitch-ui', 'spotify-ui'", project_name = "Frontend Practice", github_link = "" }
+                        , personal_project_component { project_name = "Chat App"
+                                                     , project_description=Nothing
+                                                     , github_link = "https://github.com/Farooq-azam-khan/chat-app-elm" 
+                                                     }
+
                         ]
-                    , personal_project_component { project_name = "Chat App", github_link = "https://github.com/Farooq-azam-khan/chat-app-elm" }
                     ]
                 ]
 
@@ -233,17 +237,21 @@ margin_content_component =
     div [ class "px-5 md:px-0 md:mx-auto md:max-w-3xl" ]
 
 
-personal_project_component : { a | project_name : String, github_link : String } -> Html Msg
+personal_project_component : { a | project_name : String, project_description: Maybe String, github_link : String } -> Html Msg
 personal_project_component comp_data =
-    li [ class "space-x-3 flex items-center" ]
-        [ span []
-            [ github_icon ]
-        , a
-            [ class "text-indigo-800 hover:text-indigo-900"
+    a [ href comp_data.github_link, target "blank_"
+      , class "transition duration-200 group bg-gray-100 hover:bg-indigo-900 hover:shadow-2xl  px-5 py-5 border border-gray-900 shadow-xl rounded-lg " ]
+        [ div [class "flex space-x-3 justify-between"] [h3 
+            [ class "text-gray-800 font-semibold tracking-wide text-lg group-hover:text-indigo-200"
             , target "blank_"
             , href comp_data.github_link
             ]
             [ text comp_data.project_name ]
+            , span []
+            [ github_icon ]]
+        , case comp_data.project_description of 
+            Just desc -> div [class "mt-5 group-hover:text-indigo-200"] [ text desc ] 
+            Nothing -> text "" 
         ]
 
 
