@@ -6,6 +6,7 @@
     "start": "elm-pages dev",
     "gen:styles": "tailwindcss --postcss postcss.config.cjs --config tailwind.config.cjs -i tailwind.css -o style.css --content \"app/**/*.elm\"",
     "build": "elm-pages build"
+    "buildv2": "mkdir bin && export PATH=\"/opt/build/repo/bin:$PATH\" && echo $PATH && curl https://static.lamdera.com/bin/linux/lamdera -o bin/lamdera && chmod a+x bin/lamdera && npm install && npm run build"
   },
   "devDependencies": {
     "elm-codegen": "^0.3.0",
