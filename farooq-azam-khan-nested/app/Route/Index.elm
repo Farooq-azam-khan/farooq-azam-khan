@@ -148,7 +148,10 @@ section_gradient =
     "text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-indigo-500 to-red-500"
 
 
-margin_content_component : List (Html Msg) -> Html Msg
+
+-- margin_content_component : List (Html Msg) -> Html Msg
+
+
 margin_content_component =
     div [ class "px-5 md:px-0 md:mx-auto md:max-w-3xl" ]
 
@@ -279,6 +282,7 @@ view app shared =
                         , li [] [ text "Category Theory for Programmgers (difficulty: hard)" ]
                         , li [] [ text "Deep Learning (difficulty: hard)" ]
                         , li [] [ text "The Clean Coder (difficulty: easy)" ]
+                        , li [] [ text "Refactoring UI (difficulty: easy)" ]
                         ]
                     ]
                 ]
