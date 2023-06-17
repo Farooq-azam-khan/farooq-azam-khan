@@ -60,7 +60,7 @@ ${v$.red(u.toString())}`}}}async function Cj(y,S){try{let{pattern:u,options:h}=y
   <head>
     <meta charset="UTF-8" />
     <title><!-- PLACEHOLDER_TITLE --></title>
-    <link rel="modulepreload" crossorigin href="/elm.e495c2d7.js"><link rel="modulepreload" crossorigin href="/assets/index-07900e38.js">
+    <link rel="modulepreload" crossorigin href="/elm.e495c2d7.js"><link rel="modulepreload" crossorigin href="/assets/index-a0a332c9.js">
     <script defer src="/elm.e495c2d7.js" type="text/javascript"></script>
     
         
@@ -68,8 +68,8 @@ ${v$.red(u.toString())}`}}}async function Cj(y,S){try{let{pattern:u,options:h}=y
     <meta name="generator" content="elm-pages v3.0.3" />
     
     <!-- PLACEHOLDER_HEAD_AND_DATA -->
-    <script type="module" crossorigin src="/assets/index-07900e38.js"></script>
-    <link rel="stylesheet" href="/assets/index-90811d41.css">
+    <script type="module" crossorigin src="/assets/index-a0a332c9.js"></script>
+    <link rel="stylesheet" href="/assets/index-0c55621b.css">
   </head>
   <body>
     <div data-url="" display="none"></div>
