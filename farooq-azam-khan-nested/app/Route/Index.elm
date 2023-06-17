@@ -149,9 +149,7 @@ section_gradient =
 
 
 
--- margin_content_component : List (Html Msg) -> Html Msg
-
-
+--margin_content_component : List (Html Msg) -> Html Msg
 margin_content_component =
     div [ class "px-5 md:px-0 md:mx-auto md:max-w-3xl" ]
 
@@ -178,7 +176,7 @@ personal_project_component comp_data =
             ]
         , case comp_data.project_description of
             Just desc ->
-                div [ class "mt-5 group-hover:text-indigo-200" ] [ text desc ]
+                div [ class "text-gray-700 mt-5 group-hover:text-indigo-200" ] [ text desc ]
 
             Nothing ->
                 text ""
@@ -249,6 +247,11 @@ view app shared =
                             , project_name = "Custom Tech Stack"
                             , github_link = "https://github.com/Farooq-azam-khan/my_tech_stack_sample"
                             }
+                        , personal_project_component 
+                            { project_name  = "Garbage Classification with CNN"
+                            , project_description  = Nothing -- Just "asdf"
+                            , github_link = "https://github.com/Farooq-azam-khan/cps803-course-project"
+                            }
                         , personal_project_component
                             { project_name = "Haiku Generator"
                             , project_description = Nothing
@@ -266,7 +269,7 @@ view app shared =
                         , personal_project_component { project_description = Just "Practice making 'twitter-ui, 'twitch-ui', 'spotify-ui'", project_name = "Frontend Practice", github_link = "" }
                         , personal_project_component
                             { project_name = "Chat App"
-                            , project_description = Nothing
+                            , project_description = Just "A Chat application built with elm, expressjs, and websockets." 
                             , github_link = "https://github.com/Farooq-azam-khan/chat-app-elm"
                             }
                         ]
