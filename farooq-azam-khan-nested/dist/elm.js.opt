@@ -2859,8 +2859,8 @@
     }, _Browser_call = F2(_Browser_call_fn);
     function _Browser_getViewport() {
         return {
-            bM: _Browser_getScene(),
-            bX: {
+            bO: _Browser_getScene(),
+            bZ: {
                 a9: _Browser_window.pageXOffset,
                 ba: _Browser_window.pageYOffset,
                 a8: _Browser_doc.documentElement.clientWidth,
@@ -2885,11 +2885,11 @@
     function _Browser_getViewportOf(id) {
         return _Browser_withNode(id, function (node) {
             return {
-                bM: {
+                bO: {
                     a8: node.scrollWidth,
                     aW: node.scrollHeight
                 },
-                bX: {
+                bZ: {
                     a9: node.scrollLeft,
                     ba: node.scrollTop,
                     a8: node.clientWidth,
@@ -2911,8 +2911,8 @@
             var x = _Browser_window.pageXOffset;
             var y = _Browser_window.pageYOffset;
             return {
-                bM: _Browser_getScene(),
-                bX: {
+                bO: _Browser_getScene(),
+                bZ: {
                     a9: x,
                     ba: y,
                     a8: _Browser_doc.documentElement.clientWidth,
@@ -3801,7 +3801,7 @@
             d8: F2(function (_v2, _v3) {
                 return _Utils_Tuple2({}, $author$project$Effect$none);
             }),
-            cb: record.cb,
+            cd: record.cd,
             f8: $elm$core$Maybe$Nothing,
             gh: record.gh,
             eB: F4(function (_v4, _v5, _v6, _v7) {
@@ -3846,8 +3846,8 @@
         var image = _v0.i4;
         var title = _v0.ka;
         return {
-            bZ: _List_Nil,
-            by: $elm$core$Maybe$Nothing,
+            b$: _List_Nil,
+            bz: $elm$core$Maybe$Nothing,
             ir: canonicalUrlOverride,
             iC: description,
             i4: image,
@@ -3861,7 +3861,7 @@
                 j3: summarySize,
                 ka: title
             }),
-            bW: $elm$core$Maybe$Nothing
+            bY: $elm$core$Maybe$Nothing
         };
     }, $dillonkearns$elm_pages$Head$Seo$buildSummary = F2($dillonkearns$elm_pages$Head$Seo$buildSummary_fn);
     var $dillonkearns$elm_pages$Head$Seo$summary = function (config) {
@@ -4234,7 +4234,7 @@
         ]);
     };
     var $dillonkearns$elm_pages$Head$Seo$tagsForCommon = function (common) {
-        return _Utils_ap($dillonkearns$elm_pages$Head$Seo$tagsForImage(common.i4), _Utils_ap($elm$core$Maybe$withDefault_fn(_List_Nil, $elm$core$Maybe$map_fn($dillonkearns$elm_pages$Head$Seo$tagsForAudio, common.by)), _Utils_ap($elm$core$Maybe$withDefault_fn(_List_Nil, $elm$core$Maybe$map_fn($dillonkearns$elm_pages$Head$Seo$tagsForVideo, common.bW)), _Utils_ap(_List_fromArray([
+        return _Utils_ap($dillonkearns$elm_pages$Head$Seo$tagsForImage(common.i4), _Utils_ap($elm$core$Maybe$withDefault_fn(_List_Nil, $elm$core$Maybe$map_fn($dillonkearns$elm_pages$Head$Seo$tagsForAudio, common.bz)), _Utils_ap($elm$core$Maybe$withDefault_fn(_List_Nil, $elm$core$Maybe$map_fn($dillonkearns$elm_pages$Head$Seo$tagsForVideo, common.bY)), _Utils_ap(_List_fromArray([
             _Utils_Tuple2("og:title", $elm$core$Maybe$Just($dillonkearns$elm_pages$Head$raw(common.ka))),
             _Utils_Tuple2("og:url", $elm$core$Maybe$Just($elm$core$Maybe$withDefault_fn($dillonkearns$elm_pages$Head$currentPageFullUrl, $elm$core$Maybe$map_fn($dillonkearns$elm_pages$Head$raw, common.ir)))),
             _Utils_Tuple2("og:description", $elm$core$Maybe$Just($dillonkearns$elm_pages$Head$raw(common.iC))),
@@ -4242,7 +4242,7 @@
             _Utils_Tuple2("og:locale", $elm$core$Maybe$map_fn($dillonkearns$elm_pages$Head$raw, $elm$core$Maybe$map_fn($dillonkearns$elm_pages$Head$Seo$localeToString, common.jc)))
         ]), _Utils_ap($elm$core$List$map_fn(function (alternateLocale) {
             return _Utils_Tuple2("og:locale:alternate", $elm$core$Maybe$Just($dillonkearns$elm_pages$Head$raw($dillonkearns$elm_pages$Head$Seo$localeToString(alternateLocale))));
-        }, common.bZ), $dillonkearns$elm_pages$Head$Twitter$rawTags(common.ck))))));
+        }, common.b$), $dillonkearns$elm_pages$Head$Twitter$rawTags(common.ck))))));
     };
     var $rtfeldman$elm_iso8601_date_strings$Iso8601$fromMonth = function (month) {
         switch (month) {
@@ -5334,7 +5334,7 @@
                         _Utils_Tuple2("article:expiration_time", $elm$core$Maybe$map_fn(A2($elm$core$Basics$composeR, $dillonkearns$elm_date_or_date_time$DateOrDateTime$toIso8601, $dillonkearns$elm_pages$Head$raw), articleDetails.e1))
                     ]), $elm$core$List$map_fn(function (tag) {
                         return _Utils_Tuple2("article:tag", $elm$core$Maybe$Just($dillonkearns$elm_pages$Head$raw(tag)));
-                    }, articleDetails.bQ));
+                    }, articleDetails.bS));
                 case 2:
                     var bookDetails = details.a;
                     return _Utils_ap(_List_fromArray([
@@ -5343,7 +5343,7 @@
                         _Utils_Tuple2("og:release_date", $elm$core$Maybe$map_fn(A2($elm$core$Basics$composeR, $dillonkearns$elm_date_or_date_time$DateOrDateTime$toIso8601, $dillonkearns$elm_pages$Head$raw), bookDetails.fC))
                     ]), $elm$core$List$map_fn(function (tag) {
                         return _Utils_Tuple2("book:tag", $elm$core$Maybe$Just($dillonkearns$elm_pages$Head$raw(tag)));
-                    }, bookDetails.bQ));
+                    }, bookDetails.bS));
                 case 3:
                     var songDetails = details.a;
                     return _List_fromArray([
@@ -5440,7 +5440,7 @@
                 }, pages);
             }),
             dq: head,
-            cb: "prerender",
+            cd: "prerender",
             eu: false,
             gh: pages
         };
@@ -5507,7 +5507,7 @@
                 return $dillonkearns$elm_pages$BackendTask$succeed($elm$core$Maybe$Nothing);
             }),
             dq: head,
-            cb: "serverless",
+            cd: "serverless",
             eu: true,
             gh: $dillonkearns$elm_pages$BackendTask$succeed(_List_Nil)
         };
@@ -5551,7 +5551,7 @@
             d8: F2(function (shared, app) {
                 return A2(config.d8, app, shared);
             }),
-            cb: record.cb,
+            cd: record.cd,
             f8: $elm$core$Maybe$Nothing,
             gh: record.gh,
             eB: F4(function (routeParams, path, model, sharedModel) {
@@ -5693,7 +5693,7 @@
                 return $dillonkearns$elm_pages$BackendTask$succeed($elm$core$Maybe$Nothing);
             }),
             dq: head,
-            cb: "static",
+            cd: "static",
             eu: false,
             gh: $dillonkearns$elm_pages$BackendTask$succeed(_List_fromArray([
                 {}
@@ -5805,7 +5805,7 @@
     var $elm$html$Html$span = _VirtualDom_nodeNS_fn(_VirtualDom_node_a0, "span"), $elm$html$Html$span_fn = $elm$html$Html$span.a2;
     var $author$project$Route$Index$personal_project_component = function (comp_data) {
         return $elm$html$Html$a_fn(_List_fromArray([
-            $elm$html$Html$Attributes$href(comp_data.bE),
+            $elm$html$Html$Attributes$href(comp_data.bf),
             $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$target_a0, "blank_"),
             $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "transition duration-200 group bg-gray-100 hover:bg-indigo-900 hover:shadow-2xl  px-5 py-5 border border-gray-900 shadow-xl rounded-lg ")
         ]), _List_fromArray([
@@ -5815,18 +5815,18 @@
                 $elm$html$Html$h3_fn(_List_fromArray([
                     $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "text-gray-800 font-semibold tracking-wide text-lg group-hover:text-indigo-200"),
                     $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$target_a0, "blank_"),
-                    $elm$html$Html$Attributes$href(comp_data.bE)
+                    $elm$html$Html$Attributes$href(comp_data.bf)
                 ]), _List_fromArray([
-                    $elm$html$Html$text(comp_data.cf)
+                    $elm$html$Html$text(comp_data.bN)
                 ])),
                 $elm$html$Html$span_fn(_List_Nil, _List_fromArray([$author$project$Route$Index$github_icon]))
             ])),
             function () {
-                var _v0 = comp_data.ce;
+                var _v0 = comp_data.bM;
                 if (!_v0.$) {
                     var desc = _v0.a;
                     return $elm$html$Html$div_fn(_List_fromArray([
-                        $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "mt-5 group-hover:text-indigo-200")
+                        $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "text-gray-700 mt-5 group-hover:text-indigo-200")
                     ]), _List_fromArray([
                         $elm$html$Html$text(desc)
                     ]));
@@ -5928,21 +5928,26 @@
                                 $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-5")
                             ]), _List_fromArray([
                                 $author$project$Route$Index$personal_project_component({
-                                    bE: "https://github.com/Farooq-azam-khan/my_tech_stack_sample",
-                                    ce: $elm$core$Maybe$Just("Development with Hasura, Elm, Python, Tailwindcss, Graphql, Vite"),
-                                    cf: "Custom Tech Stack"
+                                    bf: "https://github.com/Farooq-azam-khan/my_tech_stack_sample",
+                                    bM: $elm$core$Maybe$Just("Development with Hasura, Elm, Python, Tailwindcss, Graphql, Vite"),
+                                    bN: "Custom Tech Stack"
                                 }),
-                                $author$project$Route$Index$personal_project_component({ bE: "https://github.com/Farooq-azam-khan/haiku/", ce: $elm$core$Maybe$Nothing, cf: "Haiku Generator" }),
-                                $author$project$Route$Index$personal_project_component({ bE: "https://github.com/Farooq-azam-khan/Jarvis-the-Typographer", ce: $elm$core$Maybe$Nothing, cf: "Jarvis the Typographer" }),
-                                $author$project$Route$Index$personal_project_component({ bE: "https://github.com/Farooq-azam-khan/d3js-tutorials", ce: $elm$core$Maybe$Nothing, cf: "D3Js Reference Tutorial" }),
-                                $author$project$Route$Index$personal_project_component({ bE: "https://github.com/Farooq-azam-khan/fourier-analysis-modules", ce: $elm$core$Maybe$Nothing, cf: "Fourier Analysis Modules" }),
-                                $author$project$Route$Index$personal_project_component({ bE: "https://github.com/Farooq-azam-khan/my-songify", ce: $elm$core$Maybe$Nothing, cf: "My Sonfigy" }),
+                                $author$project$Route$Index$personal_project_component({ bf: "https://github.com/Farooq-azam-khan/cps803-course-project", bM: $elm$core$Maybe$Nothing, bN: "Garbage Classification with CNN" }),
+                                $author$project$Route$Index$personal_project_component({ bf: "https://github.com/Farooq-azam-khan/haiku/", bM: $elm$core$Maybe$Nothing, bN: "Haiku Generator" }),
+                                $author$project$Route$Index$personal_project_component({ bf: "https://github.com/Farooq-azam-khan/Jarvis-the-Typographer", bM: $elm$core$Maybe$Nothing, bN: "Jarvis the Typographer" }),
+                                $author$project$Route$Index$personal_project_component({ bf: "https://github.com/Farooq-azam-khan/d3js-tutorials", bM: $elm$core$Maybe$Nothing, bN: "D3Js Reference Tutorial" }),
+                                $author$project$Route$Index$personal_project_component({ bf: "https://github.com/Farooq-azam-khan/fourier-analysis-modules", bM: $elm$core$Maybe$Nothing, bN: "Fourier Analysis Modules" }),
+                                $author$project$Route$Index$personal_project_component({ bf: "https://github.com/Farooq-azam-khan/my-songify", bM: $elm$core$Maybe$Nothing, bN: "My Sonfigy" }),
                                 $author$project$Route$Index$personal_project_component({
-                                    bE: "",
-                                    ce: $elm$core$Maybe$Just("Practice making 'twitter-ui, 'twitch-ui', 'spotify-ui'"),
-                                    cf: "Frontend Practice"
+                                    bf: "",
+                                    bM: $elm$core$Maybe$Just("Practice making 'twitter-ui, 'twitch-ui', 'spotify-ui'"),
+                                    bN: "Frontend Practice"
                                 }),
-                                $author$project$Route$Index$personal_project_component({ bE: "https://github.com/Farooq-azam-khan/chat-app-elm", ce: $elm$core$Maybe$Nothing, cf: "Chat App" })
+                                $author$project$Route$Index$personal_project_component({
+                                    bf: "https://github.com/Farooq-azam-khan/chat-app-elm",
+                                    bM: $elm$core$Maybe$Just("A Chat application built with elm, expressjs, and websockets."),
+                                    bN: "Chat App"
+                                })
                             ]))
                         ]))
                     ])),
@@ -7053,7 +7058,7 @@
         }, inFlightFetchers);
     };
     var $dillonkearns$elm_pages$Pages$Internal$Platform$mainView_fn = function (config, model) {
-        var _v0 = model.bk;
+        var _v0 = model.bl;
         if (!_v0.$) {
             var info = _v0.a;
             return $dillonkearns$elm_pages$Pages$Internal$NotFoundReason$document_fn(config.jH, info);
@@ -7066,8 +7071,8 @@
                 var currentUrl = model.kd;
                 return A8(config.ar, model.a1, $dillonkearns$elm_pages$Pages$Internal$Platform$toFetcherState(model.G), $elm$core$Maybe$map_fn($elm$core$Tuple$second, model.S), {
                     e: $dillonkearns$elm_pages$UrlPath$join($dillonkearns$elm_pages$Pages$ContentCache$pathForUrl(urls)),
-                    jS: config.ke(_Utils_update(currentUrl, { e: model.b3 }))
-                }, $elm$core$Maybe$Nothing, pageData.aR, pageData.m, pageData.bw).ar(pageData.T);
+                    jS: config.ke(_Utils_update(currentUrl, { e: model.b5 }))
+                }, $elm$core$Maybe$Nothing, pageData.aR, pageData.m, pageData.bx).ar(pageData.T);
             }
             else {
                 var error = _v1.a;
@@ -7371,13 +7376,13 @@
                 var userCmd = _v2.b;
                 var cmd = $dillonkearns$elm_pages$Pages$Internal$Platform$UserCmd(userCmd);
                 var initialModel = {
-                    bx: "",
-                    b3: url.e,
+                    by: "",
+                    b5: url.e,
                     G: $elm$core$Dict$empty,
                     ja: key,
                     ax: 0,
-                    bk: $elm$core$Maybe$Nothing,
-                    m: $elm$core$Result$Ok({ bw: actionData, m: pageData, aR: sharedData, T: userModel }),
+                    bl: $elm$core$Maybe$Nothing,
+                    m: $elm$core$Result$Ok({ bx: actionData, m: pageData, aR: sharedData, T: userModel }),
                     a1: $elm$core$Dict$empty,
                     bK: $elm$core$Maybe$Nothing,
                     aL: false,
@@ -7386,18 +7391,18 @@
                     eG: flags
                 };
                 return _Utils_Tuple2(_Utils_update(initialModel, {
-                    bx: $dillonkearns$elm_pages$Pages$Internal$Platform$mainView_fn(config, initialModel).ka
+                    by: $dillonkearns$elm_pages$Pages$Internal$Platform$mainView_fn(config, initialModel).ka
                 }), cmd);
             }
             else {
                 var info = pageDataResult.a.a;
                 return _Utils_Tuple2({
-                    bx: "Page Not Found",
-                    b3: url.e,
+                    by: "Page Not Found",
+                    b5: url.e,
                     G: $elm$core$Dict$empty,
                     ja: key,
                     ax: 0,
-                    bk: $elm$core$Maybe$Just(info),
+                    bl: $elm$core$Maybe$Just(info),
                     m: $elm$core$Result$Err("Not found"),
                     a1: $elm$core$Dict$empty,
                     bK: $elm$core$Maybe$Nothing,
@@ -7411,12 +7416,12 @@
         else {
             var error = pageDataResult.a;
             return _Utils_Tuple2({
-                bx: "Error",
-                b3: url.e,
+                by: "Error",
+                b5: url.e,
                 G: $elm$core$Dict$empty,
                 ja: key,
                 ax: 0,
-                bk: $elm$core$Maybe$Nothing,
+                bl: $elm$core$Maybe$Nothing,
                 m: $elm$core$Result$Err($dillonkearns$elm_pages$BuildError$errorToString(error)),
                 a1: $elm$core$Dict$empty,
                 bK: $elm$core$Maybe$Nothing,
@@ -8111,7 +8116,7 @@
                 aN: urlWithoutRedirectResolution.aN
             }), previousPageData.T);
             var userModel = _v2.a;
-            var updatedPageData = { bw: newActionData, m: newPageData, aR: newSharedData, T: userModel };
+            var updatedPageData = { bx: newActionData, m: newPageData, aR: newSharedData, T: userModel };
             var updatedModel = (model.aL || redirectPending) ? _Utils_update(model, {
                 m: $elm$core$Result$Ok(updatedPageData),
                 a1: $elm$core$Dict$empty,
@@ -8144,8 +8149,8 @@
                     return $elm$core$Basics$identity;
                 }
             }()(_Utils_Tuple2(_Utils_update(updatedModel, {
-                bx: $dillonkearns$elm_pages$Pages$Internal$Platform$mainView_fn(config, updatedModel).ka,
-                b3: newUrl.e
+                by: $dillonkearns$elm_pages$Pages$Internal$Platform$mainView_fn(config, updatedModel).ka,
+                b5: newUrl.e
             }), $dillonkearns$elm_pages$Pages$Internal$Platform$ScrollToTop)));
         }
         else {
@@ -8532,7 +8537,7 @@
                                         var actionData = newData.c;
                                         return _Utils_Tuple3(pageData, sharedData, actionData);
                                     default:
-                                        return _Utils_Tuple3(previousPageData.m, previousPageData.aR, previousPageData.bw);
+                                        return _Utils_Tuple3(previousPageData.m, previousPageData.aR, previousPageData.bx);
                                 }
                             }();
                             var newPageData = _v21.a;
@@ -8550,7 +8555,7 @@
                             }), previousPageData.T));
                             var userModel = _v23.a;
                             var userEffect = _v23.b;
-                            var updatedPageData = { bw: newActionData, m: newPageData, aR: newSharedData, T: userModel };
+                            var updatedPageData = { bx: newActionData, m: newPageData, aR: newSharedData, T: userModel };
                             var updatedModel = (model.aL || redirectPending) ? _Utils_update(model, {
                                 m: $elm$core$Result$Ok(updatedPageData),
                                 a1: $elm$core$Dict$empty,
@@ -8580,8 +8585,8 @@
                                     return $elm$core$Basics$identity;
                                 }
                             }()(_Utils_Tuple2(_Utils_update(updatedModel, {
-                                bx: $dillonkearns$elm_pages$Pages$Internal$Platform$mainView_fn(config, updatedModel).ka,
-                                b3: newUrl.e
+                                by: $dillonkearns$elm_pages$Pages$Internal$Platform$mainView_fn(config, updatedModel).ka,
+                                b5: newUrl.e
                             }), ((!stayingOnSamePath) && scrollToTopWhenDone) ? $dillonkearns$elm_pages$Pages$Internal$Platform$Batch(_List_fromArray([$dillonkearns$elm_pages$Pages$Internal$Platform$ScrollToTop, userEffect])) : userEffect)));
                         }
                     }
@@ -8644,8 +8649,8 @@
                             var userCmd = _v31.b;
                             var cmd = $dillonkearns$elm_pages$Pages$Internal$Platform$UserCmd(userCmd);
                             return _Utils_Tuple2(_Utils_update(model, {
-                                bk: $elm$core$Maybe$Nothing,
-                                m: $elm$core$Result$Ok({ bw: actionData, m: pageData, aR: sharedData, T: userModel })
+                                bl: $elm$core$Maybe$Nothing,
+                                m: $elm$core$Result$Ok({ bx: actionData, m: pageData, aR: sharedData, T: userModel })
                             }), cmd);
                         }
                         else {
@@ -8661,8 +8666,8 @@
                                         var newPageData = _v27.a;
                                         var newActionData = _v27.b;
                                         return _Utils_Tuple2(_Utils_update(model, {
-                                            bk: $elm$core$Maybe$Nothing,
-                                            m: $elm$core$Result$Ok({ bw: newActionData, m: newPageData, aR: pageData.aR, T: pageData.T })
+                                            bl: $elm$core$Maybe$Nothing,
+                                            m: $elm$core$Result$Ok({ bx: newActionData, m: newPageData, aR: pageData.aR, T: pageData.T })
                                         }), $dillonkearns$elm_pages$Pages$Internal$Platform$NoEffect);
                                     case 1:
                                         var _v28 = newThing.a;
@@ -8670,13 +8675,13 @@
                                         var newSharedData = _v28.b;
                                         var newActionData = _v28.c;
                                         return _Utils_Tuple2(_Utils_update(model, {
-                                            bk: $elm$core$Maybe$Nothing,
-                                            m: $elm$core$Result$Ok({ bw: newActionData, m: newPageData, aR: newSharedData, T: pageData.T })
+                                            bl: $elm$core$Maybe$Nothing,
+                                            m: $elm$core$Result$Ok({ bx: newActionData, m: newPageData, aR: newSharedData, T: pageData.T })
                                         }), $dillonkearns$elm_pages$Pages$Internal$Platform$NoEffect);
                                     case 3:
                                         var info = newThing.a.a;
                                         return _Utils_Tuple2(_Utils_update(model, {
-                                            bk: $elm$core$Maybe$Just(info)
+                                            bl: $elm$core$Maybe$Just(info)
                                         }), $dillonkearns$elm_pages$Pages$Internal$Platform$NoEffect);
                                     default:
                                         break _v26$3;
@@ -8737,7 +8742,7 @@
         return {
             eS: _Utils_ap(_List_fromArray([
                 $dillonkearns$elm_pages$Pages$Internal$Platform$onViewChangeElement(model.kd),
-                $dillonkearns$elm_pages$AriaLiveAnnouncer$view(model.bx)
+                $dillonkearns$elm_pages$AriaLiveAnnouncer$view(model.by)
             ]), $elm$core$List$map_fn($elm$html$Html$map($dillonkearns$elm_pages$Pages$Internal$Platform$UserMsg), body)),
             ka: title
         };
@@ -9604,7 +9609,7 @@
         return { $: 6, a: a };
     };
     var $author$project$ErrorPage$init = function (errorPage) {
-        return _Utils_Tuple2({ b2: 0 }, $author$project$Effect$none);
+        return _Utils_Tuple2({ b4: 0 }, $author$project$Effect$none);
     };
     var $author$project$Effect$FetchRouteData = function (a) {
         return { $: 5, a: a };
@@ -10237,7 +10242,7 @@
         return _Utils_Tuple3(a, b, c);
     }, $author$project$Main$toTriple = F3($author$project$Main$toTriple_fn);
     var $author$project$ErrorPage$update_fn = function (errorPage, msg, model) {
-        return _Utils_Tuple2(_Utils_update(model, { b2: model.b2 + 1 }), $author$project$Effect$none);
+        return _Utils_Tuple2(_Utils_update(model, { b4: model.b4 + 1 }), $author$project$Effect$none);
     }, $author$project$ErrorPage$update = F3($author$project$ErrorPage$update_fn);
     var $author$project$Main$update_fn = function (pageFormState, concurrentSubmissions, navigation, sharedData, pageData, navigationKey, msg, model) {
         switch (msg.$) {
@@ -10646,7 +10651,7 @@
                         $elm$html$Html$button_fn(_List_fromArray([
                             $elm$html$Html$Events$onClick(0)
                         ]), _List_fromArray([
-                            $elm$html$Html$text($elm$core$String$fromInt(model.b2))
+                            $elm$html$Html$text($elm$core$String$fromInt(model.b4))
                         ]))
                     ]))
                 ]))
