@@ -60,28 +60,30 @@ head :
 head app =
     Seo.summary
         { canonicalUrlOverride = Nothing
-        , siteName = "elm-pages"
+        , siteName = "farooq-a-khan-portfolio"
         , image =
             { url = [ "images", "icon-png.png" ] |> UrlPath.join |> Pages.Url.fromPath
             , alt = "elm-pages logo"
             , dimensions = Nothing
             , mimeType = Nothing
             }
-        , description = "Welcome to elm-pages!"
+        , description = "Personal/Portfolio site |> Farooq A. Khan"
         , locale = Nothing
-        , title = "elm-pages is running"
+        , title = "Farooq Khan"
         }
         |> Seo.website
 
 
-
--- blog_card : { blog_title : String, blog_description : String, blog_link : String } -> Html Msg
-
-
+blog_card :
+    { blog_title : String
+    , blog_description : String
+    , blog_link : String
+    }
+    -> Html (PagesMsg Msg)
 blog_card { blog_title, blog_description, blog_link } =
-    div [ class "shadow-2xl max-w-sm p-6 bg-gray-100 border border-gray-200 rounded-lg " ]
+    div [ class "space-y-5 shadow-xl p-6 bg-gray-100 rounded-lg " ]
         [ h3 [ class "mb-2 text-2xl font-bold tracking-tight text-gray-900 " ] [ text blog_title ]
-        , p [ class "mb-3 font-normal text-gray-700 " ] [ text blog_description ]
+        , p [ class "max-w-lg mb-3 font-normal text-gray-700 " ] [ text blog_description ]
         , a
             [ href blog_link
             , target "blank_"
@@ -105,10 +107,7 @@ blog_card { blog_title, blog_description, blog_link } =
         ]
 
 
-
--- interest_card : { interest_title : String, interest_detail : String } -> Html Msg
-
-
+interest_card : { interest_title : String, interest_detail : String } -> Html (PagesMsg Msg)
 interest_card { interest_title, interest_detail } =
     div
         [ class "flex flex-col justify-between p-4 leading-normal"
@@ -148,35 +147,38 @@ section_gradient =
     "text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-indigo-500 to-red-500"
 
 
-
---margin_content_component : List (Html Msg) -> Html Msg
+margin_content_component : List (Html (PagesMsg Msg)) -> Html (PagesMsg Msg)
 margin_content_component =
     div [ class "px-5 md:px-0 md:mx-auto md:max-w-3xl" ]
 
 
-
--- personal_project_component : { a | project_name : String, project_description: Maybe String, github_link : String } -> Html Msg
-
-
+personal_project_component :
+    { a
+        | project_name : String
+        , project_description : Maybe (Html (PagesMsg Msg))
+        , github_link : String
+    }
+    -> Html (PagesMsg Msg)
 personal_project_component comp_data =
-    a
-        [ href comp_data.github_link
-        , target "blank_"
-        , class "transition duration-200 group bg-gray-100 hover:bg-indigo-900 hover:shadow-2xl  px-5 py-5 border border-gray-900 shadow-xl rounded-lg "
-        ]
-        [ div [ class "flex space-x-3 justify-between" ]
-            [ h3
-                [ class "text-gray-800 font-semibold tracking-wide text-lg group-hover:text-indigo-200"
-                , target "blank_"
-                , href comp_data.github_link
-                ]
-                [ text comp_data.project_name ]
-            , span []
-                [ github_icon ]
+    div [ class "" ]
+        [ div [class "flex space-x-3 justify-between items-center"] [h3
+            [ class "text-gray-800 font-semibold tracking-wide text-lg"
+            , target "blank_"
+            , href comp_data.github_link
             ]
+            [ text comp_data.project_name ]
+        , span []
+            [ a 
+                [ href comp_data.github_link
+                , target "blank_"
+                , class "transition duration-200 group  hover:bg-gray-200  px-5 py-5 shadow-xl rounded-lg "
+                ] [github_icon] 
+            
+            ]
+        ]
         , case comp_data.project_description of
             Just desc ->
-                div [ class "text-gray-700 mt-5 group-hover:text-indigo-200" ] [ text desc ]
+                div [ class "text-gray-700 mt-5 " ] [ desc ]
 
             Nothing ->
                 text ""
@@ -190,7 +192,7 @@ view :
 view app shared =
     { title = "Farooq Azam Khan | Home"
     , body =
-        [ main_ [ class "font-roboto font-sans" ]
+        [ main_ [ class "font-roboto font-sans mb-10" ]
             [ margin_content_component
                 [ div [ class "" ]
                     [ div [ class "pt-20 flex items-center justify-between" ]
@@ -220,9 +222,13 @@ view app shared =
                     , div [ class " mt-32 md:mt-64 rounded-md" ]
                         [ h2 [ class <| section_gradient ++ " text-xl font-semibold tracking-wide uppercase" ]
                             [ text "Blog Highlights" ]
-                        , div [ class "mt-5 md:mt-14 grid grid-cols-1 md:grid-cols-2 gap-y-14 md:gap-x-5 " ]
+                        , div
+                            [ class "mt-5 md:mt-14 grid grid-cols-1 gap-y-20 " ]
                             [ blog_card
-                                { blog_title = "Term Frequency-Inverse Document Frequency", blog_description = "In this tutorial we will look at what TF and IDF are and how they can be use to process text data in Machine learning.", blog_link = "https://blog.farooqkhan.ca/tfidf" }
+                                { blog_title = "Term Frequency-Inverse Document Frequency"
+                                , blog_description = "In this tutorial we will look at what TF and IDF are and how they can be use to process text data in Machine learning."
+                                , blog_link = "https://blog.farooqkhan.ca/tfidf"
+                                }
                             , blog_card
                                 { blog_title = "Large Scale Vector Comparison"
                                 , blog_description = "In this post, we will look at the quora qna dataset and aim to encode and compare all question pairs. The purpose of is to look at a real dataset."
@@ -237,58 +243,96 @@ view app shared =
                         ]
                     ]
                 ]
-            , section [ class "mt-32 md:mt-64 " ]
-                [ margin_content_component
-                    [ h2 [ class <| section_gradient ++ " text-indigo-500 text-lg font-semibold tracking-wide uppercase" ]
-                        [ text "Personal Projects" ]
-                    , ol [ class "mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-5" ]
-                        [ personal_project_component
-                            { project_description = Just "Development with Hasura, Elm, Python, Tailwindcss, Graphql, Vite"
-                            , project_name = "Custom Tech Stack"
-                            , github_link = "https://github.com/Farooq-azam-khan/my_tech_stack_sample"
-                            }
-                        , personal_project_component 
-                            { project_name  = "Garbage Classification with CNN"
-                            , project_description  = Nothing -- Just "asdf"
-                            , github_link = "https://github.com/Farooq-azam-khan/cps803-course-project"
-                            }
-                        , personal_project_component
-                            { project_name = "Haiku Generator"
-                            , project_description = Nothing
-                            , github_link = "https://github.com/Farooq-azam-khan/haiku/"
-                            }
-                        , personal_project_component
-                            { project_description = Nothing
-                            , project_name = "Jarvis the Typographer"
-                            , github_link = "https://github.com/Farooq-azam-khan/Jarvis-the-Typographer"
-                            }
-                        , personal_project_component { project_description = Nothing, project_name = "D3Js Reference Tutorial", github_link = "https://github.com/Farooq-azam-khan/d3js-tutorials" }
-                        , personal_project_component
-                            { project_description = Nothing, project_name = "Fourier Analysis Modules", github_link = "https://github.com/Farooq-azam-khan/fourier-analysis-modules" }
-                        , personal_project_component { project_description = Nothing, project_name = "My Sonfigy", github_link = "https://github.com/Farooq-azam-khan/my-songify" }
-                        , personal_project_component { project_description = Just "Practice making 'twitter-ui, 'twitch-ui', 'spotify-ui'", project_name = "Frontend Practice", github_link = "" }
-                        , personal_project_component
-                            { project_name = "Chat App"
-                            , project_description = Just "A Chat application built with elm, expressjs, and websockets." 
-                            , github_link = "https://github.com/Farooq-azam-khan/chat-app-elm"
-                            }
-                        ]
-                    ]
-                ]
-            , section [ class "mt-32 md:my-64" ]
-                [ margin_content_component
-                    [ h2 [ class <| section_gradient ++ " text-indigo-500 text-lg font-semibold tracking-wide uppercase" ]
-                        [ text "Book Recommendations" ]
-                    , ol [ class "mt-14 grid gap-2 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3 list-disc" ]
-                        -- potential obj: image url, book name, author
-                        [ li [] [ text "Elm in Action (difficulty: easy)" ]
-                        , li [] [ text "Category Theory for Programmgers (difficulty: hard)" ]
-                        , li [] [ text "Deep Learning (difficulty: hard)" ]
-                        , li [] [ text "The Clean Coder (difficulty: easy)" ]
-                        , li [] [ text "Refactoring UI (difficulty: easy)" ]
-                        ]
-                    ]
-                ]
+            , personal_project_list_component
+
+            -- , section [ class "mt-32 md:my-64" ]
+            --     [ margin_content_component
+            --         [ h2 [ class <| section_gradient ++ " text-indigo-500 text-lg font-semibold tracking-wide uppercase" ]
+            --             [ text "Book Recommendations" ]
+            --         , ol [ class "mt-14 grid gap-2 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3 list-disc" ]
+            --             -- potential obj: image url, book name, author
+            --             [ li [] [ text "Elm in Action (difficulty: easy)" ]
+            --             , li [] [ text "Category Theory for Programmgers (difficulty: hard)" ]
+            --             , li [] [ text "Deep Learning (difficulty: hard)" ]
+            --             , li [] [ text "The Clean Coder (difficulty: easy)" ]
+            --             , li [] [ text "Refactoring UI (difficulty: easy)" ]
+            --             ]
+            --         ]
+            --     ]
             ]
         ]
     }
+
+
+personal_project_list_component : Html (PagesMsg Msg)
+personal_project_list_component =
+    section [ class "mt-32 md:mt-64 " ]
+        [ margin_content_component
+            [ h2 [ class <| section_gradient ++ " text-indigo-500 text-lg font-semibold tracking-wide uppercase" ]
+                [ text "Personal Projects" ]
+            , ol [ class "mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-5" ]
+                (List.map personal_project_component personal_project_list) 
+                  
+            ]
+        ]
+
+personal_project_list_component2 : Html (PagesMsg Msg)
+personal_project_list_component2 =
+    section [ class "mt-32 md:mt-64 " ]
+        [ margin_content_component
+            [ h2 [ class <| section_gradient ++ " text-indigo-500 text-lg font-semibold tracking-wide uppercase" ]
+                [ text "Personal Projects" ]
+                  
+            ]
+
+            , div [class "mt-10 space-y-5"] 
+                (List.map 
+                    (\proj -> div [] [text proj.project_name]) 
+                    personal_project_list
+                )
+        ]
+
+
+type alias PersonalProject =
+    { project_name : String
+    , project_description : Maybe (Html (PagesMsg Msg))
+    , github_link : String
+    }
+
+
+personal_project_list : List PersonalProject
+personal_project_list =
+    [ { project_description = Just (div [] [ text "Full Stack web app development with: Hasura, Elm, Python, Tailwindcss, Graphql, Vite." ])
+      , project_name = "Custom Tech Stack"
+      , github_link = "https://github.com/Farooq-azam-khan/my_tech_stack_sample"
+      }
+    , { project_name = "Garbage Classification with CNN"
+      , project_description = Nothing
+      , github_link = "https://github.com/Farooq-azam-khan/cps803-course-project"
+      }
+    , { project_name = "Haiku Generator"
+      , project_description = Nothing
+      , github_link = "https://github.com/Farooq-azam-khan/haiku/"
+      }
+    , { project_description = Nothing
+      , project_name = "Jarvis the Typographer"
+      , github_link = "https://github.com/Farooq-azam-khan/Jarvis-the-Typographer"
+      }
+    , { project_description = Nothing, project_name = "D3Js Reference Tutorial", github_link = "https://github.com/Farooq-azam-khan/d3js-tutorials" }
+    , { project_description = Nothing
+      , project_name = "Fourier Analysis Modules"
+      , github_link = "https://github.com/Farooq-azam-khan/fourier-analysis-modules"
+      }
+    , { project_description = Nothing
+      , project_name = "My Sonfigy"
+      , github_link = "https://github.com/Farooq-azam-khan/my-songify"
+      }
+    , { project_description = Just (div [] [ text "Practice making 'twitter-ui, 'twitch-ui', 'spotify-ui'" ])
+      , project_name = "Frontend Practice"
+      , github_link = ""
+      }
+    , { project_name = "Chat App"
+      , project_description = Just (div [] [ text "A Chat application built with elm, expressjs, and websockets." ])
+      , github_link = "https://github.com/Farooq-azam-khan/chat-app-elm"
+      }
+    ]
