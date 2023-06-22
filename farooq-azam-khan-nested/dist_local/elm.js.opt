@@ -5711,7 +5711,7 @@
                             ]), _List_fromArray([
                                 $elm$html$Html$text("Machine Learning Researcher interested in "),
                                 $elm$html$Html$ul_fn(_List_fromArray([
-                                    $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "grid bg-orange-100 grid-cols-1 md:grid-cols-2 md:gap-5 mt-5")
+                                    $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "grid grid-cols-1 md:grid-cols-2 md:gap-5 mt-5")
                                 ]), _List_fromArray([
                                     $author$project$Route$Index$interest_card({ e0: "Machine Learning, Reinforcement Learning, NLP, MLOps.", e1: "Artificial Intelligence" }),
                                     $author$project$Route$Index$interest_card({ e0: "Prompt Egineering, Backend Development, Rust, Python, etc.", e1: "Software Engineering" }),
