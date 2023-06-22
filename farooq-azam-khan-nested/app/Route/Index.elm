@@ -81,7 +81,7 @@ blog_card :
     }
     -> Html (PagesMsg Msg)
 blog_card { blog_title, blog_description, blog_link } =
-    div [ class "space-y-5 shadow-xl p-6 bg-gray-100 rounded-lg " ]
+    div [ class "space-y-5 shadow-xl p-6 rounded-lg " ]
         [ h3 [ class "mb-2 text-2xl font-bold tracking-tight text-gray-900 " ] [ text blog_title ]
         , p [ class "max-w-lg mb-3 font-normal text-gray-700 " ] [ text blog_description ]
         , a
@@ -161,17 +161,18 @@ personal_project_component :
     -> Html (PagesMsg Msg)
 personal_project_component comp_data =
     div [ class "" ]
-        [ div [class "flex space-x-3 justify-between items-center"] [h3
-            [ class "text-gray-800 font-semibold tracking-wide text-lg"
-            , target "blank_"
-            , href comp_data.github_link
-            ]
+        [ div [class "flex space-x-3 justify-between items-center"] 
+            [h3
+                [ class "text-gray-800 font-semibold tracking-wide text-lg"
+                , target "blank_"
+                , href comp_data.github_link
+                ]
             [ text comp_data.project_name ]
         , span []
             [ a 
                 [ href comp_data.github_link
                 , target "blank_"
-                , class "transition duration-200 group  hover:bg-gray-200  px-5 py-5 shadow-xl rounded-lg "
+                , class "transition duration-200 group rounded-lg "
                 ] [github_icon] 
             
             ]
@@ -212,7 +213,7 @@ view app shared =
                         [ class "mt-14 md:mt-32 text-md md:text-xl italic leading-loose tracking-wider lg:max-w-3xl " ]
                         [ text "Machine Learning Researcher interested in "
                         , ul
-                            [ class "grid grid-cols-1 md:grid-cols-2 md:gap-5 mt-5" ]
+                            [ class "grid bg-orange-100 grid-cols-1 md:grid-cols-2 md:gap-5 mt-5" ]
                             [ interest_card { interest_title = "Artificial Intelligence", interest_detail = "Machine Learning, Reinforcement Learning, NLP, MLOps." }
                             , interest_card { interest_title = "Software Engineering", interest_detail = "Prompt Egineering, Backend Development, Rust, Python, etc." }
                             , interest_card { interest_title = "Functional Programming", interest_detail = "Category Thoery, Elm Programming, Haskell, etc." }
@@ -223,7 +224,7 @@ view app shared =
                         [ h2 [ class <| section_gradient ++ " text-xl font-semibold tracking-wide uppercase" ]
                             [ text "Blog Highlights" ]
                         , div
-                            [ class "mt-5 md:mt-14 grid grid-cols-1 gap-y-20 " ]
+                            [ class "mt-5 md:mt-14 grid grid-cols-1 gap-y-20" ]
                             [ blog_card
                                 { blog_title = "Term Frequency-Inverse Document Frequency"
                                 , blog_description = "In this tutorial we will look at what TF and IDF are and how they can be use to process text data in Machine learning."
@@ -270,7 +271,7 @@ personal_project_list_component =
         [ margin_content_component
             [ h2 [ class <| section_gradient ++ " text-indigo-500 text-lg font-semibold tracking-wide uppercase" ]
                 [ text "Personal Projects" ]
-            , ol [ class "mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-5" ]
+            , ol [ class "mt-14 grid gap-2 md:grid-cols-2 md:gap-x-2 md:gap-y-4" ]
                 (List.map personal_project_component personal_project_list) 
                   
             ]
@@ -334,5 +335,9 @@ personal_project_list =
     , { project_name = "Chat App"
       , project_description = Just (div [] [ text "A Chat application built with elm, expressjs, and websockets." ])
       , github_link = "https://github.com/Farooq-azam-khan/chat-app-elm"
+      }
+    , { project_name = "Twitch Python Discord Bot"
+      , project_description = Nothing 
+      , github_link = "https://github.com/Farooq-azam-khan/twitch-api-discord-bot"
       }
     ]

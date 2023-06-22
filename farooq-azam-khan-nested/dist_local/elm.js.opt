@@ -3115,7 +3115,7 @@
         return {
             ka: xhr.responseURL,
             Y: xhr.status,
-            ap: xhr.statusText,
+            aq: xhr.statusText,
             iV: _Http_parseHeaders(xhr.getAllResponseHeaders())
         };
     }
@@ -3735,7 +3735,7 @@
         else {
             var treeLen = builder.Q * $elm$core$Array$branchFactor;
             var depth = $elm$core$Basics$floor($elm$core$Basics$logBase_fn($elm$core$Array$branchFactor, treeLen - 1));
-            var correctNodeList = reverseNodeList ? $elm$core$List$reverse(builder.ab) : builder.ab;
+            var correctNodeList = reverseNodeList ? $elm$core$List$reverse(builder.ac) : builder.ac;
             var tree = $elm$core$Array$treeFromBuilder_fn(correctNodeList, builder.Q);
             return $elm$core$Array$Array_elm_builtin_fn($elm$core$Elm$JsArray$length(builder.Z) + treeLen, $elm$core$Basics$max_fn(5, depth * $elm$core$Array$shiftStep), tree, builder.Z);
         }
@@ -3745,7 +3745,7 @@
     var $elm$core$Array$initializeHelp_fn = function (fn, fromIndex, len, nodeList, tail) {
         initializeHelp: while (true) {
             if (fromIndex < 0) {
-                return $elm$core$Array$builderToArray_fn(false, { ab: nodeList, Q: (len / $elm$core$Array$branchFactor) | 0, Z: tail });
+                return $elm$core$Array$builderToArray_fn(false, { ac: nodeList, Q: (len / $elm$core$Array$branchFactor) | 0, Z: tail });
             }
             else {
                 var leaf = $elm$core$Array$Leaf(_JsArray_initialize_fn($elm$core$Array$branchFactor, fromIndex, fn));
@@ -5507,7 +5507,7 @@
         var blog_description = _v0.fD;
         var blog_title = _v0.fF;
         return $elm$html$Html$div_fn(_List_fromArray([
-            $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "space-y-5 shadow-xl p-6 bg-gray-100 rounded-lg ")
+            $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "space-y-5 shadow-xl p-6 rounded-lg ")
         ]), _List_fromArray([
             $elm$html$Html$h3_fn(_List_fromArray([
                 $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "mb-2 text-2xl font-bold tracking-tight text-gray-900 ")
@@ -5589,20 +5589,20 @@
                 $elm$html$Html$h3_fn(_List_fromArray([
                     $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "text-gray-800 font-semibold tracking-wide text-lg"),
                     $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$target_a0, "blank_"),
-                    $elm$html$Html$Attributes$href(comp_data.aj)
+                    $elm$html$Html$Attributes$href(comp_data.aa)
                 ]), _List_fromArray([
-                    $elm$html$Html$text(comp_data.am)
+                    $elm$html$Html$text(comp_data.ae)
                 ])),
                 $elm$html$Html$span_fn(_List_Nil, _List_fromArray([
                     $elm$html$Html$a_fn(_List_fromArray([
-                        $elm$html$Html$Attributes$href(comp_data.aj),
+                        $elm$html$Html$Attributes$href(comp_data.aa),
                         $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$target_a0, "blank_"),
-                        $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "transition duration-200 group  hover:bg-gray-200  px-5 py-5 shadow-xl rounded-lg ")
+                        $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "transition duration-200 group rounded-lg ")
                     ]), _List_fromArray([$author$project$Route$Index$github_icon]))
                 ]))
             ])),
             function () {
-                var _v0 = comp_data.aw;
+                var _v0 = comp_data.an;
                 if (!_v0.$) {
                     var desc = _v0.a;
                     return $elm$html$Html$div_fn(_List_fromArray([
@@ -5617,32 +5617,33 @@
     };
     var $author$project$Route$Index$personal_project_list = _List_fromArray([
         {
-            aj: "https://github.com/Farooq-azam-khan/my_tech_stack_sample",
-            aw: $elm$core$Maybe$Just($elm$html$Html$div_fn(_List_Nil, _List_fromArray([
+            aa: "https://github.com/Farooq-azam-khan/my_tech_stack_sample",
+            an: $elm$core$Maybe$Just($elm$html$Html$div_fn(_List_Nil, _List_fromArray([
                 $elm$html$Html$text("Full Stack web app development with: Hasura, Elm, Python, Tailwindcss, Graphql, Vite.")
             ]))),
-            am: "Custom Tech Stack"
+            ae: "Custom Tech Stack"
         },
-        { aj: "https://github.com/Farooq-azam-khan/cps803-course-project", aw: $elm$core$Maybe$Nothing, am: "Garbage Classification with CNN" },
-        { aj: "https://github.com/Farooq-azam-khan/haiku/", aw: $elm$core$Maybe$Nothing, am: "Haiku Generator" },
-        { aj: "https://github.com/Farooq-azam-khan/Jarvis-the-Typographer", aw: $elm$core$Maybe$Nothing, am: "Jarvis the Typographer" },
-        { aj: "https://github.com/Farooq-azam-khan/d3js-tutorials", aw: $elm$core$Maybe$Nothing, am: "D3Js Reference Tutorial" },
-        { aj: "https://github.com/Farooq-azam-khan/fourier-analysis-modules", aw: $elm$core$Maybe$Nothing, am: "Fourier Analysis Modules" },
-        { aj: "https://github.com/Farooq-azam-khan/my-songify", aw: $elm$core$Maybe$Nothing, am: "My Sonfigy" },
+        { aa: "https://github.com/Farooq-azam-khan/cps803-course-project", an: $elm$core$Maybe$Nothing, ae: "Garbage Classification with CNN" },
+        { aa: "https://github.com/Farooq-azam-khan/haiku/", an: $elm$core$Maybe$Nothing, ae: "Haiku Generator" },
+        { aa: "https://github.com/Farooq-azam-khan/Jarvis-the-Typographer", an: $elm$core$Maybe$Nothing, ae: "Jarvis the Typographer" },
+        { aa: "https://github.com/Farooq-azam-khan/d3js-tutorials", an: $elm$core$Maybe$Nothing, ae: "D3Js Reference Tutorial" },
+        { aa: "https://github.com/Farooq-azam-khan/fourier-analysis-modules", an: $elm$core$Maybe$Nothing, ae: "Fourier Analysis Modules" },
+        { aa: "https://github.com/Farooq-azam-khan/my-songify", an: $elm$core$Maybe$Nothing, ae: "My Sonfigy" },
         {
-            aj: "",
-            aw: $elm$core$Maybe$Just($elm$html$Html$div_fn(_List_Nil, _List_fromArray([
+            aa: "",
+            an: $elm$core$Maybe$Just($elm$html$Html$div_fn(_List_Nil, _List_fromArray([
                 $elm$html$Html$text("Practice making 'twitter-ui, 'twitch-ui', 'spotify-ui'")
             ]))),
-            am: "Frontend Practice"
+            ae: "Frontend Practice"
         },
         {
-            aj: "https://github.com/Farooq-azam-khan/chat-app-elm",
-            aw: $elm$core$Maybe$Just($elm$html$Html$div_fn(_List_Nil, _List_fromArray([
+            aa: "https://github.com/Farooq-azam-khan/chat-app-elm",
+            an: $elm$core$Maybe$Just($elm$html$Html$div_fn(_List_Nil, _List_fromArray([
                 $elm$html$Html$text("A Chat application built with elm, expressjs, and websockets.")
             ]))),
-            am: "Chat App"
-        }
+            ae: "Chat App"
+        },
+        { aa: "https://github.com/Farooq-azam-khan/twitch-api-discord-bot", an: $elm$core$Maybe$Nothing, ae: "Twitch Python Discord Bot" }
     ]);
     var $elm$html$Html$section = _VirtualDom_nodeNS_fn(_VirtualDom_node_a0, "section"), $elm$html$Html$section_fn = $elm$html$Html$section.a2;
     var $author$project$Route$Index$section_gradient = "text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-indigo-500 to-red-500";
@@ -5656,7 +5657,7 @@
                 $elm$html$Html$text("Personal Projects")
             ])),
             $elm$html$Html$ol_fn(_List_fromArray([
-                $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-5")
+                $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "mt-14 grid gap-2 md:grid-cols-2 md:gap-x-2 md:gap-y-4")
             ]), $elm$core$List$map_fn($author$project$Route$Index$personal_project_component, $author$project$Route$Index$personal_project_list))
         ]))
     ]));
@@ -5710,7 +5711,7 @@
                             ]), _List_fromArray([
                                 $elm$html$Html$text("Machine Learning Researcher interested in "),
                                 $elm$html$Html$ul_fn(_List_fromArray([
-                                    $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "grid grid-cols-1 md:grid-cols-2 md:gap-5 mt-5")
+                                    $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "grid bg-orange-100 grid-cols-1 md:grid-cols-2 md:gap-5 mt-5")
                                 ]), _List_fromArray([
                                     $author$project$Route$Index$interest_card({ e0: "Machine Learning, Reinforcement Learning, NLP, MLOps.", e1: "Artificial Intelligence" }),
                                     $author$project$Route$Index$interest_card({ e0: "Prompt Egineering, Backend Development, Rust, Python, etc.", e1: "Software Engineering" }),
@@ -5727,7 +5728,7 @@
                                     $elm$html$Html$text("Blog Highlights")
                                 ])),
                                 $elm$html$Html$div_fn(_List_fromArray([
-                                    $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "mt-5 md:mt-14 grid grid-cols-1 gap-y-20 ")
+                                    $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "mt-5 md:mt-14 grid grid-cols-1 gap-y-20")
                                 ]), _List_fromArray([
                                     $author$project$Route$Index$blog_card({ fD: "In this tutorial we will look at what TF and IDF are and how they can be use to process text data in Machine learning.", fE: "https://blog.farooqkhan.ca/tfidf", fF: "Term Frequency-Inverse Document Frequency" }),
                                     $author$project$Route$Index$blog_card({ fD: "In this post, we will look at the quora qna dataset and aim to encode and compare all question pairs. The purpose of is to look at a real dataset.", fE: "https://blog.farooqkhan.ca/cosine-similarity-pt-2", fF: "Large Scale Vector Comparison" }),
@@ -7127,7 +7128,7 @@
                     b_: url.q,
                     E: $elm$core$Dict$empty,
                     i5: key,
-                    av: 0,
+                    aw: 0,
                     bf: $elm$core$Maybe$Nothing,
                     k: $elm$core$Result$Ok({ br: actionData, k: pageData, f2: sharedData, S: userModel }),
                     gJ: $elm$core$Dict$empty,
@@ -7148,7 +7149,7 @@
                     b_: url.q,
                     E: $elm$core$Dict$empty,
                     i5: key,
-                    av: 0,
+                    aw: 0,
                     bf: $elm$core$Maybe$Just(info),
                     k: $elm$core$Result$Err("Not found"),
                     gJ: $elm$core$Dict$empty,
@@ -7167,7 +7168,7 @@
                 b_: url.q,
                 E: $elm$core$Dict$empty,
                 i5: key,
-                av: 0,
+                aw: 0,
                 bf: $elm$core$Maybe$Nothing,
                 k: $elm$core$Result$Err($dillonkearns$elm_pages$BuildError$errorToString(error)),
                 gJ: $elm$core$Dict$empty,
@@ -7539,7 +7540,7 @@
             $elm$core$Task$perform_fn($elm$core$Basics$identity, $elm$core$Task$map_fn(A3($dillonkearns$elm_pages$Pages$Internal$Platform$FetcherStarted, fetcherKey, transitionId, formData), $elm$time$Time$now)),
             $elm$http$Http$request({
                 eH: _Http_pair_fn("application/x-www-form-urlencoded", encodedBody),
-                iI: $elm$http$Http$expectBytesResponse_fn(A3($dillonkearns$elm_pages$Pages$Internal$Platform$FetcherComplete, false, fetcherKey, model.av), function (bytes) {
+                iI: $elm$http$Http$expectBytesResponse_fn(A3($dillonkearns$elm_pages$Pages$Internal$Platform$FetcherComplete, false, fetcherKey, model.aw), function (bytes) {
                     switch (bytes.$) {
                         case 4:
                             var bytesBody = bytes.b;
@@ -7589,7 +7590,7 @@
             $elm$core$Task$perform_fn($elm$core$Basics$identity, $elm$core$Task$map_fn(A3($dillonkearns$elm_pages$Pages$Internal$Platform$FetcherStarted, fetcherKey, transitionId, formData), $elm$time$Time$now)),
             $elm$http$Http$request({
                 eH: _Http_pair_fn("application/x-www-form-urlencoded", encodedBody),
-                iI: $elm$http$Http$expectBytesResponse_fn(A3($dillonkearns$elm_pages$Pages$Internal$Platform$FetcherComplete, fromPageReload, fetcherKey, model.av), function (bytes) {
+                iI: $elm$http$Http$expectBytesResponse_fn(A3($dillonkearns$elm_pages$Pages$Internal$Platform$FetcherComplete, fromPageReload, fetcherKey, model.aw), function (bytes) {
                     switch (bytes.$) {
                         case 4:
                             var bytesBody = bytes.b;
@@ -7989,8 +7990,8 @@
             }
         }();
         return _Utils_Tuple2(_Utils_update(model, {
-            av: model.av + 1,
-            R: $elm$core$Maybe$Just(_Utils_Tuple2(model.av, function () {
+            aw: model.aw + 1,
+            R: $elm$core$Maybe$Just(_Utils_Tuple2(model.aw, function () {
                 var _v1 = model.R;
                 _v1$2: while (true) {
                     if (!_v1.$) {
@@ -8015,7 +8016,7 @@
                 return $dillonkearns$elm_pages$Pages$Navigation$Loading_fn($dillonkearns$elm_pages$UrlPath$fromString(urlToGet.q), 1);
             }()))
         }), $dillonkearns$elm_pages$Pages$Internal$Platform$Batch(_List_fromArray([
-            $dillonkearns$elm_pages$Pages$Internal$Platform$FetchPageData_fn(model.av, $elm$core$Maybe$Nothing, urlToGet, toMsg),
+            $dillonkearns$elm_pages$Pages$Internal$Platform$FetchPageData_fn(model.aw, $elm$core$Maybe$Nothing, urlToGet, toMsg),
             cancelIfStale,
             effect
         ])));
@@ -8210,7 +8211,7 @@
                                     else {
                                         return $elm$core$Basics$identity;
                                     }
-                                }()(_Utils_Tuple2(_Utils_update(model, { av: model.av + 1 }), $dillonkearns$elm_pages$Pages$Internal$Platform$SubmitFetcher_fn(fields.eZ, model.av, payload))) : function () {
+                                }()(_Utils_Tuple2(_Utils_update(model, { aw: model.aw + 1 }), $dillonkearns$elm_pages$Pages$Internal$Platform$SubmitFetcher_fn(fields.eZ, model.aw, payload))) : function () {
                                     var _v14 = fields.fV;
                                     if (!_v14.$) {
                                         var justUserMsg = _v14.a;
