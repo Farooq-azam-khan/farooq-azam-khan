@@ -213,7 +213,7 @@ view app shared =
                         [ class "mt-14 md:mt-32 text-md md:text-xl italic leading-loose tracking-wider lg:max-w-3xl " ]
                         [ text "Machine Learning Researcher interested in "
                         , ul
-                            [ class "grid bg-orange-100 grid-cols-1 md:grid-cols-2 md:gap-5 mt-5" ]
+                            [ class "grid grid-cols-1 md:grid-cols-2 md:gap-5 mt-5" ]
                             [ interest_card { interest_title = "Artificial Intelligence", interest_detail = "Machine Learning, Reinforcement Learning, NLP, MLOps." }
                             , interest_card { interest_title = "Software Engineering", interest_detail = "Prompt Egineering, Backend Development, Rust, Python, etc." }
                             , interest_card { interest_title = "Functional Programming", interest_detail = "Category Thoery, Elm Programming, Haskell, etc." }
