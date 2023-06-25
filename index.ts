@@ -1,14 +1,15 @@
-import './tailwind.css'
-import { Elm } from './src/Main.elm' 
+type ElmPagesInit = {
+  load: (elmLoaded: Promise<unknown>) => Promise<void>;
+  flags: unknown;
+};
 
-document.addEventListener('DOMContentLoaded', () => {
-    const root = document.getElementById('app')
-    if (!root) { 
-        console.log('root element not found') 
-        return 
-    } 
-    const app = Elm.Main.init({
-          node: root 
-    })
-    
-})
+const config: ElmPagesInit = {
+  load: async function (elmLoaded) {
+    await elmLoaded;
+  },
+  flags: function () {
+    return "You can decode this in Shared.elm using Json.Decode.string!";
+  },
+};
+
+export default config;
