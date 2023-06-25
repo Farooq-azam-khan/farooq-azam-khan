@@ -4,6 +4,7 @@
   "scripts": {
     "postinstall": "elm-tooling install",
     "tailwindcss-watch": "tailwind --input ./tailwind.css -o ./public/style.css --config ./tailwind.config.js -w",
+    "tailwindcss-build": "tailwind --input ./tailwind.css -o ./public/style.css --config ./tailwind.config.js --minify",
     "start": "elm-pages dev",
     "build": "elm-pages build"
   },
