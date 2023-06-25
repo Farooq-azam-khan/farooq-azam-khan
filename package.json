@@ -7,7 +7,7 @@
     "tailwindcss-build": "tailwind --input ./tailwind.css -o ./public/style.css --config ./tailwind.config.js --minify",
     "start": "elm-pages dev",
     "build": "elm-pages build", 
-    "vercel-build": "mkdir bin && pwd && ech $PATH && curl https://static.lamdera.com/bin/linux/lamdera -o ./bin/lamdera && chmod a+x bin/lamdera && npm install && npm run build"
+    "vercel-build": "curl https://static.lamdera.com/bin/linux/lamdera -o lamdera && chmod a+x lamdera && export PATH=\"./:$PATH\" && npm install && npm run build"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
