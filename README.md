@@ -12,3 +12,11 @@
 - build tailwind styles: `npm run tailwindcss-build`, 
 - build elm pages `npm run build` 
 - vercel deployment
+
+```
+mkdir bin && 
+export PATH=\"/opt/build/repo/bin:$PATH\" 
+&& echo $PATH 
+&& curl https://static.lamdera.com/bin/linux/lamdera -o bin/lamdera && chmod a+x bin/lamdera 
+&& export ELM_HOME=\"$NETLIFY_BUILD_BASE/cache/elm\" && npm install && npm run build
+```
