@@ -5,7 +5,7 @@ import FatalError exposing (FatalError)
 import Head
 import Head.Seo as Seo
 import Html exposing (..)
-import Html.Attributes exposing (..)
+import Html.Attributes as Attr exposing (..)
 import Pages.Url
 import PagesMsg exposing (PagesMsg)
 import Route
@@ -80,7 +80,7 @@ view :
 view app shared =
     { title = "Farooq Azam Khan | Home"
     , body =
-        [ main_ [ class "font-roboto font-sans mb-10" ]
+        [ main_ [ class "font-roboto font-sans bg-gray-100 py-20" ]
             [ margin_content_component
                 [ div [ class "" ]
                     [ div [ class "pt-20 flex items-center justify-between" ]
@@ -114,7 +114,7 @@ view app shared =
                             [ class "mt-5 md:mt-14 grid grid-cols-1 gap-y-20" ]
                             [ blog_card
                                 { blog_title = "Term Frequency-Inverse Document Frequency"
-                                , blog_description = "In this tutorial we will look at what TF and IDF are and how they can be use to process text data in Machine learning."
+                                , blog_description = "In this tutorial we will look at what TF and IDF are and how they can be use to process text data for Machine learning."
                                 , blog_link = "https://blog.farooqkhan.ca/tfidf"
                                 }
                             , blog_card
@@ -160,7 +160,7 @@ blog_card :
     -> Html (PagesMsg Msg)
 blog_card { blog_title, blog_description, blog_link } =
     div [ class "space-y-5 shadow-xl p-6 rounded-lg " ]
-        [ h3 [ class "mb-2 text-2xl font-bold tracking-tight text-gray-900 " ] [ text blog_title ]
+        [ h3 [ class "mb-2 text-2xl font-bold tracking-tight text-gray-900" ] [ text blog_title ]
         , p [ class "max-w-lg mb-3 font-normal text-gray-700 " ] [ text blog_description ]
         , a
             [ href blog_link
@@ -219,6 +219,23 @@ github_icon =
             []
         ]
 
+link_icon : String -> Html msg 
+link_icon class = 
+    Svg.svg
+        [ Attr.attribute "aria-hidden" "true"
+        , SvgAttr.fill "none"
+        , SvgAttr.stroke "currentColor"
+        , SvgAttr.strokeWidth "1.5"
+        , SvgAttr.viewBox "0 0 24 24"
+        , SvgAttr.class class 
+        ]
+        [ path
+            [ SvgAttr.d "M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+            , SvgAttr.strokeLinecap "round"
+            , SvgAttr.strokeLinejoin "round"
+            ]
+            []
+        ]
 
 section_gradient : String
 section_gradient =
@@ -229,35 +246,49 @@ margin_content_component : List (Html (PagesMsg Msg)) -> Html (PagesMsg Msg)
 margin_content_component =
     div [ class "px-5 md:px-0 md:mx-auto md:max-w-3xl" ]
 
-
+github_light : Html msg
+github_light =     
+    Svg.svg
+        [ SvgAttr.width "24"
+        , SvgAttr.height "24"
+        , SvgAttr.viewBox "0 0 24 24"
+        ]
+        [ path
+            [ SvgAttr.style "stroke: white; fill: white", SvgAttr.d "M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.686-6 6 0 2.651 1.719 4.9 4.104 5.693.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615.479-.133.992-.199 1.502-.202.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288 2.383-.793 4.1-3.041 4.1-5.691 0-3.314-2.687-6-6-6z"
+            ]
+            []
+        ]
+    
 personal_project_component :
     { a
-        | project_name : String
-        , project_description : Maybe (Html (PagesMsg Msg))
+        | name : String
+        , description : Maybe (Html (PagesMsg Msg))
         , github_link : String
+        , maybe_site : Maybe String 
     }
     -> Html (PagesMsg Msg)
 personal_project_component comp_data =
-    div [ class "" ]
+    div [ class "p-6 rounded-md bg-gray-800 text-white shadow-xl" ]
         [ div [class "flex space-x-3 justify-between items-center"] 
             [h3
-                [ class "text-gray-800 font-semibold tracking-wide text-lg"
+                [ class "text-gray-100  text-lg   mb-2 text-2xl font-bold tracking-tight "
                 , target "blank_"
                 , href comp_data.github_link
                 ]
-            [ text comp_data.project_name ]
-        , span []
-            [ a 
+            [ text comp_data.name ]
+        , span [class "flex items-center space-x-3"]
+            [ Maybe.withDefault (text "") <| Maybe.map (\link -> a [target "blank_", href link] [link_icon "w-7 h-7"]) comp_data.maybe_site
+            , a 
                 [ href comp_data.github_link
                 , target "blank_"
                 , class "transition duration-200 group rounded-lg "
-                ] [github_icon] 
+                ] [github_light ] 
             
             ]
         ]
-        , case comp_data.project_description of
+        , case comp_data.description of
             Just desc ->
-                div [ class "text-gray-700 mt-5 " ] [ desc ]
+                div [ class "text-gray-200 mt-5 max-w-lg" ] [ desc ]
 
             Nothing ->
                 text ""
@@ -266,82 +297,81 @@ personal_project_component comp_data =
 
 personal_project_list_component : Html (PagesMsg Msg)
 personal_project_list_component =
-    section [ class "mt-32 md:mt-64 " ]
+    section [ class "mt-32 " ]
         [ margin_content_component
             [ h2 [ class <| section_gradient ++ " text-indigo-500 text-lg font-semibold tracking-wide uppercase" ]
                 [ text "Personal Projects" ]
-            , ol [ class "mt-14 grid gap-2 md:grid-cols-2 md:gap-x-2 md:gap-y-4" ]
+            , ol [ class "mt-14 space-y-10" ]
                 (List.map personal_project_component personal_project_list) 
                   
             ]
         ]
 
-personal_project_list_component2 : Html (PagesMsg Msg)
-personal_project_list_component2 =
-    section [ class "mt-32 md:mt-64 " ]
-        [ margin_content_component
-            [ h2 [ class <| section_gradient ++ " text-indigo-500 text-lg font-semibold tracking-wide uppercase" ]
-                [ text "Personal Projects" ]
-                  
-            ]
-
-            , div [class "mt-10 space-y-5"] 
-                (List.map 
-                    (\proj -> div [] [text proj.project_name]) 
-                    personal_project_list
-                )
-        ]
 
 
 type alias PersonalProject =
-    { project_name : String
-    , project_description : Maybe (Html (PagesMsg Msg))
+    { name : String
+    , description : Maybe (Html (PagesMsg Msg))
     , github_link : String
+    , maybe_site : Maybe String 
     }
 
 
 personal_project_list : List PersonalProject
 personal_project_list =
-    [ { project_description = Just (div [] [ text "Full Stack web app development with: Hasura, Elm, Python, Tailwindcss, Graphql, Vite." ])
-      , project_name = "Custom Tech Stack"
+    [ { description = Just (div [] [ text "Full Stack web app development with: Hasura, Elm, Python, Tailwindcss, Graphql, Vite." ])
+      , name = "Custom Tech Stack"
       , github_link = "https://github.com/Farooq-azam-khan/my_tech_stack_sample"
+      , maybe_site = Nothing
       }
-    , { project_name = "Garbage Classification with CNN"
-      , project_description = Nothing
+    , { name = "Garbage Classification with CNN"
+      , description = Nothing
       , github_link = "https://github.com/Farooq-azam-khan/cps803-course-project"
+      , maybe_site = Nothing
       }
-    , { project_name = "Haiku Generator"
-      , project_description = Nothing
+    , { name = "Haiku Generator"
+      , description = Nothing
       , github_link = "https://github.com/Farooq-azam-khan/haiku/"
+      , maybe_site = Nothing
       }
-    , { project_description = Nothing
-      , project_name = "Jarvis the Typographer"
-      , github_link = "https://github.com/Farooq-azam-khan/Jarvis-the-Typographer"
+    -- , { description = Nothing
+    --   , name = "Jarvis the Typographer"
+    --   , github_link = "https://github.com/Farooq-azam-khan/Jarvis-the-Typographer"
+    -- , maybe_site = Nothing
+    --   }
+    , { name = "D3Js Reference Tutorial"
+      , description = Just (div [] [text ""])      
+      , github_link = "https://github.com/Farooq-azam-khan/d3js-tutorials" 
+      , maybe_site = Just "https://farooq-azam-khan.github.io/d3js-tutorials/"
       }
-    , { project_description = Nothing, project_name = "D3Js Reference Tutorial", github_link = "https://github.com/Farooq-azam-khan/d3js-tutorials" }
-    , { project_description = Nothing
-      , project_name = "Fourier Analysis Modules"
-      , github_link = "https://github.com/Farooq-azam-khan/fourier-analysis-modules"
-      }
-    , { project_description = Nothing
-      , project_name = "My Sonfigy"
+    -- , { description = Nothing
+    --   , name = "Fourier Analysis Modules"
+    --   , github_link = "https://github.com/Farooq-azam-khan/fourier-analysis-modules"
+    --   }
+    , { description = Just (div [] [text "A full-stack application built to be a user-friendly front-end interface with a robust back-end architecture with feature like playlist create and user authentication."])
+      , name = "My Sonfigy"
       , github_link = "https://github.com/Farooq-azam-khan/my-songify"
+      , maybe_site = Nothing
       }
-    , { project_description = Just (div [] [ text "Practice making 'twitter-ui', 'twitch-ui', 'spotify-ui'" ])
-      , project_name = "Frontend Practice"
+    , { description = Just (div [] [ ol [] [text "Practice making 'twitter-ui', 'twitch-ui', 'spotify-ui'" ]])
+      , name = "Frontend Practice"
       , github_link = ""
+      , maybe_site = Nothing
       }
-    , { project_name = "Chat App"
-      , project_description = Just (div [] [ text "A Chat application built with elm, expressjs, and websockets." ])
+    , { name = "Chat App"
+      , description = Just (div [] [ text "A Chat application built with elm, expressjs, and websockets." ])
       , github_link = "https://github.com/Farooq-azam-khan/chat-app-elm"
+      , maybe_site = Nothing
       }
-    , { project_name = "Twitch Python Discord Bot"
-      , project_description = Nothing 
+    , { name = "Twitch Python Discord Bot"
+      , description = Nothing 
       , github_link = "https://github.com/Farooq-azam-khan/twitch-api-discord-bot"
+      , maybe_site = Nothing
       }
-    , { project_name = "Rust Tauri App Practice"
-      , project_description = Nothing 
+    , { name = "Rust Tauri App Practice"
+      , description = Nothing 
       , github_link = "https://github.com/Farooq-azam-khan/color-picker-tauri-test-project"
+      , maybe_site = Nothing
       }
 
     ]
