@@ -7,8 +7,9 @@
     "tailwindcss-build": "tailwind --input ./tailwind.css -o ./public/style.css --config ./tailwind.config.js --minify",
     "start": "elm-pages dev",
     "build": "elm-pages build",
-    "vercel-build": "curl https://static.lamdera.com/bin/linux/lamdera -o lamdera && chmod a+x lamdera && export PATH=\"./:$PATH\" && npm install && export ELM_HOME=\"node_modules/elm/bin\" && npm run build"
-    "noop:build": "echo \"Have not figure out how to build with lamdera\""
+    "vercel-build": "curl https://static.lamdera.com/bin/linux/lamdera -o lamdera && chmod a+x lamdera && export PATH=\"./:$PATH\" && npm install && export ELM_HOME=\"node_modules/elm/bin\" && npm run build", 
+    "noop:build": "echo \"Have not figure out how to build with lamdera\"", 
+    "noop:install": "echo \"no install\""
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
