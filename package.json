@@ -6,11 +6,12 @@
     "tailwindcss-watch": "tailwind --input ./tailwind.css -o ./public/style.css --config ./tailwind.config.js -w",
     "tailwindcss-build": "tailwind --input ./tailwind.css -o ./public/style.css --config ./tailwind.config.js --minify",
     "start": "elm-pages dev",
-    "build": "elm-pages build", 
+    "build": "elm-pages build",
     "vercel-build": "curl https://static.lamdera.com/bin/linux/lamdera -o lamdera && chmod a+x lamdera && export PATH=\"./:$PATH\" && npm install && npm run build"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
+    "elm": "^0.19.1-5",
     "elm-codegen": "^0.3.0",
     "elm-optimize-level-2": "^0.3.5",
     "elm-pages": "^3.0.3",
