@@ -4,6 +4,7 @@ node_modules/
 elm-stuff/
 .elm-pages/
 functions/render/elm-pages-cli.js
+public/style.css 
 
 # dependencies
 dist
