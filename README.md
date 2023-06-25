@@ -11,3 +11,4 @@
 # Build
 - build tailwind styles: `npm run tailwindcss-build`, 
 - build elm pages `npm run build` 
+- vercel deployment
