@@ -3114,7 +3114,7 @@
     function _Http_toMetadata(xhr) {
         return {
             ka: xhr.responseURL,
-            Y: xhr.status,
+            _: xhr.status,
             aq: xhr.statusText,
             iV: _Http_parseHeaders(xhr.getAllResponseHeaders())
         };
@@ -3445,7 +3445,7 @@
                 _Utils_Tuple2("Content-Type", "text/plain")
             ]),
             d1: false,
-            Y: 200
+            _: 200
         });
     };
     var $author$project$Effect$None = { $: 0 };
@@ -3730,14 +3730,14 @@
     }, $elm$core$Array$treeFromBuilder = F2($elm$core$Array$treeFromBuilder_fn);
     var $elm$core$Array$builderToArray_fn = function (reverseNodeList, builder) {
         if (!builder.Q) {
-            return $elm$core$Array$Array_elm_builtin_fn($elm$core$Elm$JsArray$length(builder.Z), $elm$core$Array$shiftStep, $elm$core$Elm$JsArray$empty, builder.Z);
+            return $elm$core$Array$Array_elm_builtin_fn($elm$core$Elm$JsArray$length(builder.aa), $elm$core$Array$shiftStep, $elm$core$Elm$JsArray$empty, builder.aa);
         }
         else {
             var treeLen = builder.Q * $elm$core$Array$branchFactor;
             var depth = $elm$core$Basics$floor($elm$core$Basics$logBase_fn($elm$core$Array$branchFactor, treeLen - 1));
-            var correctNodeList = reverseNodeList ? $elm$core$List$reverse(builder.ac) : builder.ac;
+            var correctNodeList = reverseNodeList ? $elm$core$List$reverse(builder.ad) : builder.ad;
             var tree = $elm$core$Array$treeFromBuilder_fn(correctNodeList, builder.Q);
-            return $elm$core$Array$Array_elm_builtin_fn($elm$core$Elm$JsArray$length(builder.Z) + treeLen, $elm$core$Basics$max_fn(5, depth * $elm$core$Array$shiftStep), tree, builder.Z);
+            return $elm$core$Array$Array_elm_builtin_fn($elm$core$Elm$JsArray$length(builder.aa) + treeLen, $elm$core$Basics$max_fn(5, depth * $elm$core$Array$shiftStep), tree, builder.aa);
         }
     }, $elm$core$Array$builderToArray = F2($elm$core$Array$builderToArray_fn);
     var $elm$core$Basics$idiv = _Basics_idiv;
@@ -3745,7 +3745,7 @@
     var $elm$core$Array$initializeHelp_fn = function (fn, fromIndex, len, nodeList, tail) {
         initializeHelp: while (true) {
             if (fromIndex < 0) {
-                return $elm$core$Array$builderToArray_fn(false, { ac: nodeList, Q: (len / $elm$core$Array$branchFactor) | 0, Z: tail });
+                return $elm$core$Array$builderToArray_fn(false, { ad: nodeList, Q: (len / $elm$core$Array$branchFactor) | 0, aa: tail });
             }
             else {
                 var leaf = $elm$core$Array$Leaf(_JsArray_initialize_fn($elm$core$Array$branchFactor, fromIndex, fn));
@@ -5433,7 +5433,7 @@
     };
     var $author$project$RouteBuilder$WithData = $elm$core$Basics$identity;
     var $dillonkearns$elm_pages$Server$Response$render = function (data) {
-        return $dillonkearns$elm_pages$PageServerResponse$RenderPage_fn({ iV: _List_Nil, Y: 200 }, data);
+        return $dillonkearns$elm_pages$PageServerResponse$RenderPage_fn({ iV: _List_Nil, _: 200 }, data);
     };
     var $dillonkearns$elm_pages$BackendTask$succeed = function (value) {
         return $dillonkearns$elm_pages$Pages$StaticHttpRequest$ApiRoute($elm$core$Result$Ok(value));
@@ -5589,20 +5589,20 @@
                 $elm$html$Html$h3_fn(_List_fromArray([
                     $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "text-gray-800 font-semibold tracking-wide text-lg"),
                     $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$target_a0, "blank_"),
-                    $elm$html$Html$Attributes$href(comp_data.aa)
+                    $elm$html$Html$Attributes$href(comp_data.V)
                 ]), _List_fromArray([
-                    $elm$html$Html$text(comp_data.ae)
+                    $elm$html$Html$text(comp_data.Y)
                 ])),
                 $elm$html$Html$span_fn(_List_Nil, _List_fromArray([
                     $elm$html$Html$a_fn(_List_fromArray([
-                        $elm$html$Html$Attributes$href(comp_data.aa),
+                        $elm$html$Html$Attributes$href(comp_data.V),
                         $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$target_a0, "blank_"),
                         $elm$html$Html$Attributes$stringProperty_fn($elm$html$Html$Attributes$class_a0, "transition duration-200 group rounded-lg ")
                     ]), _List_fromArray([$author$project$Route$Index$github_icon]))
                 ]))
             ])),
             function () {
-                var _v0 = comp_data.an;
+                var _v0 = comp_data.af;
                 if (!_v0.$) {
                     var desc = _v0.a;
                     return $elm$html$Html$div_fn(_List_fromArray([
@@ -5617,33 +5617,34 @@
     };
     var $author$project$Route$Index$personal_project_list = _List_fromArray([
         {
-            aa: "https://github.com/Farooq-azam-khan/my_tech_stack_sample",
-            an: $elm$core$Maybe$Just($elm$html$Html$div_fn(_List_Nil, _List_fromArray([
+            V: "https://github.com/Farooq-azam-khan/my_tech_stack_sample",
+            af: $elm$core$Maybe$Just($elm$html$Html$div_fn(_List_Nil, _List_fromArray([
                 $elm$html$Html$text("Full Stack web app development with: Hasura, Elm, Python, Tailwindcss, Graphql, Vite.")
             ]))),
-            ae: "Custom Tech Stack"
+            Y: "Custom Tech Stack"
         },
-        { aa: "https://github.com/Farooq-azam-khan/cps803-course-project", an: $elm$core$Maybe$Nothing, ae: "Garbage Classification with CNN" },
-        { aa: "https://github.com/Farooq-azam-khan/haiku/", an: $elm$core$Maybe$Nothing, ae: "Haiku Generator" },
-        { aa: "https://github.com/Farooq-azam-khan/Jarvis-the-Typographer", an: $elm$core$Maybe$Nothing, ae: "Jarvis the Typographer" },
-        { aa: "https://github.com/Farooq-azam-khan/d3js-tutorials", an: $elm$core$Maybe$Nothing, ae: "D3Js Reference Tutorial" },
-        { aa: "https://github.com/Farooq-azam-khan/fourier-analysis-modules", an: $elm$core$Maybe$Nothing, ae: "Fourier Analysis Modules" },
-        { aa: "https://github.com/Farooq-azam-khan/my-songify", an: $elm$core$Maybe$Nothing, ae: "My Sonfigy" },
+        { V: "https://github.com/Farooq-azam-khan/cps803-course-project", af: $elm$core$Maybe$Nothing, Y: "Garbage Classification with CNN" },
+        { V: "https://github.com/Farooq-azam-khan/haiku/", af: $elm$core$Maybe$Nothing, Y: "Haiku Generator" },
+        { V: "https://github.com/Farooq-azam-khan/Jarvis-the-Typographer", af: $elm$core$Maybe$Nothing, Y: "Jarvis the Typographer" },
+        { V: "https://github.com/Farooq-azam-khan/d3js-tutorials", af: $elm$core$Maybe$Nothing, Y: "D3Js Reference Tutorial" },
+        { V: "https://github.com/Farooq-azam-khan/fourier-analysis-modules", af: $elm$core$Maybe$Nothing, Y: "Fourier Analysis Modules" },
+        { V: "https://github.com/Farooq-azam-khan/my-songify", af: $elm$core$Maybe$Nothing, Y: "My Sonfigy" },
         {
-            aa: "",
-            an: $elm$core$Maybe$Just($elm$html$Html$div_fn(_List_Nil, _List_fromArray([
-                $elm$html$Html$text("Practice making 'twitter-ui, 'twitch-ui', 'spotify-ui'")
+            V: "",
+            af: $elm$core$Maybe$Just($elm$html$Html$div_fn(_List_Nil, _List_fromArray([
+                $elm$html$Html$text("Practice making 'twitter-ui', 'twitch-ui', 'spotify-ui'")
             ]))),
-            ae: "Frontend Practice"
+            Y: "Frontend Practice"
         },
         {
-            aa: "https://github.com/Farooq-azam-khan/chat-app-elm",
-            an: $elm$core$Maybe$Just($elm$html$Html$div_fn(_List_Nil, _List_fromArray([
+            V: "https://github.com/Farooq-azam-khan/chat-app-elm",
+            af: $elm$core$Maybe$Just($elm$html$Html$div_fn(_List_Nil, _List_fromArray([
                 $elm$html$Html$text("A Chat application built with elm, expressjs, and websockets.")
             ]))),
-            ae: "Chat App"
+            Y: "Chat App"
         },
-        { aa: "https://github.com/Farooq-azam-khan/twitch-api-discord-bot", an: $elm$core$Maybe$Nothing, ae: "Twitch Python Discord Bot" }
+        { V: "https://github.com/Farooq-azam-khan/twitch-api-discord-bot", af: $elm$core$Maybe$Nothing, Y: "Twitch Python Discord Bot" },
+        { V: "https://github.com/Farooq-azam-khan/color-picker-tauri-test-project", af: $elm$core$Maybe$Nothing, Y: "Rust Tauri App Practice" }
     ]);
     var $elm$html$Html$section = _VirtualDom_nodeNS_fn(_VirtualDom_node_a0, "section"), $elm$html$Html$section_fn = $elm$html$Html$section.a2;
     var $author$project$Route$Index$section_gradient = "text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-indigo-500 to-red-500";
@@ -7554,7 +7555,7 @@
                             return $elm$core$Result$Err($elm$http$Http$NetworkError);
                         default:
                             var metadata = bytes.a;
-                            return $elm$core$Result$Err($elm$http$Http$BadStatus(metadata.Y));
+                            return $elm$core$Result$Err($elm$http$Http$BadStatus(metadata._));
                     }
                 }),
                 iV: $elm$core$List$map_fn(function (_v1) {
@@ -7632,7 +7633,7 @@
                             return $elm$core$Result$Err($elm$http$Http$NetworkError);
                         default:
                             var metadata = bytes.a;
-                            return $elm$core$Result$Err($elm$http$Http$BadStatus(metadata.Y));
+                            return $elm$core$Result$Err($elm$http$Http$BadStatus(metadata._));
                     }
                 }),
                 iV: _List_Nil,
@@ -8705,10 +8706,10 @@
             case 0:
                 var response = serverResponse.a;
                 var data = serverResponse.b;
-                return $dillonkearns$elm_pages$PageServerResponse$RenderPage_fn(_Utils_update(response, { Y: statusCode }), data);
+                return $dillonkearns$elm_pages$PageServerResponse$RenderPage_fn(_Utils_update(response, { _: statusCode }), data);
             case 1:
                 var response = serverResponse.a;
-                return $dillonkearns$elm_pages$PageServerResponse$ServerResponse(_Utils_update(response, { Y: statusCode }));
+                return $dillonkearns$elm_pages$PageServerResponse$ServerResponse(_Utils_update(response, { _: statusCode }));
             default:
                 var error = serverResponse.a;
                 return $elm$core$Basics$never(error);
@@ -9393,7 +9394,7 @@
                 return $elm$core$Result$Err($elm$http$Http$NetworkError);
             case 3:
                 var metadata = response.a;
-                return $elm$core$Result$Err($elm$http$Http$BadStatus(metadata.Y));
+                return $elm$core$Result$Err($elm$http$Http$BadStatus(metadata._));
             default:
                 var body = response.b;
                 return $elm$core$Result$mapError_fn($elm$http$Http$BadBody, toResult(body));
