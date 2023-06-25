@@ -271,7 +271,7 @@ personal_project_list_component =
         [ margin_content_component
             [ h2 [ class <| section_gradient ++ " text-indigo-500 text-lg font-semibold tracking-wide uppercase" ]
                 [ text "Personal Projects" ]
-            , ol [ class "bg-gray-900 mt-14 grid gap-2 md:grid-cols-2 md:gap-x-2 md:gap-y-4" ]
+            , ol [ class "mt-14 grid gap-2 md:grid-cols-2 md:gap-x-2 md:gap-y-4" ]
                 (List.map personal_project_component personal_project_list) 
                   
             ]
