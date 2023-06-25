@@ -649,14 +649,9 @@ video {
   background-color: rgb(67 56 202 / var(--tw-bg-opacity));
 }
 
-.bg-orange-100 {
+.bg-gray-900 {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 237 213 / var(--tw-bg-opacity));
-}
-
-.bg-pink-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(252 231 243 / var(--tw-bg-opacity));
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-r {
