@@ -1,4 +1,4 @@
 # README
-- [farooqkhan.ca](farooqkhan.ca)
-- [bog.farooqkhan.ca](bog.farooqkhan.ca)
+- (farooqkhan.ca)[farooqkhan.ca]
+- (bog.farooqkhan.ca)[bog.farooqkhan.ca]
   
