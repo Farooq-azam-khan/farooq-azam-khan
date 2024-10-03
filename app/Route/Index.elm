@@ -212,6 +212,7 @@ github_icon =
     Svg.svg
         [ SvgAttr.width width_height
         , SvgAttr.height width_height
+
         -- , SvgAttr.viewBox "0 0 24 24"
         , SvgAttr.strokeWidth "1"
         ]
@@ -254,9 +255,9 @@ margin_content_component =
 github_dark : Html msg
 github_dark =
     Svg.svg
-        [-- SvgAttr.width "60"
-        --, SvgAttr.height "60"
-         SvgAttr.fill "none"
+        [ -- SvgAttr.width "60"
+          --, SvgAttr.height "60"
+          SvgAttr.fill "none"
         , SvgAttr.viewBox "0 0 40 40"
         ]
         [ path
@@ -332,7 +333,7 @@ personal_project_list_component =
             [ h2 [ class <| section_gradient ++ " text-indigo-500 text-lg font-semibold tracking-wide uppercase" ]
                 [ text "Personal Projects" ]
             , ol [ class "grid gap-y-10 sm:gap-x-10 sm:grid-cols-2 mt-14" ]
-                (List.map personal_project_component personal_project_list)
+                (List.map personal_project_component personal_projects)
             ]
         ]
 
@@ -345,8 +346,8 @@ type alias PersonalProject =
     }
 
 
-personal_project_list : List PersonalProject
-personal_project_list =
+personal_projects : List PersonalProject
+personal_projects =
     [ { description = Just (div [] [ text "Full Stack web app development with: Python FastApi, Tailwindcss, and Vite." ])
       , name = "Custom Tech Stack"
       , github_link = "https://github.com/Farooq-azam-khan/fastapi-elm-tailwind-techstack"
@@ -377,11 +378,11 @@ personal_project_list =
       , github_link = "https://github.com/Farooq-azam-khan/my-songify"
       , maybe_site = Nothing
       }
-    , { description = Just (div [] [ ol [] [ text "Practice making 'twitter-ui', 'twitch-ui', 'spotify-ui'" ] ])
-      , name = "Frontend Practice"
-      , github_link = ""
-      , maybe_site = Nothing
-      }
+--    , { description = Just (div [] [ ol [] [ text "Practice making 'twitter-ui', 'twitch-ui', 'spotify-ui'" ] ])
+--      , name = "Frontend Practice"
+--      , github_link = ""
+--      , maybe_site = Nothing
+--      }
     , { name = "Chat App"
       , description = Just (div [] [ text "A Chat application built with elm, expressjs, and websockets." ])
       , github_link = "https://github.com/Farooq-azam-khan/chat-app-elm"
