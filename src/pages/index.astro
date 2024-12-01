@@ -3,276 +3,286 @@ import Layout from "../layouts/Layout.astro";
 import GithubIcon from "../components/GithubIcon.astro";
 import RightArrow from "../components/RightArrow.astro";
 import LinkIcon from "../components/LinkIcon.astro";
+import "@/styles/globals.css";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 ---
 
 <Layout>
-  <div class="px-5 md:px-0 md:mx-auto md:max-w-3xl">
-    <div class="">
-      <div class="pt-20 flex items-center justify-between">
-        <h2 class="text-indigo-700 text-2xl md:text-4xl font-extralight">
-          Farooq A. Khan
-        </h2>
-        <div class="flex items-center space-x-2">
-          <a target="_blank" href="https://github.com/Farooq-azam-khan">
-            <GithubIcon />
-          </a>
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/farooq-khan-46167bb5/"
-          >
-            <img
-              alt="linkedin logo"
-              class="w-8 h-8"
-              src="/linkedin-logo-512.webp"
-            />
-          </a>
-        </div>
-      </div>
-      <h1
-        class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-red-500 text-5xl md:text-7xl font-bold"
-      >
-        Machine Learning &amp; Software Engineer
-      </h1><p
-        class="mt-14 md:mt-32 text-md md:text-xl italic leading-loose tracking-wider lg:max-w-3xl"
-      >
-        Machine Learning Engineer interested in
-        <ul class="grid grid-cols-1 md:grid-cols-2 md:gap-5 mt-5">
-          <div class="flex flex-col justify-between p-4 leading-normal">
-            <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
-              Artificial Intelligence
-            </h3>
-            <p class="mb-3 text-lg font-normal text-gray-700">
-              Machine Learning, Reinforcement Learning, NLP, MLOps.
-            </p>
-          </div><div class="flex flex-col justify-between p-4 leading-normal">
-            <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
-              Software Engineering
-            </h3>
-            <p class="mb-3 text-lg font-normal text-gray-700">
-              Prompt Egineering, Backend Development, Rust, Python, Graph
-              Database, Scalable Model Deployment.
-            </p>
-          </div><div class="flex flex-col justify-between p-4 leading-normal">
-            <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
-              Functional Programming
-            </h3>
-            <p class="mb-3 text-lg font-normal text-gray-700">
-              Category Thoery, Elm Programming, Haskell.
-            </p>
-          </div><div class="flex flex-col justify-between p-4 leading-normal">
-            <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
-              Mathematics
-            </h3><p class="mb-3 text-lg font-normal text-gray-700">
-              Fourier Analysis, Linear Albegra, Statistics, Graph Thoery.
-            </p>
-          </div>
-        </ul>
-      </p>
-      <div class="mt-32 md:mt-64 rounded-md">
-        <h2
-          class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-indigo-500 to-red-500 text-xl font-semibold tracking-wide uppercase"
-        >
-          Blog Highlights
-        </h2><div class="mt-5 md:mt-14 grid grid-cols-1 gap-y-20">
-          <div class="bg-white space-y-5 shadow-xl p-6 rounded-lg">
-            <h3
-              class="mb-2 text-xl lg:text-2xl font-bold tracking-tight text-gray-900"
+  <main class="bg-slate-50">
+    <div class="px-5 md:px-0 md:mx-auto md:max-w-3xl">
+      <div class="">
+        <div class="pt-20 flex items-center justify-between">
+          <h2 class="text-indigo-700 text-2xl md:text-4xl font-extralight">
+            Farooq A. Khan
+          </h2>
+          <div class="flex items-center space-x-2">
+            <a target="_blank" href="https://github.com/Farooq-azam-khan">
+              <GithubIcon />
+            </a>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/farooq-khan-46167bb5/"
             >
-              Term Frequency-Inverse Document Frequency
-            </h3><p class="max-w-lg mb-3 font-normal text-gray-600">
-              In this tutorial we will look at what TF and IDF are and how they
-              can be use to process text data for Machine learning.
-            </p><a
-              href="https://blog.farooqkhan.ca/tfidf"
-              target="blank_"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
-              >Read more<RightArrow /></a
-            >
-          </div>
-          <div class="bg-white space-y-5 shadow-xl p-6 rounded-lg">
-            <h3
-              class="mb-2 text-xl lg:text-2xl font-bold tracking-tight text-gray-900"
-            >
-              Large Scale Vector Comparison
-            </h3><p class="max-w-lg mb-3 font-normal text-gray-600">
-              In this post, we will look at the quora qna dataset and aim to
-              encode and compare all question pairs. The purpose of is to look
-              at a real dataset.
-            </p><a
-              href="https://blog.farooqkhan.ca/cosine-similarity-pt-2"
-              target="blank_"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
-              >Read more
-              <RightArrow />
+              <img
+                alt="linkedin logo"
+                class="w-8 h-8"
+                src="/linkedin-logo-512.webp"
+              />
             </a>
           </div>
-          <div class="bg-white space-y-5 shadow-xl p-6 rounded-lg">
-            <h3
-              class="mb-2 text-xl lg:text-2xl font-bold tracking-tight text-gray-900"
-            >
-              Comparing Vectors with Cosine Simlarity Function
-            </h3>
-            <p class="max-w-lg mb-3 font-normal text-gray-600">
-              This tutorial will focus on the math behind text vector similarity
-              using numpy, pytorch, and stentence-transformers libraries in
-              python.
-            </p><a
-              href="https://blog.farooqkhan.ca/cosine-similarity"
-              target="blank_"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
-              >Read more<RightArrow /></a
-            >
+        </div>
+        <h1
+          class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-red-500 text-5xl md:text-7xl font-bold"
+        >
+          Machine Learning &amp; Software Engineer
+        </h1><p
+          class="mt-14 md:mt-32 text-md md:text-xl italic leading-loose tracking-wider lg:max-w-3xl"
+        >
+          Machine Learning Engineer interested in
+          <ul class="grid grid-cols-1 md:grid-cols-2 md:gap-5 mt-5">
+            <div class="flex flex-col justify-between p-4 leading-normal">
+              <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
+                Artificial Intelligence
+              </h3>
+              <p class="mb-3 text-lg font-normal text-gray-700">
+                Machine Learning, Reinforcement Learning, NLP, MLOps.
+              </p>
+            </div><div class="flex flex-col justify-between p-4 leading-normal">
+              <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
+                Software Engineering
+              </h3>
+              <p class="mb-3 text-lg font-normal text-gray-700">
+                Prompt Egineering, Backend Development, Rust, Python, Graph
+                Database, Scalable Model Deployment.
+              </p>
+            </div><div class="flex flex-col justify-between p-4 leading-normal">
+              <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
+                Functional Programming
+              </h3>
+              <p class="mb-3 text-lg font-normal text-gray-700">
+                Category Thoery, Elm Programming, Haskell.
+              </p>
+            </div><div class="flex flex-col justify-between p-4 leading-normal">
+              <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
+                Mathematics
+              </h3><p class="mb-3 text-lg font-normal text-gray-700">
+                Fourier Analysis, Linear Albegra, Statistics, Graph Thoery.
+              </p>
+            </div>
+          </ul>
+        </p>
+        <div class="mt-32 md:mt-64 rounded-md">
+          <h2
+            class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-indigo-500 to-red-500 text-xl font-semibold tracking-wide uppercase"
+          >
+            Blog Highlights
+          </h2><div class="mt-5 md:mt-14 grid grid-cols-1 gap-y-20">
+            <div class="bg-white space-y-5 shadow-xl p-6 rounded-lg">
+              <h3
+                class="mb-2 text-xl lg:text-2xl font-bold tracking-tight text-gray-900"
+              >
+                Term Frequency-Inverse Document Frequency
+              </h3><p class="max-w-lg mb-3 font-normal text-gray-600">
+                In this tutorial we will look at what TF and IDF are and how
+                they can be use to process text data for Machine learning.
+              </p><a
+                href="https://blog.farooqkhan.ca/tfidf"
+                target="blank_"
+                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
+                >Read more<RightArrow /></a
+              >
+            </div>
+            <div class="bg-white space-y-5 shadow-xl p-6 rounded-lg">
+              <h3
+                class="mb-2 text-xl lg:text-2xl font-bold tracking-tight text-gray-900"
+              >
+                Large Scale Vector Comparison
+              </h3><p class="max-w-lg mb-3 font-normal text-gray-600">
+                In this post, we will look at the quora qna dataset and aim to
+                encode and compare all question pairs. The purpose of is to look
+                at a real dataset.
+              </p><a
+                href="https://blog.farooqkhan.ca/cosine-similarity-pt-2"
+                target="blank_"
+                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
+                >Read more
+                <RightArrow />
+              </a>
+            </div>
+            <div class="bg-white space-y-5 shadow-xl p-6 rounded-lg">
+              <h3
+                class="mb-2 text-xl lg:text-2xl font-bold tracking-tight text-gray-900"
+              >
+                Comparing Vectors with Cosine Simlarity Function
+              </h3>
+              <p class="max-w-lg mb-3 font-normal text-gray-600">
+                This tutorial will focus on the math behind text vector
+                similarity using numpy, pytorch, and stentence-transformers
+                libraries in python.
+              </p><a
+                href="https://blog.farooqkhan.ca/cosine-similarity"
+                target="blank_"
+                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
+                >Read more<RightArrow /></a
+              >
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <section class="mt-32">
-    <div class="px-5 md:px-0 md:mx-auto md:max-w-3xl">
-      <h2
-        class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-indigo-500 to-red-500 text-indigo-500 text-lg font-semibold tracking-wide uppercase"
-      >
-        Personal Projects
-      </h2><ol class="grid gap-y-10 sm:gap-x-10 sm:grid-cols-2 mt-14">
-        <div class="bg-white shadow-lg p-4 rounded-lg">
-          <div class="flex space-x-3 justify-between items-center">
-            <h3 class="text-gray-700 text-lg mb-2 font-semibold">
-              Custom Tech Stack
-            </h3><span class="flex items-center space-x-3"
-              ><a
-                href="https://github.com/Farooq-azam-khan/fastapi-elm-tailwind-techstack"
-                target="blank_"
-                class="rounded-lg"><GithubIcon /></a
-              ></span
-            >
-          </div><div class="text-gray-600 mt-5 max-w-lg">
-            <div>
+    <section class="mt-32">
+      <div class="px-5 md:px-0 md:mx-auto md:max-w-3xl">
+        <h2
+          class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-indigo-500 to-red-500 text-indigo-500 text-lg font-semibold tracking-wide uppercase"
+        >
+          Personal Projects
+        </h2>
+        <ol class="grid gap-y-10 sm:gap-x-10 sm:grid-cols-2 mt-14">
+          <Card>
+            <CardHeader>
+              <CardTitle class="text-gray-700 text-lg mb-2 font-semibold"
+                >Custom Tech Stack</CardTitle
+              >
+              <CardDescription>
+                <a
+                  href="https://github.com/Farooq-azam-khan/fastapi-elm-tailwind-techstack"
+                  target="blank_"
+                  class="rounded-lg"><GithubIcon /></a
+                >
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
               Full Stack web app development with: Python FastApi, Tailwindcss,
               and Vite.
-            </div>
-          </div>
-        </div><div class="bg-white shadow-lg p-4 rounded-lg">
-          <div class="flex space-x-3 justify-between items-center">
-            <h3 class="text-gray-700 text-lg mb-2 font-semibold">
-              Garbage Classification with CNN
-            </h3><span class="flex items-center space-x-3">
-              <a
-                href="https://github.com/Farooq-azam-khan/cps803-course-project"
-                target="blank_"
-                class="rounded-lg"><GithubIcon /></a
-              ></span
-            >
-          </div>
-          <div class="text-gray-600 mt-5 max-w-lg">
-            <div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle> Garbage Classification with CNN </CardTitle>
+              <CardDescription>
+                <a
+                  href="https://github.com/Farooq-azam-khan/cps803-course-project"
+                  target="blank_"
+                  class="rounded-lg"><GithubIcon /></a
+                >
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
               Efficient Net finetuned on Classifying different types of Garbage.
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle> Haiku Generator </CardTitle>
+              <CardDescription
+                ><a
+                  href="https://github.com/Farooq-azam-khan/haiku/"
+                  target="blank_"
+                  class="rounded-lg"><GithubIcon /></a
+                ></CardDescription
+              >
+            </CardHeader>
+            <CardContent
+              >SPA app designed to generate Haiku's with LLM</CardContent
+            >
+          </Card>
+          <div class="bg-white shadow-lg p-4 rounded-lg">
+            <div class="flex space-x-3 justify-between items-center">
+              <h3 class="text-gray-700 text-lg mb-2 font-semibold">
+                D3Js Reference Tutorial
+              </h3><span class="flex items-center space-x-3"
+                ><a
+                  target="blank_"
+                  href="https://farooq-azam-khan.github.io/d3js-tutorials/"
+                  ><LinkIcon /></a
+                ><a
+                  href="https://github.com/Farooq-azam-khan/d3js-tutorials"
+                  target="blank_"
+                  class="rounded-lg"><GithubIcon /></a
+                ></span
+              >
+            </div><div class="text-gray-600 mt-5 max-w-lg">
+              <div>Web app to reference D3 library and its many features.</div>
             </div>
           </div>
-        </div>
-        <div class="bg-white shadow-lg p-4 rounded-lg">
-          <div class="flex space-x-3 justify-between items-center">
-            <h3 class="text-gray-700 text-lg mb-2 font-semibold">
-              Haiku Generator
-            </h3>
-            <span class="flex items-center space-x-3"
-              ><a
-                href="https://github.com/Farooq-azam-khan/haiku/"
-                target="blank_"
-                class="rounded-lg"><GithubIcon /></a
-              ></span
-            >
-          </div><div class="text-gray-600 mt-5 max-w-lg">
-            <div>SPA app designed to generate Haiku's with LLM</div>
-          </div>
-        </div><div class="bg-white shadow-lg p-4 rounded-lg">
-          <div class="flex space-x-3 justify-between items-center">
-            <h3 class="text-gray-700 text-lg mb-2 font-semibold">
-              D3Js Reference Tutorial
-            </h3><span class="flex items-center space-x-3"
-              ><a
-                target="blank_"
-                href="https://farooq-azam-khan.github.io/d3js-tutorials/"
-                ><LinkIcon /></a
-              ><a
-                href="https://github.com/Farooq-azam-khan/d3js-tutorials"
-                target="blank_"
-                class="rounded-lg"><GithubIcon /></a
-              ></span
-            >
-          </div><div class="text-gray-600 mt-5 max-w-lg">
-            <div>Web app to reference D3 library and its many features.</div>
-          </div>
-        </div>
-        <div class="bg-white shadow-lg p-4 rounded-lg">
-          <div class="flex space-x-3 justify-between items-center">
-            <h3 class="text-gray-700 text-lg mb-2 font-semibold">
-              My Sonfigy
-            </h3><span class="flex items-center space-x-3"
-              ><a
-                href="https://github.com/Farooq-azam-khan/my-songify"
-                target="blank_"
-                class="rounded-lg"><GithubIcon /></a
-              ></span
-            >
-          </div>
-          <div class="text-gray-600 mt-5 max-w-lg">
-            <div>
-              A full-stack application built to be a user-friendly front-end
-              interface with a robust back-end architecture with feature like
-              playlist create and user authentication.
+          <div class="bg-white shadow-lg p-4 rounded-lg">
+            <div class="flex space-x-3 justify-between items-center">
+              <h3 class="text-gray-700 text-lg mb-2 font-semibold">
+                My Sonfigy
+              </h3><span class="flex items-center space-x-3"
+                ><a
+                  href="https://github.com/Farooq-azam-khan/my-songify"
+                  target="blank_"
+                  class="rounded-lg"><GithubIcon /></a
+                ></span
+              >
+            </div>
+            <div class="text-gray-600 mt-5 max-w-lg">
+              <div>
+                A full-stack application built to be a user-friendly front-end
+                interface with a robust back-end architecture with feature like
+                playlist create and user authentication.
+              </div>
+            </div>
+          </div><div class="bg-white shadow-lg p-4 rounded-lg">
+            <div class="flex space-x-3 justify-between items-center">
+              <h3 class="text-gray-700 text-lg mb-2 font-semibold">
+                Chat App
+              </h3><span class="flex items-center space-x-3">
+                <a
+                  href="https://github.com/Farooq-azam-khan/chat-app-elm"
+                  target="blank_"
+                  class="rounded-lg"><GithubIcon /></a
+                ></span
+              >
+            </div>
+            <div class="text-gray-600 mt-5 max-w-lg">
+              <div>
+                A Chat application built with elm, expressjs, and websockets.
+              </div>
             </div>
           </div>
-        </div><div class="bg-white shadow-lg p-4 rounded-lg">
-          <div class="flex space-x-3 justify-between items-center">
-            <h3 class="text-gray-700 text-lg mb-2 font-semibold">
-              Chat App
-            </h3><span class="flex items-center space-x-3">
-              <a
-                href="https://github.com/Farooq-azam-khan/chat-app-elm"
-                target="blank_"
-                class="rounded-lg"><GithubIcon /></a
-              ></span
-            >
-          </div>
-          <div class="text-gray-600 mt-5 max-w-lg">
-            <div>
-              A Chat application built with elm, expressjs, and websockets.
+          <div class="bg-white shadow-lg p-4 rounded-lg">
+            <div class="flex space-x-3 justify-between items-center">
+              <h3 class="text-gray-700 text-lg mb-2 font-semibold">
+                Twitch Python Discord Bot
+              </h3><span class="flex items-center space-x-3"
+                ><a
+                  href="https://github.com/Farooq-azam-khan/twitch-api-discord-bot"
+                  target="blank_"
+                  class="rounded-lg"><GithubIcon /></a
+                ></span
+              >
+            </div><div class="text-gray-600 mt-5 max-w-lg">
+              <div>Discord bot built with Python</div>
+            </div>
+          </div><div class="bg-white shadow-lg p-4 rounded-lg">
+            <div class="flex space-x-3 justify-between items-center">
+              <h3 class="text-gray-700 text-lg mb-2 font-semibold">
+                Rust Tauri App
+              </h3><span class="flex items-center space-x-3"
+                ><a
+                  href="https://github.com/Farooq-azam-khan/color-picker-tauri-test-project"
+                  target="blank_"
+                  class="rounded-lg"><GithubIcon /></a
+                ></span
+              >
+            </div><div class="text-gray-600 mt-5 max-w-lg">
+              <div>
+                Experimental app designed to test the features offered by Tauri
+                library
+              </div>
             </div>
           </div>
-        </div>
-        <div class="bg-white shadow-lg p-4 rounded-lg">
-          <div class="flex space-x-3 justify-between items-center">
-            <h3 class="text-gray-700 text-lg mb-2 font-semibold">
-              Twitch Python Discord Bot
-            </h3><span class="flex items-center space-x-3"
-              ><a
-                href="https://github.com/Farooq-azam-khan/twitch-api-discord-bot"
-                target="blank_"
-                class="rounded-lg"><GithubIcon /></a
-              ></span
-            >
-          </div><div class="text-gray-600 mt-5 max-w-lg">
-            <div>Discord bot built with Python</div>
-          </div>
-        </div><div class="bg-white shadow-lg p-4 rounded-lg">
-          <div class="flex space-x-3 justify-between items-center">
-            <h3 class="text-gray-700 text-lg mb-2 font-semibold">
-              Rust Tauri App
-            </h3><span class="flex items-center space-x-3"
-              ><a
-                href="https://github.com/Farooq-azam-khan/color-picker-tauri-test-project"
-                target="blank_"
-                class="rounded-lg"><GithubIcon /></a
-              ></span
-            >
-          </div><div class="text-gray-600 mt-5 max-w-lg">
-            <div>
-              Experimental app designed to test the features offered by Tauri
-              library
-            </div>
-          </div>
-        </div>
-      </ol>
-    </div>
-  </section>
+        </ol>
+      </div>
+    </section>
+  </main>
 </Layout>
