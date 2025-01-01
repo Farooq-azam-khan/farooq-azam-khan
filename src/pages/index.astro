@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import GithubIcon from "../components/GithubIcon.astro";
 import RightArrow from "../components/RightArrow.astro";
-import LinkIcon from "../components/LinkIcon.astro";
 import "@/styles/globals.css";
 import {
   Card,
@@ -12,11 +11,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { MoveRight } from "lucide-react";
+import { Link, MoveRight } from "lucide-react";
 ---
 
 <Layout>
-  <main class="dark bg-background text-foreground">
+  <main class="dark bg-background text-foreground pb-64">
     <section class="min-h-screen flex items-center justify-center w-full">
       <div>
         <div class="flex gap-x-7 items-baseline">
@@ -78,15 +77,15 @@ import { MoveRight } from "lucide-react";
         </div>
       </div>
     </section>
-    <section class="max-h-screen flex items-center justify-center">
-      <div>
-        Cutting-Edge Research & Application Bridging theory and practice to
-        create impactful, intelligent systems.
-      </div>
+    <section class="min-h-screen flex items-center justify-center">
+      <p class="font-serif text-6xl">
+        Bridging best parts of theory and practice to create impactful,
+        intelligent systems
+      </p>
     </section>
-  </main>
-  <div class="px-5 md:px-0 md:mx-auto md:max-w-3xl">
-    <div class="">
+
+    <section class="px-5 md:px-0 md:max-w-3xl">
+      <!-- <div class=""> -->
       <!-- <div class="pt-20 flex items-center justify-between"> -->
       <!-- <div class="flex items-center space-x-2">
             <a target="_blank" href="https://github.com/Farooq-azam-khan">
@@ -104,107 +103,101 @@ import { MoveRight } from "lucide-react";
             </a>
           </div> -->
       <!-- </div> -->
+      <h2 class="text-foreground text-4xl font-semibold tracking-wide">
+        Blog Highlights
+      </h2>
 
-      <p
-        class="mt-14 md:mt-32 text-md md:text-xl italic leading-loose tracking-wider lg:max-w-3xl"
-      >
-      </p>
-      <div class="mt-32 md:mt-64 rounded-md">
-        <h2
-          class="text-indigo-800 text-xl font-semibold tracking-wide uppercase"
-        >
-          Blog Highlights
-        </h2>
-        <div class="space-y-5">
-          <Card>
-            <CardHeader>
-              <CardTitle
-                >Scaling LLMs with Triton Inference Server: A Hands-on Guide</CardTitle
-              >
-              <CardDescription
-                >Get hands-on experience with deploying Large Language Models
-                (LLMs) at scale using NVIDIA's Triton Inference Server.
-              </CardDescription>
-            </CardHeader>
-            <CardContent />
-            <CardFooter
-              ><a
-                href="https://blog.farooqkhan.ca/fast-llm-inferencing"
-                target="blank_"
-                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
-                >Read more<RightArrow /></a
-              ></CardFooter
+      <!-- <div class="mt-32 md:mt-64 rounded-md"> -->
+      <div class="mt-5 space-y-14">
+        <Card>
+          <CardHeader>
+            <CardTitle
+              >Scaling LLMs with Triton Inference Server: A Hands-on Guide</CardTitle
             >
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle> Term Frequency-Inverse Document Frequency </CardTitle>
-              <CardDescription
-                >In this tutorial we will look at what TF and IDF are and how
-                they can be use to process text data for Machine learning.
-              </CardDescription>
-            </CardHeader>
-            <CardContent />
-            <CardFooter
-              ><a
-                href="https://blog.farooqkhan.ca/tfidf"
-                target="blank_"
-                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
-                >Read more<RightArrow /></a
-              ></CardFooter
+            <CardDescription
+              >Get hands-on experience with deploying Large Language Models
+              (LLMs) at scale using NVIDIA's Triton Inference Server.
+            </CardDescription>
+          </CardHeader>
+          <CardContent />
+          <CardFooter
+            ><a
+              href="https://blog.farooqkhan.ca/fast-llm-inferencing"
+              target="blank_"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
+              >Read more<RightArrow /></a
+            ></CardFooter
+          >
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle> Term Frequency-Inverse Document Frequency </CardTitle>
+            <CardDescription
+              >In this tutorial we will look at what TF and IDF are and how they
+              can be use to process text data for Machine learning.
+            </CardDescription>
+          </CardHeader>
+          <CardContent />
+          <CardFooter
+            ><a
+              href="https://blog.farooqkhan.ca/tfidf"
+              target="blank_"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
+              >Read more<RightArrow /></a
+            ></CardFooter
+          >
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>Large Scale Vector Comparison</CardTitle>
+            <CardDescription>
+              In this post, we will look at the quora qna dataset and aim to
+              encode and compare all question pairs. The purpose of is to look
+              at a real dataset.</CardDescription
             >
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Large Scale Vector Comparison</CardTitle>
-              <CardDescription>
-                In this post, we will look at the quora qna dataset and aim to
-                encode and compare all question pairs. The purpose of is to look
-                at a real dataset.</CardDescription
-              >
-            </CardHeader>
-            <CardContent />
-            <CardFooter
-              ><a
-                href="https://blog.farooqkhan.ca/cosine-similarity-pt-2"
-                target="blank_"
-                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
-                >Read more
-                <RightArrow />
-              </a></CardFooter
+          </CardHeader>
+          <CardContent />
+          <CardFooter
+            ><a
+              href="https://blog.farooqkhan.ca/cosine-similarity-pt-2"
+              target="blank_"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
+              >Read more
+              <RightArrow />
+            </a></CardFooter
+          >
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>
+              Comparing Vectors with Cosine Simlarity Function
+            </CardTitle>
+            <CardDescription>
+              This tutorial will focus on the math behind text vector similarity
+              using numpy, pytorch, and stentence-transformers libraries in
+              python.</CardDescription
             >
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>
-                Comparing Vectors with Cosine Simlarity Function
-              </CardTitle>
-              <CardDescription>
-                This tutorial will focus on the math behind text vector
-                similarity using numpy, pytorch, and stentence-transformers
-                libraries in python.</CardDescription
-              >
-            </CardHeader>
-            <CardContent />
-            <CardFooter
-              ><a
-                href="https://blog.farooqkhan.ca/cosine-similarity"
-                target="blank_"
-                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
-                >Read more<RightArrow /></a
-              ></CardFooter
-            >
-          </Card>
-        </div>
+          </CardHeader>
+          <CardContent />
+          <CardFooter
+            ><a
+              href="https://blog.farooqkhan.ca/cosine-similarity"
+              target="blank_"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
+              >Read more<RightArrow /></a
+            ></CardFooter
+          >
+        </Card>
       </div>
-    </div>
-  </div>
-  <section class="mt-32">
-    <div class="px-5 space-y-14 md:px-0 md:mx-auto md:max-w-3xl">
-      <h2 class="text-indigo-500 text-lg font-semibold tracking-wide uppercase">
+      <!-- </div> -->
+      <!-- </div> -->
+    </section>
+    <!-- <section class="mt-32"> -->
+    <section class="mt-32 font-mono px-5 md:px-0 md:mx-auto md:max-w-3xl">
+      <h2 class="text-foreground text-4xl font-semibold tracking-wide">
         Personal AI Projects
       </h2>
-      <div class="grid gap-y-10 md:gap-x-10 md:grid-cols-2">
+      <ol class="mt-5 grid gap-y-14 md:gap-x-10 md:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle>Race Car RL Agent</CardTitle>
@@ -244,125 +237,116 @@ import { MoveRight } from "lucide-react";
             ></CardFooter
           >
         </Card>
-      </div>
-    </div>
-  </section>
-
-  <section class="mt-32">
-    <div class="px-5 space-y-14 md:px-0 md:mx-auto md:max-w-3xl">
-      <h2 class="text-indigo-500 text-lg font-semibold tracking-wide uppercase">
-        Additional Projects
-      </h2>
-      <ol class="grid gap-y-10 md:gap-x-10 md:grid-cols-2 mt-14">
-        <Card>
-          <CardHeader>
-            <CardTitle> D3Js Reference Tutorial </CardTitle>
-            <CardDescription>
-              Web app to reference D3 library and its many features.</CardDescription
-            >
-          </CardHeader>
-          <CardContent />
-          <CardFooter className="space-x-3">
-            <a
-              target="blank_"
-              href="https://farooq-azam-khan.github.io/d3js-tutorials/"
-              ><LinkIcon /></a
-            >
-            <a
-              href="https://github.com/Farooq-azam-khan/d3js-tutorials"
-              target="blank_"><GithubIcon /></a
-            ></CardFooter
-          >
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Chat App</CardTitle>
-            <CardDescription>
-              A Chat application built to explore web socket connections and
-              server client relations with the protocol. App built with elm,
-              expressjs, and websockets.
-            </CardDescription>
-          </CardHeader>
-          <CardContent />
-          <CardFooter
-            ><a
-              href="https://github.com/Farooq-azam-khan/chat-app-elm"
-              target="blank_"
-              class="rounded-lg"><GithubIcon /></a
-            ></CardFooter
-          >
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle> Twitch Python Discord Bot </CardTitle>
-            <CardDescription>Discord bot built with Python.</CardDescription>
-          </CardHeader>
-          <CardContent />
-          <CardFooter
-            ><a
-              href="https://github.com/Farooq-azam-khan/twitch-api-discord-bot"
-              target="blank_"
-              class="rounded-lg"><GithubIcon /></a
-            ></CardFooter
-          >
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle> Rust Tauri App </CardTitle>
-            <CardDescription>
-              Experimental app designed to test the features offered by Tauri
-              library.</CardDescription
-            >
-          </CardHeader>
-          <CardContent />
-          <CardFooter
-            ><a
-              href="https://github.com/Farooq-azam-khan/color-picker-tauri-test-project"
-              target="blank_"
-              class="rounded-lg"><GithubIcon /></a
-            ></CardFooter
-          >
-        </Card>
+        <!-- </div> -->
       </ol>
-    </div>
-  </section>
-  <section class="mt-32">
-    <div class="px-5 md:px-0 md:mx-auto md:max-w-3xl">
-      <h2 class="text-indigo-500 text-lg font-semibold tracking-wide uppercase">
+      <!-- </section> -->
+
+      <section class="mt-32 font-mono">
+        <h2 class="text-foreground text-4xl font-semibold tracking-wide">
+          Additional Projects
+        </h2>
+        <ol class="mt-5 grid gap-y-14 md:gap-x-10 md:grid-cols-2">
+          <Card>
+            <CardHeader>
+              <CardTitle> D3Js Reference Tutorial </CardTitle>
+              <CardDescription>
+                Web app to reference D3 library and its many features.</CardDescription
+              >
+            </CardHeader>
+            <CardContent />
+            <CardFooter className="space-x-3">
+              <a
+                href="https://github.com/Farooq-azam-khan/d3js-tutorials"
+                target="blank_"><GithubIcon /></a
+              ><a
+                target="blank_"
+                href="https://farooq-azam-khan.github.io/d3js-tutorials/"
+              >
+                <Link /></a
+              ></CardFooter
+            >
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Chat App</CardTitle>
+              <CardDescription>
+                A Chat application built to explore web socket connections and
+                server client relations with the protocol. App built with elm,
+                expressjs, and websockets.
+              </CardDescription>
+            </CardHeader>
+            <CardContent />
+            <CardFooter
+              ><a
+                href="https://github.com/Farooq-azam-khan/chat-app-elm"
+                target="blank_"
+                class="rounded-lg"><GithubIcon /></a
+              ></CardFooter
+            >
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle> Twitch Python Discord Bot </CardTitle>
+              <CardDescription>Discord bot built with Python.</CardDescription>
+            </CardHeader>
+            <CardContent />
+            <CardFooter
+              ><a
+                href="https://github.com/Farooq-azam-khan/twitch-api-discord-bot"
+                target="blank_"
+                class="rounded-lg"><GithubIcon /></a
+              ></CardFooter
+            >
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle> Rust Tauri App </CardTitle>
+              <CardDescription>
+                Experimental app designed to test the features offered by Tauri
+                library.</CardDescription
+              >
+            </CardHeader>
+            <CardContent />
+            <CardFooter
+              ><a
+                href="https://github.com/Farooq-azam-khan/color-picker-tauri-test-project"
+                target="blank_"
+                class="rounded-lg"><GithubIcon /></a
+              ></CardFooter
+            >
+          </Card>
+        </ol>
+      </section>
+    </section>
+    <section class="mt-64 px-5 md:px-0 md:mx-auto md:max-w-3xl">
+      <h2 class="text-foreground text-4xl font-semibold tracking-wide">
         Additional Interests
       </h2>
-      <ul>
+      <ul class="mt-5 space-y-14">
         <div>
-          <h3 class="mb-2 text-xl font-bold tracking-tight">
-            Artificial Intelligence
-          </h3>
-          <p class="mb-3 text-lg font-normal">
-            Machine Learning, Reinforcement Learning, NLP, MLOps.
+          <h3 class="text-xl font-bold tracking-tight">Software Engineering</h3>
+          <p class="text-lg font-normal">
+            Backend Development, Rust, Python, Graph Database, Scalable Model
+            Deployment.
           </p>
-        </div><div>
-          <h3 class="mb-2 text-xl font-bold tracking-tight">
-            Software Engineering
-          </h3>
-          <p class="mb-3 text-lg font-normal">
-            Prompt Egineering, Backend Development, Rust, Python, Graph
-            Database, Scalable Model Deployment.
-          </p>
-        </div><div>
-          <h3 class="mb-2 text-xl font-bold tracking-tight">
+        </div>
+        <div>
+          <h3 class="text-xl font-bold tracking-tight">
             Functional Programming
           </h3>
-          <p class="mb-3 text-lg font-normal">
+          <p class="text-lg font-normal">
             Category Thoery, Elm Programming, Haskell.
           </p>
-        </div><div>
-          <h3 class="mb-2 text-xl font-bold tracking-tight">Mathematics</h3><p
-            class="mb-3 text-lg font-normal"
+        </div>
+        <div>
+          <h3 class="text-xl font-bold tracking-tight">Mathematics</h3><p
+            class="text-lg font-normal"
           >
             Fourier Analysis, Linear Albegra, Statistics, Graph Thoery.
           </p>
         </div>
       </ul>
-    </div>
-  </section>
+    </section>
+  </main>
 </Layout>
