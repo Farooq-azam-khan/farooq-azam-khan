@@ -12,26 +12,83 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { MoveRight } from "lucide-react";
 ---
 
 <Layout>
-  <main class="bg-slate-50">
-    <div class="px-5 md:px-0 md:mx-auto md:max-w-3xl">
-      <h2 class="text-indigo-700 text-7xl md:text-4xl font-extralight">
-        Farooq A. Khan
-      </h2>
-      <h1 class="text-gray-800 text-9xl md:text-9xl font-bold">
-        Machine Learning Engineer
-      </h1>
-      <div class="mt-32 text-5xl">
-        MLE specializing in <span class="text-indigo-400"
-          >delivering scalable</span
-        > AI solutions.
+  <main class="dark bg-background text-foreground">
+    <section class="min-h-screen flex items-center justify-center w-full">
+      <div>
+        <div class="flex gap-x-7 items-baseline">
+          <div class="font-mono text-rose-400 text-3xl">def</div>
+          <h2 class="text-indigo-400 text-7xl font-light font-mono">
+            <span>farooq</span><span>_</span><span>khan</span>
+          </h2>
+          <span class="text-5xl font-extralight font-mono">(</span>
+        </div>
+        <h1
+          class="pl-10 mt-14 flex flex-col gap-y-4 text-white text-9xl font-bold"
+        >
+          <div>Machine</div>
+          <div>Learning</div>
+          <div>Engineer</div>
+        </h1>
+        <div class="font-mono text-5xl font-extralight">)</div>
       </div>
-      <div class="">
-        <!-- <div class="pt-20 flex items-center justify-between"> -->
-        <!-- <div class="flex items-center space-x-2">
+    </section>
+    <section class="min-h-screen flex items-center jusitfy-center">
+      <div
+        class="flex items-baseline font-mono font-extralight gap-x-5 text-6xl"
+      >
+        <MoveRight />
+        <div class="font-mono">AwesomeStuff:</div>
+      </div>
+    </section>
+    <section class="min-h-screen flex items-center justify-center">
+      <div>
+        <p class="font-serif text-6xl">
+          MLE specializing in <span class="text-indigo-400"
+            >delivering scalable</span
+          > AI solutions.
+        </p>
+        <p class="font-mono">
+          with VLLMs, Ollama, and NVIDIA TensorRT for optimized model serving
+          pipelines.
+        </p>
+      </div>
+    </section>
+    <section class="min-h-screen flex items-center justify-center">
+      <div>
+        <div class="flex items-baseline">
+          <p class="font-serif text-6xl">focus on</p><div
+            class="font-mono text-6xl"
+          >
+            (
+          </div>
+        </div>
+        <span class="font-mono text-7xl text-indigo-500">graph algorithms</span
+        ><span class="font-mono text-7xl">,</span>
+
+        <span class="font-mono text-7xl text-indigo-500"
+          >reinforcement learning algorithms</span
+        ><span class="font-mono text-6xl">)</span>
+        <div class="font-mono text-6xl">
+          <MoveRight />
+          <div>enhanced LLM Agents</div>
+        </div>
+      </div>
+    </section>
+    <section class="max-h-screen flex items-center justify-center">
+      <div>
+        Cutting-Edge Research & Application Bridging theory and practice to
+        create impactful, intelligent systems.
+      </div>
+    </section>
+  </main>
+  <div class="px-5 md:px-0 md:mx-auto md:max-w-3xl">
+    <div class="">
+      <!-- <div class="pt-20 flex items-center justify-between"> -->
+      <!-- <div class="flex items-center space-x-2">
             <a target="_blank" href="https://github.com/Farooq-azam-khan">
               <GithubIcon />
             </a>
@@ -46,291 +103,266 @@ import { Button } from "@/components/ui/button";
               />
             </a>
           </div> -->
-        <!-- </div> -->
+      <!-- </div> -->
 
-        <p
-          class="mt-14 md:mt-32 text-md md:text-xl italic leading-loose tracking-wider lg:max-w-3xl"
+      <p
+        class="mt-14 md:mt-32 text-md md:text-xl italic leading-loose tracking-wider lg:max-w-3xl"
+      >
+      </p>
+      <div class="mt-32 md:mt-64 rounded-md">
+        <h2
+          class="text-indigo-800 text-xl font-semibold tracking-wide uppercase"
         >
-          <div>
-            <span>Artificial Intelligence</span>: Working on the use of graph
-            algorithms and reinforcement learning algorithms to develop enhanced
-            large language models.
-          </div>
-          <div>
-            <span>Model Deployment Specialist</span>: Delivering scalable
-            solutions with VLLMs, Ollama, and NVIDIA TensorRT for optimized
-            model serving pipelines.
-          </div>
-          <div>
-            <span>Cutting-Edge Research & Application</span>: Bridging theory
-            and practice to create impactful, intelligent systems.
-          </div>
-        </p>
-        <div class="mt-32 md:mt-64 rounded-md">
-          <h2
-            class="text-indigo-800 text-xl font-semibold tracking-wide uppercase"
-          >
-            Blog Highlights
-          </h2>
-          <div class="space-y-5">
-            <Card>
-              <CardHeader>
-                <CardTitle
-                  >Scaling LLMs with Triton Inference Server: A Hands-on Guide</CardTitle
-                >
-                <CardDescription
-                  >Get hands-on experience with deploying Large Language Models
-                  (LLMs) at scale using NVIDIA's Triton Inference Server.
-                </CardDescription>
-              </CardHeader>
-              <CardContent />
-              <CardFooter
-                ><a
-                  href="https://blog.farooqkhan.ca/fast-llm-inferencing"
-                  target="blank_"
-                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
-                  >Read more<RightArrow /></a
-                ></CardFooter
+          Blog Highlights
+        </h2>
+        <div class="space-y-5">
+          <Card>
+            <CardHeader>
+              <CardTitle
+                >Scaling LLMs with Triton Inference Server: A Hands-on Guide</CardTitle
               >
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>
-                  Term Frequency-Inverse Document Frequency
-                </CardTitle>
-                <CardDescription
-                  >In this tutorial we will look at what TF and IDF are and how
-                  they can be use to process text data for Machine learning.
-                </CardDescription>
-              </CardHeader>
-              <CardContent />
-              <CardFooter
-                ><a
-                  href="https://blog.farooqkhan.ca/tfidf"
-                  target="blank_"
-                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
-                  >Read more<RightArrow /></a
-                ></CardFooter
+              <CardDescription
+                >Get hands-on experience with deploying Large Language Models
+                (LLMs) at scale using NVIDIA's Triton Inference Server.
+              </CardDescription>
+            </CardHeader>
+            <CardContent />
+            <CardFooter
+              ><a
+                href="https://blog.farooqkhan.ca/fast-llm-inferencing"
+                target="blank_"
+                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
+                >Read more<RightArrow /></a
+              ></CardFooter
+            >
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle> Term Frequency-Inverse Document Frequency </CardTitle>
+              <CardDescription
+                >In this tutorial we will look at what TF and IDF are and how
+                they can be use to process text data for Machine learning.
+              </CardDescription>
+            </CardHeader>
+            <CardContent />
+            <CardFooter
+              ><a
+                href="https://blog.farooqkhan.ca/tfidf"
+                target="blank_"
+                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
+                >Read more<RightArrow /></a
+              ></CardFooter
+            >
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>Large Scale Vector Comparison</CardTitle>
+              <CardDescription>
+                In this post, we will look at the quora qna dataset and aim to
+                encode and compare all question pairs. The purpose of is to look
+                at a real dataset.</CardDescription
               >
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Large Scale Vector Comparison</CardTitle>
-                <CardDescription>
-                  In this post, we will look at the quora qna dataset and aim to
-                  encode and compare all question pairs. The purpose of is to
-                  look at a real dataset.</CardDescription
-                >
-              </CardHeader>
-              <CardContent />
-              <CardFooter
-                ><a
-                  href="https://blog.farooqkhan.ca/cosine-similarity-pt-2"
-                  target="blank_"
-                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
-                  >Read more
-                  <RightArrow />
-                </a></CardFooter
+            </CardHeader>
+            <CardContent />
+            <CardFooter
+              ><a
+                href="https://blog.farooqkhan.ca/cosine-similarity-pt-2"
+                target="blank_"
+                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
+                >Read more
+                <RightArrow />
+              </a></CardFooter
+            >
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>
+                Comparing Vectors with Cosine Simlarity Function
+              </CardTitle>
+              <CardDescription>
+                This tutorial will focus on the math behind text vector
+                similarity using numpy, pytorch, and stentence-transformers
+                libraries in python.</CardDescription
               >
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>
-                  Comparing Vectors with Cosine Simlarity Function
-                </CardTitle>
-                <CardDescription>
-                  This tutorial will focus on the math behind text vector
-                  similarity using numpy, pytorch, and stentence-transformers
-                  libraries in python.</CardDescription
-                >
-              </CardHeader>
-              <CardContent />
-              <CardFooter
-                ><a
-                  href="https://blog.farooqkhan.ca/cosine-similarity"
-                  target="blank_"
-                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
-                  >Read more<RightArrow /></a
-                ></CardFooter
-              >
-            </Card>
-          </div>
+            </CardHeader>
+            <CardContent />
+            <CardFooter
+              ><a
+                href="https://blog.farooqkhan.ca/cosine-similarity"
+                target="blank_"
+                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
+                >Read more<RightArrow /></a
+              ></CardFooter
+            >
+          </Card>
         </div>
       </div>
     </div>
-    <section class="mt-32">
-      <div class="px-5 space-y-14 md:px-0 md:mx-auto md:max-w-3xl">
-        <h2
-          class="text-indigo-500 text-lg font-semibold tracking-wide uppercase"
-        >
-          Personal AI Projects
-        </h2>
-        <div class="grid gap-y-10 md:gap-x-10 md:grid-cols-2">
-          <Card>
-            <CardHeader>
-              <CardTitle>Race Car RL Agent</CardTitle>
-              <CardDescription>Comming Soon...</CardDescription>
-            </CardHeader>
-            <CardContent />
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Garbage Classification with CNN </CardTitle>
-              <CardDescription>
-                Efficient Net finetuned on Classifying different types of
-                Garbage.
-              </CardDescription>
-            </CardHeader>
-            <CardContent />
-            <CardFooter>
-              <a
-                href="https://github.com/Farooq-azam-khan/cps803-course-project"
-                target="blank_"
-                class="rounded-lg"><GithubIcon /></a
-              ></CardFooter
+  </div>
+  <section class="mt-32">
+    <div class="px-5 space-y-14 md:px-0 md:mx-auto md:max-w-3xl">
+      <h2 class="text-indigo-500 text-lg font-semibold tracking-wide uppercase">
+        Personal AI Projects
+      </h2>
+      <div class="grid gap-y-10 md:gap-x-10 md:grid-cols-2">
+        <Card>
+          <CardHeader>
+            <CardTitle>Race Car RL Agent</CardTitle>
+            <CardDescription>Comming Soon...</CardDescription>
+          </CardHeader>
+          <CardContent />
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>Garbage Classification with CNN </CardTitle>
+            <CardDescription>
+              Efficient Net finetuned on Classifying different types of Garbage.
+            </CardDescription>
+          </CardHeader>
+          <CardContent />
+          <CardFooter>
+            <a
+              href="https://github.com/Farooq-azam-khan/cps803-course-project"
+              target="blank_"
+              class="rounded-lg"><GithubIcon /></a
+            ></CardFooter
+          >
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle> Haiku Generator</CardTitle>
+            <CardDescription
+              >Prompt engineering experimentation to generate Haikus with LLMs.</CardDescription
             >
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle> Haiku Generator</CardTitle>
-              <CardDescription
-                >Prompt engineering experimentation to generate Haikus with
-                LLMs.</CardDescription
-              >
-            </CardHeader>
-            <CardContent />
-            <CardFooter
-              ><a
-                href="https://github.com/Farooq-azam-khan/haiku/"
-                target="blank_"
-                class="rounded-lg"><GithubIcon /></a
-              ></CardFooter
+          </CardHeader>
+          <CardContent />
+          <CardFooter
+            ><a
+              href="https://github.com/Farooq-azam-khan/haiku/"
+              target="blank_"
+              class="rounded-lg"><GithubIcon /></a
+            ></CardFooter
+          >
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-32">
+    <div class="px-5 space-y-14 md:px-0 md:mx-auto md:max-w-3xl">
+      <h2 class="text-indigo-500 text-lg font-semibold tracking-wide uppercase">
+        Additional Projects
+      </h2>
+      <ol class="grid gap-y-10 md:gap-x-10 md:grid-cols-2 mt-14">
+        <Card>
+          <CardHeader>
+            <CardTitle> D3Js Reference Tutorial </CardTitle>
+            <CardDescription>
+              Web app to reference D3 library and its many features.</CardDescription
             >
-          </Card>
+          </CardHeader>
+          <CardContent />
+          <CardFooter className="space-x-3">
+            <a
+              target="blank_"
+              href="https://farooq-azam-khan.github.io/d3js-tutorials/"
+              ><LinkIcon /></a
+            >
+            <a
+              href="https://github.com/Farooq-azam-khan/d3js-tutorials"
+              target="blank_"><GithubIcon /></a
+            ></CardFooter
+          >
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Chat App</CardTitle>
+            <CardDescription>
+              A Chat application built to explore web socket connections and
+              server client relations with the protocol. App built with elm,
+              expressjs, and websockets.
+            </CardDescription>
+          </CardHeader>
+          <CardContent />
+          <CardFooter
+            ><a
+              href="https://github.com/Farooq-azam-khan/chat-app-elm"
+              target="blank_"
+              class="rounded-lg"><GithubIcon /></a
+            ></CardFooter
+          >
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle> Twitch Python Discord Bot </CardTitle>
+            <CardDescription>Discord bot built with Python.</CardDescription>
+          </CardHeader>
+          <CardContent />
+          <CardFooter
+            ><a
+              href="https://github.com/Farooq-azam-khan/twitch-api-discord-bot"
+              target="blank_"
+              class="rounded-lg"><GithubIcon /></a
+            ></CardFooter
+          >
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle> Rust Tauri App </CardTitle>
+            <CardDescription>
+              Experimental app designed to test the features offered by Tauri
+              library.</CardDescription
+            >
+          </CardHeader>
+          <CardContent />
+          <CardFooter
+            ><a
+              href="https://github.com/Farooq-azam-khan/color-picker-tauri-test-project"
+              target="blank_"
+              class="rounded-lg"><GithubIcon /></a
+            ></CardFooter
+          >
+        </Card>
+      </ol>
+    </div>
+  </section>
+  <section class="mt-32">
+    <div class="px-5 md:px-0 md:mx-auto md:max-w-3xl">
+      <h2 class="text-indigo-500 text-lg font-semibold tracking-wide uppercase">
+        Additional Interests
+      </h2>
+      <ul>
+        <div>
+          <h3 class="mb-2 text-xl font-bold tracking-tight">
+            Artificial Intelligence
+          </h3>
+          <p class="mb-3 text-lg font-normal">
+            Machine Learning, Reinforcement Learning, NLP, MLOps.
+          </p>
+        </div><div>
+          <h3 class="mb-2 text-xl font-bold tracking-tight">
+            Software Engineering
+          </h3>
+          <p class="mb-3 text-lg font-normal">
+            Prompt Egineering, Backend Development, Rust, Python, Graph
+            Database, Scalable Model Deployment.
+          </p>
+        </div><div>
+          <h3 class="mb-2 text-xl font-bold tracking-tight">
+            Functional Programming
+          </h3>
+          <p class="mb-3 text-lg font-normal">
+            Category Thoery, Elm Programming, Haskell.
+          </p>
+        </div><div>
+          <h3 class="mb-2 text-xl font-bold tracking-tight">Mathematics</h3><p
+            class="mb-3 text-lg font-normal"
+          >
+            Fourier Analysis, Linear Albegra, Statistics, Graph Thoery.
+          </p>
         </div>
-      </div>
-    </section>
-
-    <section class="mt-32">
-      <div class="px-5 space-y-14 md:px-0 md:mx-auto md:max-w-3xl">
-        <h2
-          class="text-indigo-500 text-lg font-semibold tracking-wide uppercase"
-        >
-          Additional Projects
-        </h2>
-        <ol class="grid gap-y-10 md:gap-x-10 md:grid-cols-2 mt-14">
-          <Card>
-            <CardHeader>
-              <CardTitle> D3Js Reference Tutorial </CardTitle>
-              <CardDescription>
-                Web app to reference D3 library and its many features.</CardDescription
-              >
-            </CardHeader>
-            <CardContent />
-            <CardFooter className="space-x-3">
-              <a
-                target="blank_"
-                href="https://farooq-azam-khan.github.io/d3js-tutorials/"
-                ><LinkIcon /></a
-              >
-              <a
-                href="https://github.com/Farooq-azam-khan/d3js-tutorials"
-                target="blank_"><GithubIcon /></a
-              ></CardFooter
-            >
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Chat App</CardTitle>
-              <CardDescription>
-                A Chat application built to explore web socket connections and
-                server client relations with the protocol. App built with elm,
-                expressjs, and websockets.
-              </CardDescription>
-            </CardHeader>
-            <CardContent />
-            <CardFooter
-              ><a
-                href="https://github.com/Farooq-azam-khan/chat-app-elm"
-                target="blank_"
-                class="rounded-lg"><GithubIcon /></a
-              ></CardFooter
-            >
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle> Twitch Python Discord Bot </CardTitle>
-              <CardDescription>Discord bot built with Python.</CardDescription>
-            </CardHeader>
-            <CardContent />
-            <CardFooter
-              ><a
-                href="https://github.com/Farooq-azam-khan/twitch-api-discord-bot"
-                target="blank_"
-                class="rounded-lg"><GithubIcon /></a
-              ></CardFooter
-            >
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle> Rust Tauri App </CardTitle>
-              <CardDescription>
-                Experimental app designed to test the features offered by Tauri
-                library.</CardDescription
-              >
-            </CardHeader>
-            <CardContent />
-            <CardFooter
-              ><a
-                href="https://github.com/Farooq-azam-khan/color-picker-tauri-test-project"
-                target="blank_"
-                class="rounded-lg"><GithubIcon /></a
-              ></CardFooter
-            >
-          </Card>
-        </ol>
-      </div>
-    </section>
-    <section class="mt-32">
-      <div class="px-5 md:px-0 md:mx-auto md:max-w-3xl">
-        <h2
-          class="text-indigo-500 text-lg font-semibold tracking-wide uppercase"
-        >
-          Additional Interests
-        </h2>
-        <ul>
-          <div>
-            <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
-              Artificial Intelligence
-            </h3>
-            <p class="mb-3 text-lg font-normal text-gray-700">
-              Machine Learning, Reinforcement Learning, NLP, MLOps.
-            </p>
-          </div><div>
-            <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
-              Software Engineering
-            </h3>
-            <p class="mb-3 text-lg font-normal text-gray-700">
-              Prompt Egineering, Backend Development, Rust, Python, Graph
-              Database, Scalable Model Deployment.
-            </p>
-          </div><div>
-            <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
-              Functional Programming
-            </h3>
-            <p class="mb-3 text-lg font-normal text-gray-700">
-              Category Thoery, Elm Programming, Haskell.
-            </p>
-          </div><div>
-            <h3 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
-              Mathematics
-            </h3><p class="mb-3 text-lg font-normal text-gray-700">
-              Fourier Analysis, Linear Albegra, Statistics, Graph Thoery.
-            </p>
-          </div>
-        </ul>
-      </div>
-    </section>
-  </main>
+      </ul>
+    </div>
+  </section>
 </Layout>
