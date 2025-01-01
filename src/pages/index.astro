@@ -12,79 +12,104 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Link, MoveRight } from "lucide-react";
+import { BlogSectionCarousel } from "@/components/BlogSection.tsx";
 ---
 
 <Layout>
   <main class="dark bg-background text-foreground pb-64">
-    <section class="min-h-screen flex items-center justify-center w-full">
+    <section class="min-h-screen flex items-center justify-start w-full">
       <div>
         <div class="flex gap-x-7 items-baseline">
           <div class="font-mono text-rose-400 text-3xl">def</div>
-          <h2 class="text-indigo-400 text-7xl font-light font-mono">
+          <h2
+            class="md:tracking-widest text-indigo-400 text-2xl sm:text-7xl font-light font-mono"
+          >
             <span>farooq</span><span>_</span><span>khan</span>
           </h2>
           <span class="text-5xl font-extralight font-mono">(</span>
         </div>
         <h1
-          class="pl-10 mt-14 flex flex-col gap-y-4 text-white text-9xl font-bold"
+          class="pl-2 tracking-wide grid grid-cols-1 lg:pl-5 lg:grid-cols-2 gap-y-4 text-white text-5xl sm:text-9xl font-bold"
         >
           <div>Machine</div>
           <div>Learning</div>
-          <div>Engineer</div>
+          <div class="lg:col-span-2">Engineer</div>
         </h1>
-        <div class="font-mono text-5xl font-extralight">)</div>
-      </div>
-    </section>
-    <section class="min-h-screen flex items-center jusitfy-center">
-      <div
-        class="flex items-baseline font-mono font-extralight gap-x-5 text-6xl"
-      >
-        <MoveRight />
-        <div class="font-mono">AwesomeStuff:</div>
-      </div>
-    </section>
-    <section class="min-h-screen flex items-center justify-center">
-      <div>
-        <p class="font-serif text-6xl">
-          MLE specializing in <span class="text-indigo-400"
-            >delivering scalable</span
-          > AI solutions.
-        </p>
-        <p class="font-mono">
-          with VLLMs, Ollama, and NVIDIA TensorRT for optimized model serving
-          pipelines.
-        </p>
+        <div class="flex items-center gap-x-3">
+          <div class="font-mono text-5xl font-extralight">)</div>
+          <div
+            class="flex items-baseline justify-start font-mono font-extralight gap-x-5 text-3xl sm:text-7xl"
+          >
+            <MoveRight className="w-16 h-10" />
+            <div class="font-mono">AwesomeStuff:</div>
+          </div>
+        </div>
       </div>
     </section>
     <section class="min-h-screen flex items-center justify-center">
-      <div>
+      <div class="space-y-10 lg:max-w-4xl text-center">
+        <div class="font-serif text-6xl lg:text-8xl">
+          <div>MLE specializing in</div>
+          <div>
+            <span class="text-indigo-700">delivering scalable</span> AI solutions<span
+              class="text-indigo-900">.</span
+            >
+          </div>
+        </div>
+        <p class="font-mono lg:text-2xl lg:mt-4 flex flex-col md:block">
+          with <span class="text-indigo-500 border px-1 py-5">VLLMs</span>
+          <span class="text-indigo-500 border px-1 py-5">Ollama</span> and <span
+            class="text-green-600 boreder px-4 py-2 border border-green-600"
+            >NVIDIA TensorRT</span
+          >
+          {" "} for optimized model serving pipelines.
+        </p>
+      </div>
+    </section>
+    <section class="min-h-screen flex items-center justify-start">
+      <div class="">
         <div class="flex items-baseline">
-          <p class="font-serif text-6xl">focus on</p><div
+          <p class="font-serif text-3xl sm:text-6xl">focus on</p><div
             class="font-mono text-6xl"
           >
             (
           </div>
         </div>
-        <span class="font-mono text-7xl text-indigo-500">graph algorithms</span
-        ><span class="font-mono text-7xl">,</span>
+        <!-- <div class="font-mono text-center text-4xl sm:text-7xl text-indigo-500">
+          graph algorithms
+        </div> -->
+        <div>
+          <img class="h-80" alt="Image of a Network Graph" src="/graph.png" />
+        </div>
+        <span class="font-mono text-7xl">,</span>
 
-        <span class="font-mono text-7xl text-indigo-500"
-          >reinforcement learning algorithms</span
-        ><span class="font-mono text-6xl">)</span>
-        <div class="font-mono text-6xl">
-          <MoveRight />
+        <!-- <div class="font-mono text-7xl text-indigo-500"> -->
+        <!-- reinforcement learning algorithms -->
+        <!-- </div> -->
+        <div class="">
+          <img
+            alt="Image of Reinforcement Learning Setup - state, action, reward, environment."
+            class="w-80"
+            src="/rl.png"
+          />
+        </div>
+        <span class="font-mono text-6xl">)</span>
+        <div class="font-mono flex items-baseline lg:gap-x-8 text-6xl">
+          <MoveRight className="lg:w-16 h:10" />
           <div>enhanced LLM Agents</div>
         </div>
       </div>
     </section>
     <section class="min-h-screen flex items-center justify-center">
-      <p class="font-serif text-6xl">
-        Bridging best parts of theory and practice to create impactful,
-        intelligent systems
-      </p>
+      <div class="lg:max-w-4xl text-center">
+        <p class="font-serif text-6xl">
+          Bridging best parts of theory and practice to create impactful,
+          intelligent systems<span class="text-indigo-900">.</span>
+        </p>
+      </div>
     </section>
 
-    <section class="px-5 md:px-0 md:max-w-3xl">
+    <section class="">
       <!-- <div class=""> -->
       <!-- <div class="pt-20 flex items-center justify-between"> -->
       <!-- <div class="flex items-center space-x-2">
@@ -103,13 +128,16 @@ import { Link, MoveRight } from "lucide-react";
             </a>
           </div> -->
       <!-- </div> -->
-      <h2 class="text-foreground text-4xl font-semibold tracking-wide">
+      <h2
+        class="px-5 md:px-0 text-center text-foreground text-4xl font-semibold tracking-wide lg:mx-auto lg:max-w-3xl"
+      >
         Blog Highlights
       </h2>
 
       <!-- <div class="mt-32 md:mt-64 rounded-md"> -->
       <div class="mt-5 space-y-14">
-        <Card>
+        <BlogSectionCarousel client:load />
+        <!-- <Card>
           <CardHeader>
             <CardTitle
               >Scaling LLMs with Triton Inference Server: A Hands-on Guide</CardTitle
@@ -187,18 +215,20 @@ import { Link, MoveRight } from "lucide-react";
               >Read more<RightArrow /></a
             ></CardFooter
           >
-        </Card>
+        </Card> -->
       </div>
       <!-- </div> -->
       <!-- </div> -->
     </section>
     <!-- <section class="mt-32"> -->
-    <section class="mt-32 font-mono px-5 md:px-0 md:mx-auto md:max-w-3xl">
-      <h2 class="text-foreground text-4xl font-semibold tracking-wide">
+    <section class="mt-64 font-mono px-5 md:px-0 md:mx-auto md:max-w-6xl">
+      <h2
+        class="text-center text-foreground text-4xl font-semibold tracking-wide"
+      >
         Personal AI Projects
       </h2>
-      <ol class="mt-5 grid gap-y-14 md:gap-x-10 md:grid-cols-2">
-        <Card>
+      <ol class="px-5 xl:px-0 mt-5 grid gap-y-14 lg:gap-x-10 lg:grid-cols-2">
+        <Card className="col-span-2">
           <CardHeader>
             <CardTitle>Race Car RL Agent</CardTitle>
             <CardDescription>Comming Soon...</CardDescription>
@@ -242,11 +272,13 @@ import { Link, MoveRight } from "lucide-react";
       <!-- </section> -->
 
       <section class="mt-32 font-mono">
-        <h2 class="text-foreground text-4xl font-semibold tracking-wide">
+        <h2
+          class="text-center text-foreground text-4xl font-semibold tracking-wide"
+        >
           Additional Projects
         </h2>
-        <ol class="mt-5 grid gap-y-14 md:gap-x-10 md:grid-cols-2">
-          <Card>
+        <ol class="mt-5 px-5 grid gap-y-14 md:gap-x-10 md:grid-cols-3">
+          <Card className="col-span-2">
             <CardHeader>
               <CardTitle> D3Js Reference Tutorial </CardTitle>
               <CardDescription>
@@ -299,7 +331,7 @@ import { Link, MoveRight } from "lucide-react";
               ></CardFooter
             >
           </Card>
-          <Card>
+          <Card className="col-span-2">
             <CardHeader>
               <CardTitle> Rust Tauri App </CardTitle>
               <CardDescription>
@@ -319,33 +351,64 @@ import { Link, MoveRight } from "lucide-react";
         </ol>
       </section>
     </section>
-    <section class="mt-64 px-5 md:px-0 md:mx-auto md:max-w-3xl">
-      <h2 class="text-foreground text-4xl font-semibold tracking-wide">
-        Additional Interests
+    <section class="mt-32">
+      <h2
+        class="font-serif text-center text-foreground text-4xl font-semibold tracking-wide"
+      >
+        2025 VISON
       </h2>
-      <ul class="mt-5 space-y-14">
-        <div>
-          <h3 class="text-xl font-bold tracking-tight">Software Engineering</h3>
-          <p class="text-lg font-normal">
-            Backend Development, Rust, Python, Graph Database, Scalable Model
-            Deployment.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-xl font-bold tracking-tight">
-            Functional Programming
-          </h3>
-          <p class="text-lg font-normal">
-            Category Thoery, Elm Programming, Haskell.
-          </p>
-        </div>
+      <ul class="mt-5 space-y-14 px-5 lg:max-w-6xl lg:mx-auto">
+        <Card className="">
+          <CardHeader><CardTitle>Books</CardTitle></CardHeader><CardContent>
+            <ul class="font-serif">
+              <li>
+                <a href="https://www.deeplearningbook.org/"
+                  >Deep Learning (Ian Goodfellow, Yoshua Bengio, and Aaron
+                  Courville)</a
+                >
+              </li>
+              <li>
+                <a href="http://incompleteideas.net/book/the-book-2nd.html"
+                  >Reinforcement Learning: An Introduction (Andrew Barto and
+                  Richard S. Sutton)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/"
+                  >Category Theory for Programmers (Bartosz Milewski)</a
+                >
+              </li>
+            </ul></CardContent
+          ><CardFooter
+            ><a
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-stone-700 rounded-lg hover:bg-stone-800 focus:ring-4 focus:outline-none focus:ring-stone-300 dark:bg-stone-600 dark:hover:bg-stone-700 dark:focus:ring-stone-800"
+              href="https://www.goodreads.com/user/show/133899873-farooq"
+              target="blank_">Goodreads for other stuff<MoveRight /></a
+            >
+          </CardFooter></Card
+        >
+        <Card className="font-mono">
+          <CardHeader>
+            <CardTitle> Software Engineering </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div>
+              {"{"} Go, Rust, Python {"}"}
+              {"u"}
+              {"{"} Graph Database, Postgres DB {"}"}
+            </div>
+            <div>{"=>"} Backend Development {"=>"} Kubernetes</div>
+          </CardContent>
+        </Card>
+        <!-- 
         <div>
           <h3 class="text-xl font-bold tracking-tight">Mathematics</h3><p
             class="text-lg font-normal"
           >
             Fourier Analysis, Linear Albegra, Statistics, Graph Thoery.
           </p>
-        </div>
+        </div> -->
       </ul>
     </section>
   </main>
