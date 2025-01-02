@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import GithubIcon from "../components/GithubIcon.astro";
-import RightArrow from "../components/RightArrow.astro";
 import "@/styles/globals.css";
 import {
   Card,
@@ -11,44 +10,70 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Link, MoveRight } from "lucide-react";
+import {
+  CornerDownLeft,
+  CornerDownRight,
+  MoveDown,
+  Plus,
+  Link,
+  MoveRight,
+} from "lucide-react";
 import { BlogSectionCarousel } from "@/components/BlogSection.tsx";
+import { gsap } from "gsap";
 ---
 
 <Layout>
-  <main class="dark bg-background text-foreground pb-64">
+  <script
+    is:inline
+    src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+  <script
+    is:inline
+    src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+  ></script>
+
+  <main class="overflow-hidden dark bg-background text-foreground pb-64">
     <section class="min-h-screen flex items-center justify-start w-full">
       <div>
-        <div class="flex gap-x-7 items-baseline">
-          <div class="font-mono text-rose-400 text-3xl">def</div>
-          <h2
-            class="md:tracking-widest text-indigo-400 text-2xl sm:text-7xl font-light font-mono"
-          >
-            <span>farooq</span><span>_</span><span>khan</span>
-          </h2>
-          <span class="text-5xl font-extralight font-mono">(</span>
-        </div>
-        <h1
-          class="pl-2 tracking-wide grid grid-cols-1 lg:pl-5 lg:grid-cols-2 gap-y-4 text-white text-5xl sm:text-9xl font-bold"
+        <h2
+          id="fak"
+          class="text-indigo-400 text-2xl sm:text-7xl font-light font-mono"
         >
-          <div>Machine</div>
-          <div>Learning</div>
-          <div class="lg:col-span-2">Engineer</div>
-        </h1>
-        <div class="flex items-center gap-x-3">
-          <div class="font-mono text-5xl font-extralight">)</div>
-          <div
-            class="flex items-baseline justify-start font-mono font-extralight gap-x-5 text-3xl sm:text-7xl"
+          <span>farooq</span><span>_</span><span>khan</span>
+        </h2>
+        <!-- <div class="col-span-1 flex gap-x-3 items-center justify-end">
+          <a target="_blank" href="https://github.com/Farooq-azam-khan">
+            <GithubIcon className="w-10 h-10" />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/farooq-khan-46167bb5/"
           >
-            <MoveRight className="w-16 h-10" />
-            <div class="font-mono">AwesomeStuff:</div>
-          </div>
-        </div>
+            <img
+              alt="linkedin logo"
+              class="w-5 h-5"
+              src="/linkedin-white.png"
+            />
+          </a>
+        </div> -->
+        <h1
+          id="mle"
+          class="flex leading-[10rem] items-center justify-end tracking-wide text-stone-200 text-8xl md:text-[12rem] lg:text-[13rem] font-bold"
+        >
+          Machine Learning Engineer
+        </h1>
       </div>
     </section>
+    <script>
+      window.addEventListener("load", () => {
+        gsap.registerPlugin(ScrollTrigger);
+        const herotimeline = gsap.timeline({});
+      });
+    </script>
+
     <section class="min-h-screen flex items-center justify-center">
-      <div class="space-y-10 lg:max-w-4xl text-center">
-        <div class="font-serif text-6xl lg:text-8xl">
+      <div id="section-1" class="space-y-10 lg:max-w-4xl text-center">
+        <div class="font-serif text-6xl md:text-8xl">
           <div>MLE specializing in</div>
           <div>
             <span class="text-indigo-700">delivering scalable</span> AI solutions<span
@@ -56,76 +81,187 @@ import { BlogSectionCarousel } from "@/components/BlogSection.tsx";
             >
           </div>
         </div>
-        <p class="font-mono lg:text-2xl lg:mt-4 flex flex-col md:block">
-          with <span class="text-indigo-500 border px-1 py-5">VLLMs</span>
-          <span class="text-indigo-500 border px-1 py-5">Ollama</span> and <span
-            class="text-green-600 boreder px-4 py-2 border border-green-600"
-            >NVIDIA TensorRT</span
+        <p
+          class="font-mono lg:mt-4 md:text-3xl lg:text-4xl flex flex-col md:block"
+        >
+          with <span class="text-indigo-500">VLLMs</span>,
+          <span class="text-indigo-500">Ollama</span>, and <span
+            class="text-green-600">NVIDIA TensorRT</span
           >
           {" "} for optimized model serving pipelines.
         </p>
       </div>
     </section>
+    <script>
+      window.addEventListener("load", () => {
+        gsap.registerPlugin(ScrollTrigger);
+        const timeline0 = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#section-1",
+            start: "top bottom",
+            end: "bottom center",
+            scrub: 1,
+            //markers: true,
+          },
+        });
+
+        timeline0.fromTo(
+          "#section-1",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+            duration: 1,
+          },
+        );
+      });
+    </script>
     <section class="min-h-screen flex items-center justify-start">
-      <div class="">
-        <div class="flex items-baseline">
-          <p class="font-serif text-3xl sm:text-6xl">focus on</p><div
-            class="font-mono text-6xl"
+      <div>
+        <div
+          id="fe-section"
+          class="font-mono text-3xl w-full h-full grid gap-y-5 grid-rows-4 grid-cols-5"
+        >
+          <p
+            data-fs-row-1
+            class="flex items-center justify-center row-start-1 col-span-5 font-serif text-3xl sm:text-6xl"
+          >
+            focusing on
+          </p>
+          <div
+            data-fs-row-2
+            class="row-start-2 text-9xl col-span-1 flex items-center justify-center"
           >
             (
           </div>
-        </div>
-        <div class="font-mono text-4xl sm:text-7xl text-indigo-500">
-          graph algorithms
-        </div>
-        <!-- <div>
-          <img class="h-80" alt="Image of a Network Graph" src="/graph.png" />
-        </div> -->
-        <span class="font-mono text-7xl">,</span>
-
-        <div class="font-mono text-7xl text-indigo-500">
-          reinforcement learning algorithms
-        </div>
-        <!-- <div class="">
-          <img
-            alt="Image of Reinforcement Learning Setup - state, action, reward, environment."
-            class="w-80"
-            src="/rl.png"
-          />
-        </div> -->
-        <span class="font-mono text-6xl">)</span>
-        <div class="font-mono flex items-baseline lg:gap-x-8 text-6xl">
-          <MoveRight className="lg:w-16 h:10" />
-          <div>enhanced LLM Agents</div>
+          <div
+            data-fs-row-2
+            class="row-start-2 flex items-center justify-center text-center text-4xl col-span-1 text-indigo-500"
+          >
+            graph algorithms
+          </div>
+          <div
+            data-fs-row-2
+            class="row-start-2 col-span-1 flex items-center justify-center"
+          >
+            <Plus className="w-16 h-16" />
+          </div>
+          <div
+            data-fs-row-2
+            class="row-start-2 col-span-1 text-indigo-500 flex items-center justify-center text-center"
+          >
+            reinforcement learning algorithms
+          </div>
+          <div
+            data-fs-row-2
+            class="row-start-2 text-9xl col-span-1 flex items-center justify-center"
+          >
+            )
+          </div>
+          <div
+            data-fs-row-3
+            class="flex items-center justify-center row-start-3 col-start-3 col-span-1"
+          >
+            <MoveDown className="w-16 h-16" />
+          </div>
+          <div
+            data-fs-row-4
+            class="row-start-4 col-span-5 text-8xl flex items-center justify-center"
+          >
+            enhanced <br />LLM Agents
+          </div>
         </div>
       </div>
     </section>
+    <script>
+      window.addEventListener("load", () => {
+        const t1 = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#fe-section",
+            pin: true,
+            start: "top top",
+            end: "bottom center",
+            scrub: 1,
+            //markers: true,
+          },
+        });
+        // t1.fromTo(
+        //   "[data-fs-row-1]",
+        //   {
+        //     opacity: "0",
+        //   },
+        //   {
+        //     opacity: "100%",
+        //   },
+        // );
+        t1.fromTo(
+          "[data-fs-row-2]",
+          {
+            opacity: "0",
+          },
+          {
+            opacity: "100%",
+          },
+        );
+        t1.fromTo(
+          "[data-fs-row-3]",
+          {
+            opacity: "0",
+          },
+          {
+            opacity: "100%",
+          },
+        );
+        t1.fromTo(
+          "[data-fs-row-4]",
+          { opacity: "0" },
+          {
+            opacity: "100%",
+            duration: 1,
+          },
+        );
+      });
+    </script>
+
     <section class="min-h-screen flex items-center justify-center">
       <div class="lg:max-w-4xl text-center">
-        <p class="font-serif text-6xl">
+        <p id="bridge-section" class="font-serif text-6xl lg:text-7xl">
           Bridging best parts of theory and practice to create impactful,
           intelligent systems<span class="text-indigo-900">.</span>
         </p>
       </div>
     </section>
+    <script>
+      window.addEventListener("load", () => {
+        gsap.registerPlugin(ScrollTrigger);
+        const bridgetimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#bridge-section",
+            start: "top center",
+            end: "bottom top",
+            scrub: 1,
+            //markers: true,
+          },
+        });
+
+        bridgetimeline.fromTo(
+          "#bridge-section",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+          },
+        );
+      });
+    </script>
 
     <section class="">
       <!-- <div class=""> -->
       <!-- <div class="pt-20 flex items-center justify-between"> -->
       <!-- <div class="flex items-center space-x-2">
-            <a target="_blank" href="https://github.com/Farooq-azam-khan">
-              <GithubIcon />
-            </a>
-            <a
-              target="_blank"
-              href="https://www.linkedin.com/in/farooq-khan-46167bb5/"
-            >
-              <img
-                alt="linkedin logo"
-                class="w-8 h-8"
-                src="/linkedin-logo-512.webp"
-              />
-            </a>
+
           </div> -->
       <!-- </div> -->
       <h2
@@ -227,7 +363,9 @@ import { BlogSectionCarousel } from "@/components/BlogSection.tsx";
       >
         Personal AI Projects
       </h2>
-      <ol class="px-5 xl:px-0 mt-5 grid gap-y-14 lg:gap-x-10 lg:grid-cols-2">
+      <ol
+        class="px-5 xl:px-0 mt-5 grid gap-x-2 gap-y-14 lg:gap-x-10 lg:grid-cols-2"
+      >
         <Card className="col-span-2">
           <CardHeader>
             <CardTitle>Race Car RL Agent</CardTitle>
@@ -395,13 +533,13 @@ import { BlogSectionCarousel } from "@/components/BlogSection.tsx";
           <CardContent>
             <div>
               {"{"} Go, Rust, Python {"}"}
-              {"u"}
+              {"x"}
               {"{"} Graph Database, Postgres DB {"}"}
             </div>
             <div>{"=>"} Backend Development {"=>"} Kubernetes</div>
           </CardContent>
         </Card>
-        <!-- 
+        <!--
         <div>
           <h3 class="text-xl font-bold tracking-tight">Mathematics</h3><p
             class="text-lg font-normal"
