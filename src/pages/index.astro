@@ -37,7 +37,7 @@ import { gsap } from "gsap";
       <div>
         <h2
           id="fak"
-          class="text-indigo-400 text-2xl sm:text-7xl font-light font-mono"
+          class="text-indigo-400 text-4xl sm:text-7xl font-light font-mono"
         >
           <span>farooq</span><span>_</span><span>khan</span>
         </h2>
@@ -58,7 +58,7 @@ import { gsap } from "gsap";
         </div> -->
         <h1
           id="mle"
-          class="flex leading-[10rem] items-center justify-end tracking-wide text-stone-200 text-8xl md:text-[12rem] lg:text-[13rem] font-bold"
+          class="flex leading-[6rem] text-7xl md:leading-[10rem] items-center justify-end tracking-wide text-stone-200 md:text-[12rem] lg:text-[13rem] font-bold"
         >
           Machine Learning Engineer
         </h1>
@@ -81,9 +81,7 @@ import { gsap } from "gsap";
             >
           </div>
         </div>
-        <p
-          class="font-mono lg:mt-4 md:text-3xl lg:text-4xl flex flex-col md:block"
-        >
+        <p class="font-mono lg:mt-4 md:text-3xl lg:text-4xl md:block">
           with <span class="text-indigo-500">VLLMs</span>,
           <span class="text-indigo-500">Ollama</span>, and <span
             class="text-green-600">NVIDIA TensorRT</span
@@ -131,13 +129,13 @@ import { gsap } from "gsap";
           </p>
           <div
             data-fs-row-2
-            class="row-start-2 text-9xl col-span-1 flex items-center justify-center"
+            class="row-start-2 text-5xl sm:text-9xl col-span-1 flex items-center justify-center"
           >
             (
           </div>
           <div
             data-fs-row-2
-            class="row-start-2 flex items-center justify-center text-center text-4xl col-span-1 text-indigo-500"
+            class="row-start-2 flex items-center justify-center text-center text-2xl sm:text-4xl col-span-1 text-indigo-500"
           >
             graph algorithms
           </div>
@@ -145,17 +143,17 @@ import { gsap } from "gsap";
             data-fs-row-2
             class="row-start-2 col-span-1 flex items-center justify-center"
           >
-            <Plus className="w-16 h-16" />
+            <Plus className="w-10 h-10 sm:w-16 sm:h-16" />
           </div>
           <div
             data-fs-row-2
-            class="row-start-2 col-span-1 text-indigo-500 flex items-center justify-center text-center"
+            class="text-2xl sm:text-4xl row-start-2 col-span-1 text-indigo-500 flex items-center justify-center text-center"
           >
             reinforcement learning algorithms
           </div>
           <div
             data-fs-row-2
-            class="row-start-2 text-9xl col-span-1 flex items-center justify-center"
+            class="row-start-2 text-6xl sm:text-9xl col-span-1 flex items-center justify-center"
           >
             )
           </div>
@@ -167,9 +165,9 @@ import { gsap } from "gsap";
           </div>
           <div
             data-fs-row-4
-            class="row-start-4 col-span-5 text-8xl flex items-center justify-center"
+            class="row-start-4 text-4xl sm:text-8xl col-span-5 flex items-center justify-center"
           >
-            enhanced <br />LLM Agents
+            enhanced LLM Agents
           </div>
         </div>
       </div>
@@ -226,7 +224,10 @@ import { gsap } from "gsap";
 
     <section class="min-h-screen flex items-center justify-center">
       <div class="lg:max-w-4xl text-center">
-        <p id="bridge-section" class="font-serif text-6xl lg:text-7xl">
+        <p
+          id="bridge-section"
+          class="font-serif text-4xl sm:text-6xl lg:text-7xl"
+        >
           Bridging best parts of theory and practice to create impactful,
           intelligent systems<span class="text-indigo-900">.</span>
         </p>
@@ -239,7 +240,7 @@ import { gsap } from "gsap";
           scrollTrigger: {
             trigger: "#bridge-section",
             start: "top center",
-            end: "bottom top",
+            end: "bottom center",
             scrub: 1,
             //markers: true,
           },
@@ -364,7 +365,7 @@ import { gsap } from "gsap";
         Personal AI Projects
       </h2>
       <ol
-        class="px-5 xl:px-0 mt-5 grid gap-x-2 gap-y-14 lg:gap-x-10 lg:grid-cols-2"
+        class="px-5 xl:px-0 mt-5 grid sm:gap-x-2 gap-y-4 lg:gap-x-10 grid-cols-2"
       >
         <Card className="col-span-2">
           <CardHeader>
@@ -373,7 +374,7 @@ import { gsap } from "gsap";
           </CardHeader>
           <CardContent />
         </Card>
-        <Card>
+        <Card className="col-span-2 sm:col-span-1">
           <CardHeader>
             <CardTitle>Garbage Classification with CNN </CardTitle>
             <CardDescription>
@@ -389,7 +390,7 @@ import { gsap } from "gsap";
             ></CardFooter
           >
         </Card>
-        <Card>
+        <Card className="col-span-2 sm:col-span-1">
           <CardHeader>
             <CardTitle> Haiku Generator</CardTitle>
             <CardDescription
@@ -415,8 +416,8 @@ import { gsap } from "gsap";
         >
           Additional Projects
         </h2>
-        <ol class="mt-5 px-5 grid gap-y-14 md:gap-x-10 md:grid-cols-3">
-          <Card className="col-span-2">
+        <ol class="mt-5 px-5 grid gap-y-4 sm:gap-x-3 md:gap-x-10 grid-cols-3">
+          <Card className="col-span-3 sm:col-span-2">
             <CardHeader>
               <CardTitle> D3Js Reference Tutorial </CardTitle>
               <CardDescription>
@@ -436,8 +437,7 @@ import { gsap } from "gsap";
               ></CardFooter
             >
           </Card>
-
-          <Card>
+          <Card className="col-span-3 sm:col-span-1">
             <CardHeader>
               <CardTitle>Chat App</CardTitle>
               <CardDescription>
@@ -455,7 +455,7 @@ import { gsap } from "gsap";
               ></CardFooter
             >
           </Card>
-          <Card>
+          <Card className="col-span-3 sm:col-span-1">
             <CardHeader>
               <CardTitle> Twitch Python Discord Bot </CardTitle>
               <CardDescription>Discord bot built with Python.</CardDescription>
@@ -469,7 +469,7 @@ import { gsap } from "gsap";
               ></CardFooter
             >
           </Card>
-          <Card className="col-span-2">
+          <Card className="col-span-3 sm:col-span-2">
             <CardHeader>
               <CardTitle> Rust Tauri App </CardTitle>
               <CardDescription>
