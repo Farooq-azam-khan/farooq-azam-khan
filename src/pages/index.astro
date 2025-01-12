@@ -34,12 +34,13 @@ import { gsap } from "gsap";
 
   <main class="overflow-hidden dark bg-background text-foreground pb-64">
     <section class="min-h-screen flex items-center justify-start w-full">
-      <div>
+      <div class="w-full">
         <h2
           id="fak"
-          class="text-indigo-400 text-4xl sm:text-7xl font-light font-mono"
+          class="text-indigo-400 text-3xl font-mono
+            sm:text-7xl  "
         >
-          <span>farooq</span><span>_</span><span>khan</span>
+          farooq khan
         </h2>
         <!-- <div class="col-span-1 flex gap-x-3 items-center justify-end">
           <a target="_blank" href="https://github.com/Farooq-azam-khan">
@@ -58,9 +59,14 @@ import { gsap } from "gsap";
         </div> -->
         <h1
           id="mle"
-          class="flex leading-[6rem] text-7xl md:leading-[10rem] items-center justify-end tracking-wide text-stone-200 md:text-[12rem] lg:text-[13rem] font-bold"
+          class="text-stone-100 bg-indigo-800/10 sm:w-full tracking-wide text-3xl text-stone-200 font-bold
+                 sm:leading-[7rem] sm:text-[9rem] sm:font-bold
+                 md:leading-[9rem] md:text-[11rem]
+                 lg:text-[13rem] lg:leading-[10rem] lg:mt-3"
         >
-          Machine Learning Engineer
+        Machine <br class="hidden sm:block"/> 
+       Learning
+        <br class="hidden sm:block"/> Engineer
         </h1>
       </div>
     </section>
@@ -115,17 +121,17 @@ import { gsap } from "gsap";
         );
       });
     </script>
-    <section class="min-h-screen flex items-center justify-start">
+    <section  class="min-h-screen flex items-center justify-start"
+        id="fe-section">
       <div>
         <div
-          id="fe-section"
           class="font-mono text-3xl w-full h-full grid gap-y-5 grid-rows-4 grid-cols-5"
         >
           <p
             data-fs-row-1
             class="flex items-center justify-center row-start-1 col-span-5 font-serif text-3xl sm:text-6xl"
           >
-            focusing on
+           interested in 
           </p>
           <div
             data-fs-row-2
@@ -165,9 +171,9 @@ import { gsap } from "gsap";
           </div>
           <div
             data-fs-row-4
-            class="row-start-4 text-4xl sm:text-8xl col-span-5 flex items-center justify-center"
+            class="row-start-4 text-4xl sm:text-7xl col-span-5 flex items-center justify-center"
           >
-            enhanced LLM Agents
+            Enhanced LLM Agents
           </div>
         </div>
       </div>
@@ -223,13 +229,13 @@ import { gsap } from "gsap";
     </script>
 
     <section class="min-h-screen flex items-center justify-center">
-      <div class="lg:max-w-4xl text-center">
+      <div id="bridge-section" class=" lg:max-w-4xl text-center">
+          
         <p
-          id="bridge-section"
           class="font-serif text-4xl sm:text-6xl lg:text-7xl"
         >
           Bridging best parts of theory and practice to create impactful,
-          intelligent systems<span class="text-indigo-900">.</span>
+          intelligent systems<span class="text-indigo-800">.</span>
         </p>
       </div>
     </section>
@@ -239,10 +245,10 @@ import { gsap } from "gsap";
         const bridgetimeline = gsap.timeline({
           scrollTrigger: {
             trigger: "#bridge-section",
-            start: "top center",
-            end: "bottom center",
+            start: "bottom center",
+            end: "bottom top",
             scrub: 1,
-            //markers: true,
+            // markers: true,
           },
         });
 
@@ -259,105 +265,16 @@ import { gsap } from "gsap";
     </script>
 
     <section class="">
-      <!-- <div class=""> -->
-      <!-- <div class="pt-20 flex items-center justify-between"> -->
-      <!-- <div class="flex items-center space-x-2">
-
-          </div> -->
-      <!-- </div> -->
+   
       <h2
         class="px-5 md:px-0 text-center text-foreground text-4xl font-semibold tracking-wide lg:mx-auto lg:max-w-3xl"
       >
         Blog Highlights
       </h2>
-
-      <!-- <div class="mt-32 md:mt-64 rounded-md"> -->
       <div class="mt-5 space-y-14">
         <BlogSectionCarousel client:load />
-        <!-- <Card>
-          <CardHeader>
-            <CardTitle
-              >Scaling LLMs with Triton Inference Server: A Hands-on Guide</CardTitle
-            >
-            <CardDescription
-              >Get hands-on experience with deploying Large Language Models
-              (LLMs) at scale using NVIDIA's Triton Inference Server.
-            </CardDescription>
-          </CardHeader>
-          <CardContent />
-          <CardFooter
-            ><a
-              href="https://blog.farooqkhan.ca/fast-llm-inferencing"
-              target="blank_"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
-              >Read more<RightArrow /></a
-            ></CardFooter
-          >
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle> Term Frequency-Inverse Document Frequency </CardTitle>
-            <CardDescription
-              >In this tutorial we will look at what TF and IDF are and how they
-              can be use to process text data for Machine learning.
-            </CardDescription>
-          </CardHeader>
-          <CardContent />
-          <CardFooter
-            ><a
-              href="https://blog.farooqkhan.ca/tfidf"
-              target="blank_"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
-              >Read more<RightArrow /></a
-            ></CardFooter
-          >
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Large Scale Vector Comparison</CardTitle>
-            <CardDescription>
-              In this post, we will look at the quora qna dataset and aim to
-              encode and compare all question pairs. The purpose of is to look
-              at a real dataset.</CardDescription
-            >
-          </CardHeader>
-          <CardContent />
-          <CardFooter
-            ><a
-              href="https://blog.farooqkhan.ca/cosine-similarity-pt-2"
-              target="blank_"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
-              >Read more
-              <RightArrow />
-            </a></CardFooter
-          >
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>
-              Comparing Vectors with Cosine Simlarity Function
-            </CardTitle>
-            <CardDescription>
-              This tutorial will focus on the math behind text vector similarity
-              using numpy, pytorch, and stentence-transformers libraries in
-              python.</CardDescription
-            >
-          </CardHeader>
-          <CardContent />
-          <CardFooter
-            ><a
-              href="https://blog.farooqkhan.ca/cosine-similarity"
-              target="blank_"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
-              >Read more<RightArrow /></a
-            ></CardFooter
-          >
-        </Card> -->
       </div>
-      <!-- </div> -->
-      <!-- </div> -->
     </section>
-    <!-- <section class="mt-32"> -->
     <section class="mt-64 font-mono px-5 md:px-0 md:mx-auto md:max-w-6xl">
       <h2
         class="text-center text-foreground text-4xl font-semibold tracking-wide"
@@ -370,9 +287,17 @@ import { gsap } from "gsap";
         <Card className="col-span-2">
           <CardHeader>
             <CardTitle>Race Car RL Agent</CardTitle>
-            <CardDescription>Comming Soon...</CardDescription>
+            <CardDescription>Using Deep Q Learning to create a self driving car.</CardDescription>
           </CardHeader>
-          <CardContent />
+          <CardContent>
+              <a target="blank_" 
+                 href="https://github.com/Farooq-azam-khan/unpublished-papers/blob/main/deep-q-learning.pdf" 
+                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800">
+                  Read the Paper
+              </a>
+
+          </CardContent>
+                    
         </Card>
         <Card className="col-span-2 sm:col-span-1">
           <CardHeader>
@@ -381,13 +306,22 @@ import { gsap } from "gsap";
               Efficient Net finetuned on Classifying different types of Garbage.
             </CardDescription>
           </CardHeader>
-          <CardContent />
-          <CardFooter>
+          <CardContent>
+                
+          </CardContent>
+          <CardFooter className="flex justify-between items-center">
+       <a target="blank_" 
+                 href="https://github.com/Farooq-azam-khan/unpublished-papers/blob/main/deep-q-learning.pdf" 
+                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800">
+                 Read the Paper
+              </a>
             <a
               href="https://github.com/Farooq-azam-khan/cps803-course-project"
               target="blank_"
               class="rounded-lg"><GithubIcon /></a
-            ></CardFooter
+          >
+ 
+          </CardFooter
           >
         </Card>
         <Card className="col-span-2 sm:col-span-1">
