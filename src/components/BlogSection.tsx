@@ -16,6 +16,12 @@ import {
 import { MoveRight } from "lucide-react";
 
 const blogs = [
+{
+    title: "Importance of Maximum Likelihood Estimation for Machine Learning",
+    description: `Learn about the Maximum Likelihood Estimator and the Gradient Descent Algorithm.`,
+    cta: "https://blog.farooqkhan.ca/mle",
+  },
+
   {
     title: "Scaling LLMs with Triton Inference Server: A Hands-on Guide",
     description: `Get hands-on experience with deploying Large Language Models
