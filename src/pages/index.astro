@@ -1,9 +1,11 @@
 ---
 import "@fontsource-variable/montserrat";
+import Marquee from "@/components/ui/marquee";
 import Layout from "../layouts/Layout.astro";
 import GithubIcon from "../components/GithubIcon.astro";
 import "@/styles/globals.css";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { LinkButton } from "@/components/link-button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -16,10 +18,8 @@ import { MoveDown, Plus, Link, MoveRight } from "lucide-react";
 import { BlogSectionCarousel } from "@/components/BlogSection.tsx";
 import { gsap } from "gsap";
 
-
-
 const blogs = [
-{
+  {
     title: "Importance of Maximum Likelihood Estimation for Machine Learning",
     description: `Learn about the Maximum Likelihood Estimator and the Gradient Descent Algorithm.`,
     cta: "https://blog.farooqkhan.ca/mle",
@@ -64,9 +64,12 @@ const blogs = [
     src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
   ></script>
 
-  <main class="font-neo-brutal overflow-hidden dark bg-background text-foreground pb-64">
+  <main
+    class="font-neo-brutal overflow-hidden dark bg-background text-foreground pb-64"
+  >
     <section class="min-h-screen flex items-center justify-start w-full">
       <div class="w-full">
+        <Marquee items={["Welcome ", "to", "my site"]} />
         <h2
           id="fak"
           class="text-indigo-400 text-3xl font-mono
@@ -327,31 +330,31 @@ const blogs = [
             >
           </CardHeader>
           <CardContent>
-            <a
+            <LinkButton
               target="blank_"
               href="https://github.com/Farooq-azam-khan/unpublished-papers/blob/main/deep-q-learning.pdf"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
             >
               Read the Paper
-            </a>
+            </LinkButton>
           </CardContent>
         </Card>
         <Card className="col-span-2 sm:col-span-1">
           <CardHeader>
-            <CardTitle>Garbage Classification with CNN </CardTitle>
-            <CardDescription>
+            <CardTitle className="line-clamp-2"
+              >Garbage Classification with CNN
+            </CardTitle>
+            <CardDescription className="line-clamp-3">
               Efficient Net finetuned on Classifying different types of Garbage.
             </CardDescription>
           </CardHeader>
           <CardContent />
           <CardFooter className="flex justify-between items-center">
-            <a
+            <LinkButton
               target="blank_"
               href="https://github.com/Farooq-azam-khan/unpublished-papers/blob/main/deep-q-learning.pdf"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
             >
               Read the Paper
-            </a>
+            </LinkButton>
             <a
               href="https://github.com/Farooq-azam-khan/cps803-course-project"
               target="blank_"
@@ -361,19 +364,22 @@ const blogs = [
         </Card>
         <Card className="col-span-2 sm:col-span-1">
           <CardHeader>
-            <CardTitle> Haiku Generator</CardTitle>
-            <CardDescription
+            <CardTitle className="line-clamp-2"> Haiku Generator</CardTitle>
+            <CardDescription className="line-clamp-3"
               >Prompt engineering experimentation to generate Haikus with LLMs.</CardDescription
             >
           </CardHeader>
           <CardContent />
-          <CardFooter
-            ><a
-              href="https://github.com/Farooq-azam-khan/haiku/"
-              target="blank_"
-              class="rounded-lg"><GithubIcon /></a
-            ></CardFooter
-          >
+          <CardFooter className="flex justify-between items-center">
+            <Button disabled>View App</Button>
+            <div>
+              <a
+                href="https://github.com/Farooq-azam-khan/haiku/"
+                target="blank_"
+                class="rounded-lg"><GithubIcon /></a
+              >
+            </div>
+          </CardFooter>
         </Card>
         <!-- </div> -->
       </ol>
@@ -388,8 +394,10 @@ const blogs = [
         <ol class="mt-5 px-5 grid gap-y-4 sm:gap-x-3 md:gap-x-10 grid-cols-3">
           <Card className="col-span-3 sm:col-span-2">
             <CardHeader>
-              <CardTitle> D3Js Reference Tutorial </CardTitle>
-              <CardDescription>
+              <CardTitle className="line-clamp-2"
+                >D3-js Reference Tutorial
+              </CardTitle>
+              <CardDescription className="line-clamp-3">
                 Web app to reference D3 library and its many features.</CardDescription
               >
             </CardHeader>
@@ -506,10 +514,10 @@ const blogs = [
               {"{"} Graph Database, Postgres DB {"}"}
               {"x"}
               {"{"} MLOps, DevOps {"}"}
-            {"=>"} Solve Problems</div>
+              {"=>"} Solve Problems
+            </div>
           </CardContent>
         </Card>
-      
       </ul>
     </section>
   </main>

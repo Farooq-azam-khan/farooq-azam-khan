@@ -6,6 +6,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { LinkButton } from "@/components/link-button";
 import {
   Card,
   CardContent,
@@ -41,13 +42,14 @@ export function BlogSectionCarousel({ blogs }: { blogs: Blog[] }) {
               </CardHeader>
               <CardContent />
               <CardFooter>
-                <Button asChild><a
+                <LinkButton
                   href={blog.cta}
                   target="blank_"
+                  className="inline-flex items-center space-x-3"
                 >
                   Read more
                   <MoveRight />
-                </a></Button>
+                </LinkButton>
               </CardFooter>
             </Card>
           </CarouselItem>
