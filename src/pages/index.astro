@@ -67,9 +67,11 @@ const blogs = [
   <main
     class="font-neo-brutal overflow-hidden dark bg-background text-foreground pb-64"
   >
-    <section class="min-h-screen flex items-center justify-start w-full">
+    <section class="min-h-screen w-full pb-64">
       <div class="w-full">
-        <Marquee items={["Welcome ", "to", "my site"]} />
+        <div class="py-4">
+          <Marquee items={["Welcome ", "to", "my site"]} />
+        </div>
         <h2
           id="fak"
           class="text-indigo-400 text-3xl font-mono
@@ -355,10 +357,12 @@ const blogs = [
             >
               Read the Paper
             </LinkButton>
-            <a
+            <LinkButton
+              size="icon"
               href="https://github.com/Farooq-azam-khan/cps803-course-project"
               target="blank_"
-              class="rounded-lg"><GithubIcon /></a
+            >
+              <GithubIcon /></LinkButton
             >
           </CardFooter>
         </Card>
@@ -373,10 +377,11 @@ const blogs = [
           <CardFooter className="flex justify-between items-center">
             <Button disabled>View App</Button>
             <div>
-              <a
+              <LinkButton
+                size="icon"
                 href="https://github.com/Farooq-azam-khan/haiku/"
                 target="blank_"
-                class="rounded-lg"><GithubIcon /></a
+                class="rounded-lg"><GithubIcon /></LinkButton
               >
             </div>
           </CardFooter>
@@ -403,14 +408,16 @@ const blogs = [
             </CardHeader>
             <CardContent />
             <CardFooter className="space-x-3">
-              <a
+              <LinkButton
+                size="icon"
                 href="https://github.com/Farooq-azam-khan/d3js-tutorials"
-                target="blank_"><GithubIcon /></a
-              ><a
+                target="blank_"><GithubIcon /></LinkButton
+              ><LinkButton
+                size="icon"
                 target="blank_"
                 href="https://farooq-azam-khan.github.io/d3js-tutorials/"
               >
-                <Link /></a
+                <Link /></LinkButton
               ></CardFooter
             >
           </Card>
@@ -425,10 +432,11 @@ const blogs = [
             </CardHeader>
             <CardContent />
             <CardFooter
-              ><a
+              ><LinkButton
+                size="icon"
                 href="https://github.com/Farooq-azam-khan/chat-app-elm"
                 target="blank_"
-                class="rounded-lg"><GithubIcon /></a
+                class="rounded-lg"><GithubIcon /></LinkButton
               ></CardFooter
             >
           </Card>
@@ -439,10 +447,11 @@ const blogs = [
             </CardHeader>
             <CardContent />
             <CardFooter
-              ><a
+              ><LinkButton
+                size="icon"
                 href="https://github.com/Farooq-azam-khan/twitch-api-discord-bot"
                 target="blank_"
-                class="rounded-lg"><GithubIcon /></a
+                class="rounded-lg"><GithubIcon /></LinkButton
               ></CardFooter
             >
           </Card>
@@ -456,10 +465,11 @@ const blogs = [
             </CardHeader>
             <CardContent />
             <CardFooter
-              ><a
+              ><LinkButton
+                size="icon"
                 href="https://github.com/Farooq-azam-khan/color-picker-tauri-test-project"
                 target="blank_"
-                class="rounded-lg"><GithubIcon /></a
+                class="rounded-lg"><GithubIcon /></LinkButton
               ></CardFooter
             >
           </Card>
@@ -496,10 +506,10 @@ const blogs = [
               </li>
             </ul></CardContent
           ><CardFooter
-            ><a
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-stone-700 rounded-lg hover:bg-stone-800 focus:ring-4 focus:outline-none focus:ring-stone-300 dark:bg-stone-600 dark:hover:bg-stone-700 dark:focus:ring-stone-800"
+            ><LinkButton
+              className="font-medium dark:text-white dark:bg-indigo-500 dark:hover:bg-indigo-600"
               href="https://www.goodreads.com/user/show/133899873-farooq"
-              target="blank_">Goodreads for other stuff<MoveRight /></a
+              target="blank_">Goodreads for other stuff<MoveRight /></LinkButton
             >
           </CardFooter></Card
         >
@@ -508,7 +518,7 @@ const blogs = [
             <CardTitle> Software Engineering </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="font-mono">
+            <div class="font-mono">
               {"{"} TypeScript, Rust, Python {"}"}
               {"x"}
               {"{"} Graph Database, Postgres DB {"}"}

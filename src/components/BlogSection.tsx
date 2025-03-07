@@ -41,7 +41,7 @@ export function BlogSectionCarousel({ blogs }: { blogs: Blog[] }) {
                 <CardDescription className="line-clamp-3">{blog.description}</CardDescription>
               </CardHeader>
               <CardContent />
-              <CardFooter>
+              <CardFooter className="flex items-center justify-between w-full h-full">
                 <LinkButton
                   href={blog.cta}
                   target="blank_"
