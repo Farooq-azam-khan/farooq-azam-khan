@@ -1,4 +1,5 @@
 ---
+import "@fontsource-variable/montserrat";
 import Layout from "../layouts/Layout.astro";
 import GithubIcon from "../components/GithubIcon.astro";
 import "@/styles/globals.css";
@@ -10,14 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  CornerDownLeft,
-  CornerDownRight,
-  MoveDown,
-  Plus,
-  Link,
-  MoveRight,
-} from "lucide-react";
+import { MoveDown, Plus, Link, MoveRight } from "lucide-react";
 import { BlogSectionCarousel } from "@/components/BlogSection.tsx";
 import { gsap } from "gsap";
 ---
@@ -38,7 +32,7 @@ import { gsap } from "gsap";
         <h2
           id="fak"
           class="text-indigo-400 text-3xl font-mono
-            sm:text-7xl  "
+            sm:text-7xl"
         >
           farooq khan
         </h2>
@@ -59,14 +53,19 @@ import { gsap } from "gsap";
         </div> -->
         <h1
           id="mle"
-          class="text-stone-100 sm:w-full tracking-wide text-3xl text-stone-200 font-bold
-                 sm:leading-[7rem] sm:text-[9rem] sm:font-bold
+          class="text-stone-100 sm:w-full tracking-wide text-3xl
+                 sm:leading-[7rem] sm:text-[9rem]
                  md:leading-[9rem] md:text-[11rem]
                  lg:text-[13rem] lg:leading-[10rem] lg:mt-3"
         >
-        Machine <br class="hidden sm:block"/> 
-       Learning
-        <br class="hidden sm:block"/> Engineer
+          <style>
+            #mle {
+              font-family: "montserrat" sans-serif;
+            }
+          </style>
+          Machine <br class="hidden sm:block" />
+          Learning
+          <br class="hidden sm:block" /> Engineer
         </h1>
       </div>
     </section>
@@ -121,8 +120,10 @@ import { gsap } from "gsap";
         );
       });
     </script>
-    <section  class="min-h-screen flex items-center justify-start"
-        id="fe-section">
+    <section
+      class="min-h-screen flex items-center justify-start"
+      id="fe-section"
+    >
       <div>
         <div
           class="font-mono text-3xl w-full h-full grid gap-y-5 grid-rows-4 grid-cols-5"
@@ -131,7 +132,7 @@ import { gsap } from "gsap";
             data-fs-row-1
             class="flex items-center justify-center row-start-1 col-span-5 font-serif text-3xl sm:text-6xl"
           >
-           interested in 
+            interested in
           </p>
           <div
             data-fs-row-2
@@ -229,11 +230,8 @@ import { gsap } from "gsap";
     </script>
 
     <section class="min-h-screen flex items-center justify-center">
-      <div id="bridge-section" class=" lg:max-w-4xl text-center">
-          
-        <p
-          class="font-serif text-4xl sm:text-6xl lg:text-7xl"
-        >
+      <div id="bridge-section" class="lg:max-w-4xl text-center">
+        <p class="font-serif text-4xl sm:text-6xl lg:text-7xl">
           Bridging best parts of theory and practice to create impactful,
           intelligent systems<span class="text-indigo-800">.</span>
         </p>
@@ -265,7 +263,6 @@ import { gsap } from "gsap";
     </script>
 
     <section class="">
-   
       <h2
         class="px-5 md:px-0 text-center text-foreground text-4xl font-semibold tracking-wide lg:mx-auto lg:max-w-3xl"
       >
@@ -287,17 +284,19 @@ import { gsap } from "gsap";
         <Card className="col-span-2">
           <CardHeader>
             <CardTitle>Race Car RL Agent</CardTitle>
-            <CardDescription>Using Deep Q Learning to create a self driving car.</CardDescription>
+            <CardDescription
+              >Using Deep Q Learning to create a self driving car.</CardDescription
+            >
           </CardHeader>
           <CardContent>
-              <a target="blank_" 
-                 href="https://github.com/Farooq-azam-khan/unpublished-papers/blob/main/deep-q-learning.pdf" 
-                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800">
-                  Read the Paper
-              </a>
-
+            <a
+              target="blank_"
+              href="https://github.com/Farooq-azam-khan/unpublished-papers/blob/main/deep-q-learning.pdf"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
+            >
+              Read the Paper
+            </a>
           </CardContent>
-                    
         </Card>
         <Card className="col-span-2 sm:col-span-1">
           <CardHeader>
@@ -306,23 +305,21 @@ import { gsap } from "gsap";
               Efficient Net finetuned on Classifying different types of Garbage.
             </CardDescription>
           </CardHeader>
-          <CardContent>
-                
-          </CardContent>
+          <CardContent />
           <CardFooter className="flex justify-between items-center">
-       <a target="blank_" 
-                 href="https://github.com/Farooq-azam-khan/unpublished-papers/blob/main/deep-q-learning.pdf" 
-                 class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800">
-                 Read the Paper
-              </a>
+            <a
+              target="blank_"
+              href="https://github.com/Farooq-azam-khan/unpublished-papers/blob/main/deep-q-learning.pdf"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
+            >
+              Read the Paper
+            </a>
             <a
               href="https://github.com/Farooq-azam-khan/cps803-course-project"
               target="blank_"
               class="rounded-lg"><GithubIcon /></a
-          >
- 
-          </CardFooter
-          >
+            >
+          </CardFooter>
         </Card>
         <Card className="col-span-2 sm:col-span-1">
           <CardHeader>
@@ -483,9 +480,5 @@ import { gsap } from "gsap";
         </div> -->
       </ul>
     </section>
-
-
-
-
   </main>
 </Layout>
