@@ -10,6 +10,9 @@ export default {
         sm: 'calc(var(--radius) - 4px)'
       },
       colors: {
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+
         main: 'var(--main)',
         overlay: 'var(--overlay)',
         bg: 'var(--bg)',
@@ -24,9 +27,7 @@ export default {
         secondaryBlack: '#212121',
       },
       /*colors: {
-          background: 'hsl(var(--background))',
-          foreground: 'hsl(var(--foreground))',
-          card: {
+         card: {
             DEFAULT: 'hsl(var(--card))',
             foreground: 'hsl(var(--card-foreground))'
           },
@@ -94,7 +95,6 @@ export default {
         }
       }
     }
-  }
-},
-plugins: [require("tailwindcss-animate")],
+  },
+  plugins: [require("tailwindcss-animate")],
 };
