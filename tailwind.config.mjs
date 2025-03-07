@@ -10,8 +10,8 @@ export default {
         sm: 'calc(var(--radius) - 4px)'
       },
       colors: {
-        background: 'var(--bg)',//'hsl(var(--background))',
-        foreground: 'var(--bg)',//'hsl(var(--foreground))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
 
         main: 'var(--main)',
         overlay: 'var(--overlay)',
@@ -70,6 +70,9 @@ export default {
       fontWeight: {
         base: '600',
         heading: '900',
+      },
+      fontFamily: {
+        'neo-brutal': ['"montserrat', 'sans-serif'],
       },
       border: 'hsl(var(--border))',
       input: 'hsl(var(--input))',

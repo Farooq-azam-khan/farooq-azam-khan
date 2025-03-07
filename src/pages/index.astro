@@ -15,6 +15,43 @@ import {
 import { MoveDown, Plus, Link, MoveRight } from "lucide-react";
 import { BlogSectionCarousel } from "@/components/BlogSection.tsx";
 import { gsap } from "gsap";
+
+
+
+const blogs = [
+{
+    title: "Importance of Maximum Likelihood Estimation for Machine Learning",
+    description: `Learn about the Maximum Likelihood Estimator and the Gradient Descent Algorithm.`,
+    cta: "https://blog.farooqkhan.ca/mle",
+  },
+
+  {
+    title: "Scaling LLMs with Triton Inference Server: A Hands-on Guide",
+    description: `Get hands-on experience with deploying Large Language Models
+              (LLMs) at scale using NVIDIA's Triton Inference Server.`,
+    cta: "https://blog.farooqkhan.ca/fast-llm-inferencing",
+  },
+  {
+    title: "Term Frequency-Inverse Document Frequency",
+    description: `In this tutorial we will look at what TF and IDF are and how they
+              can be use to process text data for Machine learning.`,
+    cta: "https://blog.farooqkhan.ca/tfidf",
+  },
+  {
+    title: "Large Scale Vector Comparison",
+    description: `In this post, we will look at the quora qna dataset and aim to
+              encode and compare all question pairs. The purpose of is to look
+              at a real dataset.`,
+    cta: "https://blog.farooqkhan.ca/cosine-similarity-pt-2",
+  },
+  {
+    title: "Comparing Vectors with Cosine Simlarity Function",
+    description: `This tutorial will focus on the math behind text vector similarity
+              using numpy, pytorch, and stentence-transformers libraries in
+              python.`,
+    cta: "https://blog.farooqkhan.ca/cosine-similarity",
+  },
+];
 ---
 
 <Layout>
@@ -27,7 +64,7 @@ import { gsap } from "gsap";
     src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
   ></script>
 
-  <main class="overflow-hidden dark bg-background text-foreground pb-64">
+  <main class="font-neo-brutal overflow-hidden dark bg-background text-foreground pb-64">
     <section class="min-h-screen flex items-center justify-start w-full">
       <div class="w-full">
         <h2
@@ -131,7 +168,7 @@ import { gsap } from "gsap";
         >
           <p
             data-fs-row-1
-            class="flex items-center justify-center row-start-1 col-span-5 font-serif text-3xl sm:text-6xl"
+            class="flex items-center justify-center row-start-1 col-span-5 text-3xl sm:text-6xl"
           >
             interested in
           </p>
@@ -232,7 +269,7 @@ import { gsap } from "gsap";
 
     <section class="min-h-screen flex items-center justify-center">
       <div id="bridge-section" class="lg:max-w-4xl text-center">
-        <p class="font-serif text-4xl sm:text-6xl lg:text-7xl">
+        <p class="text-4xl sm:text-6xl lg:text-7xl">
           Bridging best parts of theory and practice to create impactful,
           intelligent systems<span class="text-indigo-800">.</span>
         </p>
@@ -270,7 +307,7 @@ import { gsap } from "gsap";
         Blog Highlights
       </h2>
       <div class="mt-5 space-y-14">
-        <BlogSectionCarousel client:load />
+        <BlogSectionCarousel blogs={blogs} client:load />
       </div>
     </section>
     <section class="mt-64 font-mono px-5 md:px-0 md:mx-auto md:max-w-6xl">
@@ -423,14 +460,14 @@ import { gsap } from "gsap";
     </section>
     <section class="mt-32">
       <h2
-        class="font-serif text-center text-foreground text-4xl font-semibold tracking-wide"
+        class="text-center text-foreground text-4xl font-semibold tracking-wide"
       >
         2025 VISON
       </h2>
       <ul class="mt-5 space-y-14 px-5 lg:max-w-6xl lg:mx-auto">
         <Card className="">
           <CardHeader><CardTitle>Books</CardTitle></CardHeader><CardContent>
-            <ul class="font-serif">
+            <ul class="">
               <li>
                 <a href="https://www.deeplearningbook.org/"
                   >Deep Learning (Ian Goodfellow, Yoshua Bengio, and Aaron
@@ -458,27 +495,21 @@ import { gsap } from "gsap";
             >
           </CardFooter></Card
         >
-        <Card className="font-mono">
+        <Card className="">
           <CardHeader>
             <CardTitle> Software Engineering </CardTitle>
           </CardHeader>
           <CardContent>
-            <div>
-              {"{"} Go, Rust, Python {"}"}
+            <div className="font-mono">
+              {"{"} TypeScript, Rust, Python {"}"}
               {"x"}
               {"{"} Graph Database, Postgres DB {"}"}
-            </div>
-            <div>{"=>"} Backend Development {"=>"} Kubernetes</div>
+              {"x"}
+              {"{"} MLOps, DevOps {"}"}
+            {"=>"} Solve Problems</div>
           </CardContent>
         </Card>
-        <!--
-        <div>
-          <h3 class="text-xl font-bold tracking-tight">Mathematics</h3><p
-            class="text-lg font-normal"
-          >
-            Fourier Analysis, Linear Albegra, Statistics, Graph Thoery.
-          </p>
-        </div> -->
+      
       </ul>
     </section>
   </main>

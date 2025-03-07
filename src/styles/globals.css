@@ -31,9 +31,8 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
-  /*
   .dark {
-    --background: 240 10% 3.9%;
+    --background: 240 10% 14%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -58,7 +57,6 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-*/
 }
 @layer base {
   * {
@@ -94,7 +92,7 @@
 }
 
 .dark {
-  --bg: #0d0e12; 
+  --bg: #272933;
   --bw: #212121;
   --blank: #fff;
   --border: #000;
