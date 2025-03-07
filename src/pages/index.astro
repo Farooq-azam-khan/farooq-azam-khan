@@ -1,6 +1,7 @@
 ---
 import "@fontsource-variable/montserrat";
 import Marquee from "@/components/ui/marquee";
+import { H2 } from "@/components/typography";
 import Layout from "../layouts/Layout.astro";
 import GithubIcon from "../components/GithubIcon.astro";
 import "@/styles/globals.css";
@@ -69,16 +70,15 @@ const blogs = [
   >
     <section class="min-h-screen w-full pb-64">
       <div class="w-full">
-        <div class="py-4">
+        <div class="py-4 mb-24">
           <Marquee items={["Welcome ", "to", "my site"]} />
         </div>
-        <h2
-          id="fak"
-          class="text-indigo-400 text-3xl font-mono
-            sm:text-7xl"
+        <H2 id="fak" className="text-left mb-10 ">
+          <span
+            class="font-base border-border rounded-base border-2 px-4 py-2 shadow-shadow bg-indigo-400"
+            >@farooq-azam-khan</span
+          ></H2
         >
-          farooq khan
-        </h2>
         <!-- <div class="col-span-1 flex gap-x-3 items-center justify-end">
           <a target="_blank" href="https://github.com/Farooq-azam-khan">
             <GithubIcon className="w-10 h-10" />
@@ -306,21 +306,13 @@ const blogs = [
     </script>
 
     <section class="">
-      <h2
-        class="px-5 md:px-0 text-center text-foreground text-4xl font-semibold tracking-wide lg:mx-auto lg:max-w-3xl"
-      >
-        Blog Highlights
-      </h2>
+      <H2> Blog Highlights </H2>
       <div class="mt-5 space-y-14">
         <BlogSectionCarousel blogs={blogs} client:load />
       </div>
     </section>
-    <section class="mt-64 font-mono px-5 md:px-0 md:mx-auto md:max-w-6xl">
-      <h2
-        class="text-center text-foreground text-4xl font-semibold tracking-wide"
-      >
-        Personal AI Projects
-      </h2>
+    <section class="mt-64 font-heading px-5 md:px-0 md:mx-auto md:max-w-6xl">
+      <H2> Personal AI Projects </H2>
       <ol
         class="px-5 xl:px-0 mt-5 grid sm:gap-x-2 gap-y-4 lg:gap-x-10 grid-cols-2"
       >
@@ -390,12 +382,8 @@ const blogs = [
       </ol>
       <!-- </section> -->
 
-      <section class="mt-32 font-mono">
-        <h2
-          class="text-center text-foreground text-4xl font-semibold tracking-wide"
-        >
-          Additional Projects
-        </h2>
+      <section class="mt-32">
+        <H2> Additional Projects </H2>
         <ol class="mt-5 px-5 grid gap-y-4 sm:gap-x-3 md:gap-x-10 grid-cols-3">
           <Card className="col-span-3 sm:col-span-2">
             <CardHeader>
@@ -477,11 +465,7 @@ const blogs = [
       </section>
     </section>
     <section class="mt-32">
-      <h2
-        class="text-center text-foreground text-4xl font-semibold tracking-wide"
-      >
-        2025 VISON
-      </h2>
+      <H2> 2025 VISON </H2>
       <ul class="mt-5 space-y-14 px-5 lg:max-w-6xl lg:mx-auto">
         <Card className="">
           <CardHeader><CardTitle>Books</CardTitle></CardHeader><CardContent>
@@ -507,7 +491,7 @@ const blogs = [
             </ul></CardContent
           ><CardFooter
             ><LinkButton
-              className="font-medium dark:text-white dark:bg-indigo-500 dark:hover:bg-indigo-600"
+              className="font-base dark:text-white dark:bg-indigo-500 dark:hover:bg-indigo-600"
               href="https://www.goodreads.com/user/show/133899873-farooq"
               target="blank_">Goodreads for other stuff<MoveRight /></LinkButton
             >
