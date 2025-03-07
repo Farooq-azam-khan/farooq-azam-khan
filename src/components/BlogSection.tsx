@@ -5,7 +5,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Button, buttonVariants } from "@/components/ui/button";
 import { LinkButton } from "@/components/link-button";
 import {
   Card,
@@ -21,7 +20,6 @@ type Blog = {
   title: string, description: string, cta: string
 }
 
-//className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indgio-800"
 export function BlogSectionCarousel({ blogs }: { blogs: Blog[] }) {
   return (
     <Carousel

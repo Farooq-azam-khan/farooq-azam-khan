@@ -18,7 +18,11 @@ import {
 import { MoveDown, Plus, Link, MoveRight } from "lucide-react";
 import { BlogSectionCarousel } from "@/components/BlogSection.tsx";
 import { gsap } from "gsap";
-
+import posthog from "posthog-js";
+/*posthog.init("phc_l9zYl2thCuee5gj2sI1zCOWtpe7KphtMEObHS8SncgV", {
+  api_host: "https://us.i.posthog.com",
+});
+*/
 const blogs = [
   {
     title: "Importance of Maximum Likelihood Estimation for Machine Learning",

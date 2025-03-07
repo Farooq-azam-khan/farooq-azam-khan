@@ -24,6 +24,7 @@
     "embla-carousel-react": "^8.5.1",
     "gsap": "^3.12.5",
     "lucide-react": "^0.462.0",
+    "posthog-js": "^1.229.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^2.5.5",
