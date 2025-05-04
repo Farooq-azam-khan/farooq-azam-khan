@@ -1,7 +1,7 @@
 ---
 import "@fontsource-variable/montserrat";
 import Marquee from "@/components/ui/marquee";
-import { H2 } from "@/components/typography";
+import { A, H2 } from "@/components/typography";
 import Layout from "../layouts/Layout.astro";
 import GithubIcon from "../components/GithubIcon.astro";
 import "@/styles/globals.css";
@@ -72,42 +72,27 @@ const blogs = [
         <div class="py-4 mb-24">
           <Marquee items={["Welcome ", "to", "my site"]} />
         </div>
-        <H2 id="fak" className="text-left mb-10 ">
+        <H2 id="fak" className="mb-10 ">
           <span
             class="font-base border-border rounded-base border-2 px-4 py-2 shadow-shadow bg-indigo-400"
             >@farooq-azam-khan</span
           ></H2
         >
-        <!-- <div class="col-span-1 flex gap-x-3 items-center justify-end">
-          <a target="_blank" href="https://github.com/Farooq-azam-khan">
-            <GithubIcon className="w-10 h-10" />
-          </a>
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/farooq-khan-46167bb5/"
-          >
-            <img
-              alt="linkedin logo"
-              class="w-5 h-5"
-              src="/linkedin-white.png"
-            />
-          </a>
-        </div> -->
         <h1
           id="mle"
-          class="text-stone-100 text-4xl sm:w-full tracking-wide 
-                 sm:leading-[7rem] sm:text-[9rem]
+          class="tracking-wide leading-[4rem] text-[4rem]
+                 sm:leading-[7rem]  sm:text-[9rem]
                  md:leading-[9rem] md:text-[11rem]
-                 lg:text-[13rem] lg:leading-[10rem] lg:mt-3"
+                 lg:text-[13rem] lg:leading-[10rem] "
         >
           <style>
             #mle {
               font-family: "montserrat" sans-serif;
             }
           </style>
-          Machine <br class="hidden sm:block" />
+          Machine 
           Learning
-          <br class="hidden sm:block" /> Engineer
+          Engineer
         </h1>
       </div>
     </section>
@@ -513,5 +498,18 @@ const blogs = [
         </Card>
       </ul>
     </section>
+    <section class="mt-32">
+      <H2>Inspirational Projects</H2>
+        <Card>
+          <CardHeader></CardHeader>
+            <CardContent>
+              <ul>
+                <li><A target="blank_" href="https://www.tldraw.com/">tldraw</a></li>
+                <li><A target="blank_" href="https://notebooklm.google/">notebooklm</a></li>
+                <li><A target="blank_" href="https://openai.com/sora/">sora</a></li>
+                </ul>
+            </CardContent>
+        </Card>
+          </section>
   </main>
 </Layout>

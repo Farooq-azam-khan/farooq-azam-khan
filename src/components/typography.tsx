@@ -3,6 +3,26 @@ import { cn } from "@/lib/utils"
 import { cva } from "class-variance-authority"
 
 
+const aVariants = cva(
+  "text-foreground hover:bg-foreground hover:text-background",
+
+  {
+    variants: {
+      variant: {
+        default:
+          ""
+      },
+      size: {
+        default: "",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  },
+)
+
 
 const h2Variants = cva(
   "text-center font-heading leading-none tracking-tight lg:mx-auto lg:max-w-3xl",
@@ -24,6 +44,16 @@ const h2Variants = cva(
   },
 )
 
+function A({ className, children, ...props }: any) {
+  return (<a
+
+    className={cn(aVariants({ className }))}
+    {...props}> {children}</a >)
+}
+
+A.displayName = "A"
+
+
 
 function H2({ className, children, ...props }: any) {
   return (<h2
@@ -34,4 +64,4 @@ function H2({ className, children, ...props }: any) {
 
 H2.displayName = "H2"
 
-export { H2, h2Variants }
+export { H2, h2Variants, A, aVariants }
