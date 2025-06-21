@@ -1,6 +1,6 @@
 ---
 import "@fontsource-variable/montserrat";
-import { A, H2 } from "@/components/typography";
+import {H2 } from "@/components/typography";
 import Layout from "../layouts/Layout.astro";
 import "@/styles/globals.css";
 import { LinkButton } from "@/components/link-button";
@@ -92,7 +92,7 @@ const blogs = [
     <script>
       window.addEventListener("load", () => {
         gsap.registerPlugin(ScrollTrigger);
-        const herotimeline = gsap.timeline({});
+        // const herotimeline = gsap.timeline({});
       });
     </script>
 
@@ -331,7 +331,7 @@ const blogs = [
               href="https://github.com/Farooq-azam-khan/cps803-course-project"
               target="blank_"
             >
-              <Github fill /></LinkButton
+              </LinkButton
             >
           </CardFooter>
         </Card>
