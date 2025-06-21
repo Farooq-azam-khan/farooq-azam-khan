@@ -2,7 +2,6 @@
 import "@fontsource-variable/montserrat";
 import { A, H2 } from "@/components/typography";
 import Layout from "../layouts/Layout.astro";
-import GithubIcon from "@/components/GithubIcon.astro";
 import "@/styles/globals.css";
 import { LinkButton } from "@/components/link-button";
 import { Button } from "@/components/ui/button";
@@ -14,9 +13,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { MoveDown, Plus, Link, MoveRight } from "lucide-react";
-import { BlogSectionCarousel } from "@/components/BlogSection.tsx";
+import { MoveDown, Plus, Link, MoveRight, Github, Linkedin} from "lucide-react";
+import { BlogSectionCarousel, inspirations } from "@/components/BlogSection.tsx";
 import { gsap } from "gsap";
+import Marquee from "@/components/ui/marquee";
 
 const blogs = [
   {
@@ -52,6 +52,8 @@ const blogs = [
     cta: "https://blog.farooqkhan.ca/cosine-similarity",
   },
 ];
+
+
 ---
 
 <Layout>
@@ -65,22 +67,26 @@ const blogs = [
   ></script>
 
   <main
-    class="font-neo-brutal overflow-hidden bg-background text-foreground pb-64"
+    class="font-neo-brutal overflow-hidden bg-my-white   pb-64"
   >
     <section class="min-h-screen w-full pb-64 flex flex-col items-center justify-center">
       <div>
         <a 
         target="_blank"
-        class="inline-flex items-center justify-center whitespace-nowrap rounded-base text-sm font-base ring-offset-white transition-all gap-2 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-mtext bg-main border-2 border-border shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none h-10 px-4 py-2" 
-        href="https://github.com/farooq-azam-khan/"><GithubIcon/> @farooq-azam-khan</a></div> 
+        class="inline-flex items-center justify-center whitespace-nowrap rounded-base text-sm font-base ring-offset-white transition-all gap-2 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-button-foreground bg-button border-2 border-border shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none h-10 px-4 py-2" 
+        href="https://github.com/farooq-azam-khan/"><Github fill="var(--text-button-foreground)" /> @farooq-azam-khan</a></div> 
         <h1
           id="mle"
-          class="my-3 text-xl text-center bg-indigo-500 -skew-x-12 text-background px-5 py-1 leading-[1.5rem] tracking-wide
+          class="my-3 text-xl text-center text-my-white bg-indigo-500 -skew-x-12 px-5 py-1 leading-[1.5rem] tracking-wide
            sm:leading-[4rem]  sm:text-2xl sm:tracking-wider
           md:text-4xl md:tracking-widest
           lg:leading-[5rem]"
         > Machine Learning Engineer
         </h1>
+         <a 
+        target="_blank"
+        class="inline-flex items-center justify-center whitespace-nowrap rounded-base text-sm font-base ring-offset-white transition-all gap-2 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-button-foreground bg-button border-2 border-border shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none h-10 px-4 py-2" 
+        href="https://www.linkedin.com/in/farooq-khan-46167bb5/"><Linkedin fill="var(--text-button-foreground)" /> </a></div>
         
     </section>
     <script>
@@ -325,7 +331,7 @@ const blogs = [
               href="https://github.com/Farooq-azam-khan/cps803-course-project"
               target="blank_"
             >
-              <GithubIcon /></LinkButton
+              <Github fill /></LinkButton
             >
           </CardFooter>
         </Card>
@@ -344,18 +350,40 @@ const blogs = [
                 size="icon"
                 href="https://github.com/Farooq-azam-khan/haiku/"
                 target="blank_"
-                class="rounded-lg"><GithubIcon /></LinkButton
+                class="rounded-lg"><Github fill="var(--text-button-foreground)" /> </LinkButton
               >
             </div>
           </CardFooter>
         </Card>
-        <!-- </div> -->
       </ol>
-      <!-- </section> -->
+ <script>
+      window.addEventListener("load", () => {
+        gsap.registerPlugin(ScrollTrigger);
+        const bridgetimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#additional-projects",
+            start: "bottom bottom",
+            end: "bottom top",
+            scrub: 1,
+            // markers: true,
+          },
+        });
 
-      <section class="mt-32">
+        bridgetimeline.fromTo(
+          "#additional-projects",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+          },
+        );
+      });
+    </script>
+      <section id="additional-projects" class="mt-32">
         <H2> Additional Projects </H2>
-        <ol class="mt-5 px-5 grid gap-y-4 sm:gap-x-3 md:gap-x-10 grid-cols-3">
+       
+        <ol  class="mt-5 px-5 grid gap-y-4 sm:gap-x-3 md:gap-x-10 grid-cols-3">
           <Card className="col-span-3 sm:col-span-2">
             <CardHeader>
               <CardTitle className="line-clamp-2"
@@ -370,7 +398,8 @@ const blogs = [
               <LinkButton
                 size="icon"
                 href="https://github.com/Farooq-azam-khan/d3js-tutorials"
-                target="blank_"><GithubIcon /></LinkButton
+                target="blank_">
+                <Github /></LinkButton
               ><LinkButton
                 size="icon"
                 target="blank_"
@@ -395,7 +424,7 @@ const blogs = [
                 size="icon"
                 href="https://github.com/Farooq-azam-khan/chat-app-elm"
                 target="blank_"
-                class="rounded-lg"><GithubIcon /></LinkButton
+                class="rounded-lg"><Github fill="var(--text-button-foreground)" /> </LinkButton
               ></CardFooter
             >
           </Card>
@@ -410,7 +439,7 @@ const blogs = [
                 size="icon"
                 href="https://github.com/Farooq-azam-khan/twitch-api-discord-bot"
                 target="blank_"
-                class="rounded-lg"><GithubIcon /></LinkButton
+                class="rounded-lg"><Github fill="var(--text-button-foreground)" /> </LinkButton
               ></CardFooter
             >
           </Card>
@@ -428,15 +457,40 @@ const blogs = [
                 size="icon"
                 href="https://github.com/Farooq-azam-khan/color-picker-tauri-test-project"
                 target="blank_"
-                class="rounded-lg"><GithubIcon /></LinkButton
+                class="rounded-lg"><Github fill="var(--text-button-foreground)" /> </LinkButton
               ></CardFooter
             >
           </Card>
         </ol>
       </section>
     </section>
-    <section class="mt-32">
-      <H2> 2025 VISON </H2>
+
+    <script>
+      window.addEventListener("load", () => {
+        gsap.registerPlugin(ScrollTrigger);
+        const bridgetimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#goals",
+            start: "bottom bottom",
+            end: "bottom top",
+            scrub: 1,
+            // markers: true,
+          },
+        });
+
+        bridgetimeline.fromTo(
+          "#goals",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+          },
+        );
+      });
+    </script>
+    <section id="goals" class="mt-32">
+      <H2> Goals </H2>
       <ul class="mt-5 space-y-14 px-5 lg:max-w-6xl lg:mx-auto">
         <Card className="">
           <CardHeader><CardTitle>Books</CardTitle></CardHeader><CardContent>
@@ -485,18 +539,39 @@ const blogs = [
         </Card>
       </ul>
     </section>
-    <section class="mt-32">
-      <H2>Inspirational Projects</H2>
-        <Card>
-          <CardHeader></CardHeader>
-            <CardContent>
-              <ul>
-                <li><A target="blank_" href="https://www.tldraw.com/">tldraw</a></li>
-                <li><A target="blank_" href="https://notebooklm.google/">notebooklm</a></li>
-                <li><A target="blank_" href="https://openai.com/sora/">sora</a></li>
-                </ul>
-            </CardContent>
-        </Card>
+
+    <script>
+      window.addEventListener("load", () => {
+        gsap.registerPlugin(ScrollTrigger);
+        const bridgetimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#inspirations",
+            start: "bottom bottom",
+            end: "bottom top",
+            scrub: 1,
+            // markers: true,
+          },
+        });
+
+        bridgetimeline.fromTo(
+          "#inspirations",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+          },
+        );
+      });
+    </script>
+
+    <section id="inspirations" class="mt-64 font-heading px-5 md:px-0 md:mx-auto md:max-w-6xl">
+      <H2>Inspirations</H2>
+      <ul class="mt-5 space-y-14 px-5 lg:max-w-6xl lg:mx-auto">
+       
+              <Marquee items={inspirations} />
+       
+        </ul>
           </section>
   </main>
 </Layout>

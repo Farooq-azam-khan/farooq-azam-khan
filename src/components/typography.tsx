@@ -1,7 +1,6 @@
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
-import { cva } from "class-variance-authority"
-
+import { cva } from "class-variance-authority";
 
 const aVariants = cva(
   "text-foreground hover:bg-foreground hover:text-background",
@@ -9,8 +8,7 @@ const aVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          ""
+        default: "",
       },
       size: {
         default: "",
@@ -21,8 +19,7 @@ const aVariants = cva(
       size: "default",
     },
   },
-)
-
+);
 
 const h2Variants = cva(
   "text-center font-heading leading-none tracking-tight lg:mx-auto lg:max-w-3xl",
@@ -30,8 +27,7 @@ const h2Variants = cva(
   {
     variants: {
       variant: {
-        default:
-          ""
+        default: "",
       },
       size: {
         default: "px-5 md:px-0 text-4xl",
@@ -42,26 +38,27 @@ const h2Variants = cva(
       size: "default",
     },
   },
-)
+);
 
 function A({ className, children, ...props }: any) {
-  return (<a
-
-    className={cn(aVariants({ className }))}
-    {...props}> {children}</a >)
+  return (
+    <a className={cn(aVariants({ className }))} {...props}>
+      {" "}
+      {children}
+    </a>
+  );
 }
 
-A.displayName = "A"
-
-
+A.displayName = "A";
 
 function H2({ className, children, ...props }: any) {
-  return (<h2
-
-    className={cn(h2Variants({ className }))}
-    {...props}>{children}</h2>)
+  return (
+    <h2 className={cn(h2Variants({ className }))} {...props}>
+      {children}
+    </h2>
+  );
 }
 
-H2.displayName = "H2"
+H2.displayName = "H2";
 
-export { H2, h2Variants, A, aVariants }
+export { H2, h2Variants, A, aVariants };
