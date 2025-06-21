@@ -65,36 +65,23 @@ const blogs = [
   ></script>
 
   <main
-    class="font-neo-brutal overflow-hidden dark bg-background text-foreground pb-64"
+    class="font-neo-brutal overflow-hidden bg-background text-foreground pb-64"
   >
-    <section class="min-h-screen w-full pb-64">
-      <div class="w-full">
-        <div class="py-4 mb-24">
-          <Marquee items={["Welcome ", "to", "my site"]} />
-        </div>
-        <H2 id="fak" className="mb-10 ">
-          <span
-            class="font-base border-border rounded-base border-2 px-4 py-2 shadow-shadow bg-indigo-400"
-            >@farooq-azam-khan</span
-          ></H2
-        >
+    <section class="min-h-screen w-full pb-64 flex flex-col items-center justify-center">
+      <div>
+        <a 
+        target="_blank"
+        class="inline-flex items-center justify-center whitespace-nowrap rounded-base text-sm font-base ring-offset-white transition-all gap-2 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-mtext bg-main border-2 border-border shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none h-10 px-4 py-2" 
+        href="https://github.com/farooq-azam-khan/"> @farooq-azam-khan</a></div>
         <h1
-          id="mle"
-          class="tracking-wide leading-[4rem] text-[4rem]
-                 sm:leading-[7rem]  sm:text-[9rem]
-                 md:leading-[9rem] md:text-[11rem]
-                 lg:text-[13rem] lg:leading-[10rem] "
-        >
-          <style>
-            #mle {
-              font-family: "montserrat" sans-serif;
-            }
-          </style>
-          Machine 
-          Learning
-          Engineer
+          id="mle "
+          class="my-3 text-xl text-center bg-foreground text-background px-5 py-1 leading-[1.5rem] tracking-wide
+           sm:leading-[4rem]  sm:text-2xl sm:tracking-wider
+          md:text-4xl md:tracking-widest
+          lg:leading-[5rem]"
+        > Machine Learning Engineer
         </h1>
-      </div>
+        
     </section>
     <script>
       window.addEventListener("load", () => {
