@@ -1,9 +1,9 @@
 ---
 import "@fontsource-variable/montserrat";
-import Marquee from "@/components/ui/marquee";
 import { A, H2 } from "@/components/typography";
 import Layout from "../layouts/Layout.astro";
-import GithubIcon from "../components/GithubIcon.astro";
+import GithubIcon from "@/components/GithubIcon.astro";
+import Slash from "@/components/slash.astro";
 import "@/styles/globals.css";
 import { LinkButton } from "@/components/link-button";
 import { Button } from "@/components/ui/button";
@@ -18,6 +18,7 @@ import {
 import { MoveDown, Plus, Link, MoveRight } from "lucide-react";
 import { BlogSectionCarousel } from "@/components/BlogSection.tsx";
 import { gsap } from "gsap";
+
 const blogs = [
   {
     title: "Importance of Maximum Likelihood Estimation for Machine Learning",
@@ -72,10 +73,10 @@ const blogs = [
         <a 
         target="_blank"
         class="inline-flex items-center justify-center whitespace-nowrap rounded-base text-sm font-base ring-offset-white transition-all gap-2 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-mtext bg-main border-2 border-border shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none h-10 px-4 py-2" 
-        href="https://github.com/farooq-azam-khan/"> @farooq-azam-khan</a></div>
+        href="https://github.com/farooq-azam-khan/"><GithubIcon/> @farooq-azam-khan</a></div> 
         <h1
-          id="mle "
-          class="my-3 text-xl text-center bg-foreground text-background px-5 py-1 leading-[1.5rem] tracking-wide
+          id="mle"
+          class="my-3 text-xl text-center bg-indigo-500 -skew-x-12 text-background px-5 py-1 leading-[1.5rem] tracking-wide
            sm:leading-[4rem]  sm:text-2xl sm:tracking-wider
           md:text-4xl md:tracking-widest
           lg:leading-[5rem]"
