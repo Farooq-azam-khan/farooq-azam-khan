@@ -56,7 +56,7 @@ const blogs = [
 
 ---
 
-<Layout>
+  <Layout>
   <script
     is:inline
     src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
@@ -66,8 +66,10 @@ const blogs = [
     src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
   ></script>
 
-  <main
-    class="font-neo-brutal overflow-hidden bg-my-white   pb-64"
+  <!-- Page Content -->
+  <!-- Note: Layout provides the main wrapper -->
+  <div
+    class="font-neo-brutal overflow-hidden bg-my-white pb-64"
   >
     <section class="min-h-screen w-full pb-64 flex flex-col items-center justify-center">
       <div>
@@ -565,7 +567,7 @@ const blogs = [
       });
     </script>
 
-    <section id="inspirations" class="mt-64 font-heading px-5 md:px-0 md:mx-auto md:max-w-6xl">
+    <section id="inspirations" class="mt-64 pb-64 font-heading px-5 md:px-0 md:mx-auto md:max-w-6xl">
       <H2>Inspirations</H2>
       <ul class="mt-5 space-y-14 px-5 lg:max-w-6xl lg:mx-auto">
        
@@ -573,5 +575,5 @@ const blogs = [
        
         </ul>
           </section>
-  </main>
+    </div>
 </Layout>
