@@ -17,6 +17,7 @@ import { MoveDown, Plus, Link, MoveRight, Github, Linkedin} from "lucide-react";
 import { BlogSectionCarousel, inspirations } from "@/components/BlogSection.tsx";
 import { gsap } from "gsap";
 import Marquee from "@/components/ui/marquee";
+import { InspirationsSection } from "@/components/InspirationsSection.tsx";
 
 const blogs = [
   {
@@ -459,6 +460,8 @@ const blogs = [
         </Card>
       </ul>
     </section>
+    <!-- Inspirations Section -->
+    <InspirationsSection client:load />
 
     <script>
       window.addEventListener("load", () => {
