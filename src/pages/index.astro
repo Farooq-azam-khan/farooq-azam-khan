@@ -268,23 +268,22 @@ const blogs = [
     <section class="mt-64 font-heading px-5 md:px-0 md:mx-auto md:max-w-6xl">
       <H2> 🤖 Experiments & Creations </H2>
       <ol class="px-5 xl:px-0 mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <Card>
+        <Card class="relative flex flex-col border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] bg-purple-200 transition-transform duration-200 hover:skew-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,1)]">
+          <div class="absolute top-2 left-2 font-mono font-bold text-lg">01</div>
           <CardHeader>
             <CardTitle>Race Car RL Agent</CardTitle>
             <CardDescription>
               Developed a Deep Q-Learning agent in a simulated racing environment (e.g., OpenAI Gym CarRacing) to autonomously navigate tracks by learning from reward feedback.
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            <LinkButton
-              target="blank_"
-              href="https://github.com/Farooq-azam-khan/unpublished-papers/blob/main/deep-q-learning.pdf"
-            >
-              Read the Paper
+          <CardContent class="flex-grow flex items-end">
+            <LinkButton href="https://github.com/Farooq-azam-khan/unpublished-papers/blob/main/deep-q-learning.pdf" target="blank_" class="w-full py-2 text-center bg-yellow-300 text-black font-bold">
+              Read the Paper →
             </LinkButton>
           </CardContent>
         </Card>
-        <Card>
+        <Card class="relative flex flex-col border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] bg-yellow-200 transition-transform duration-200 hover:skew-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,1)]">
+          <div class="absolute top-2 left-2 font-mono font-bold text-lg">02</div>
           <CardHeader>
             <CardTitle className="line-clamp-2"
               >Garbage Classification with CNN
@@ -294,24 +293,15 @@ const blogs = [
               enhancing model performance through data augmentation and fine-tuning techniques.
             </CardDescription>
           </CardHeader>
-          <CardContent />
-          <CardFooter className="flex justify-between items-center">
-            <LinkButton
-              target="blank_"
-              href="https://github.com/Farooq-azam-khan/unpublished-papers/blob/main/deep-q-learning.pdf"
-            >
-              Read the Paper
+          <CardContent class="flex-grow" />
+          <CardFooter class="w-full">
+            <LinkButton href="https://github.com/Farooq-azam-khan/unpublished-papers/blob/main/deep-q-learning.pdf" target="blank_" class="w-full py-2 text-center bg-pink-500 text-white font-bold">
+              Read the Paper →
             </LinkButton>
-            <LinkButton
-              size="icon"
-              href="https://github.com/Farooq-azam-khan/cps803-course-project"
-              target="blank_"
-            >
-              </LinkButton
-            >
           </CardFooter>
         </Card>
-        <Card>
+        <Card class="relative flex flex-col border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] bg-green-200 transition-transform duration-200 hover:skew-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,1)]">
+          <div class="absolute top-2 left-2 font-mono font-bold text-lg">03</div>
           <CardHeader>
             <CardTitle className="line-clamp-2"> Haiku Generator</CardTitle>
             <CardDescription className="line-clamp-3">
@@ -319,17 +309,14 @@ const blogs = [
               enforcing syllable constraints and thematic coherence.
             </CardDescription>
           </CardHeader>
-          <CardContent />
-          <CardFooter className="flex justify-between items-center">
-            <Button disabled>View App</Button>
-            <div>
-              <LinkButton
-                size="icon"
-                href="https://github.com/Farooq-azam-khan/haiku/"
-                target="blank_"
-                class="rounded-lg"><Github fill="var(--text-button-foreground)" /> </LinkButton
-              >
-            </div>
+          <CardContent class="flex-grow" />
+          <CardFooter class="w-full flex flex-col space-y-2">
+            <Button disabled class="w-full py-2 bg-gray-300 text-black font-bold">
+              View App
+            </Button>
+            <LinkButton href="https://github.com/Farooq-azam-khan/haiku/" target="blank_" class="w-full py-2 text-center bg-pink-500 text-white font-bold">
+              Source Code →
+            </LinkButton>
           </CardFooter>
         </Card>
       </ol>
