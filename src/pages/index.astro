@@ -66,54 +66,35 @@ const blogs = [
     src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
   ></script>
 
-  <!-- Page Content -->
-  <!-- Note: Layout provides the main wrapper -->
-  <div
-    class="font-neo-brutal overflow-hidden bg-my-white pb-64"
-  >
-    <section class="min-h-screen w-full pb-64 flex flex-col items-center justify-center">
-      <div>
-        <a 
-        target="_blank"
-        class="inline-flex items-center justify-center whitespace-nowrap rounded-base text-sm font-base ring-offset-white transition-all gap-2 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-button-foreground bg-button border-2 border-border shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none h-10 px-4 py-2" 
-        href="https://github.com/farooq-azam-khan/"><Github fill="var(--text-button-foreground)" /> @farooq-azam-khan</a></div> 
-        <h1
-          id="mle"
-          class="my-3 text-xl text-center text-my-white bg-indigo-500 -skew-x-12 px-5 py-1 leading-[1.5rem] tracking-wide
-           sm:leading-[4rem]  sm:text-2xl sm:tracking-wider
+  <!-- Hero Section -->
+  <div class="font-neo-brutal overflow-hidden bg-my-white pb-64">
+    <section id="hero" class="w-full flex flex-col items-center justify-center space-y-8 py-20">
+      <h1
+        id="mle"
+        class="text-xl text-center text-my-white bg-indigo-500 -skew-x-12 px-5 py-1 leading-[1.5rem] tracking-wide
+          sm:leading-[4rem] sm:text-2xl sm:tracking-wider
           md:text-4xl md:tracking-widest
           lg:leading-[5rem]"
-        > Machine Learning Engineer
-        </h1>
-         <a 
-        target="_blank"
-        class="inline-flex items-center justify-center whitespace-nowrap rounded-base text-sm font-base ring-offset-white transition-all gap-2 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-button-foreground bg-button border-2 border-border shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none h-10 px-4 py-2" 
-        href="https://www.linkedin.com/in/farooq-khan-46167bb5/"><Linkedin fill="var(--text-button-foreground)" /> </a></div>
-        
-    </section>
-    <script>
-      window.addEventListener("load", () => {
-        gsap.registerPlugin(ScrollTrigger);
-        // const herotimeline = gsap.timeline({});
-      });
-    </script>
-
-    <section class="min-h-screen flex items-center justify-center">
-      <div id="section-1" class="space-y-10 lg:max-w-4xl text-center">
+      >
+        Machine Learning Engineer
+      </h1>
+      <div class="flex gap-4">
+        <LinkButton variant="default" size="sm" href="https://github.com/farooq-azam-khan/" target="_blank" rel="noopener">
+          <Github className="w-4 h-4" /> @farooq-azam-khan
+        </LinkButton>
+        <LinkButton variant="default" size="sm" href="https://www.linkedin.com/in/farooq-khan-46167bb5/" target="_blank" rel="noopener">
+          <Linkedin className="w-4 h-4" />
+        </LinkButton>
+      </div>
+      <div id="section-1" class="space-y-6 lg:max-w-4xl text-center">
         <div class="font-serif text-6xl md:text-8xl">
           <div>MLE specializing in</div>
           <div>
-            <span class="text-indigo-700">delivering scalable</span> AI solutions<span
-              class="text-indigo-900">.</span
-            >
+            <span class="text-indigo-700">delivering scalable</span> AI solutions<span class="text-indigo-900">.</span>
           </div>
         </div>
         <p class="font-mono lg:mt-4 md:text-3xl lg:text-4xl md:block">
-          with <span class="text-indigo-500">VLLMs</span>,
-          <span class="text-indigo-500">Ollama</span>, and <span
-            class="text-green-600">NVIDIA TensorRT</span
-          >
-          {" "} for optimized model serving pipelines.
+          with <span class="text-indigo-500">VLLMs</span>, <span class="text-indigo-500">Ollama</span>, and <span class="text-green-600">NVIDIA TensorRT</span> for optimized model serving pipelines.
         </p>
       </div>
     </section>
