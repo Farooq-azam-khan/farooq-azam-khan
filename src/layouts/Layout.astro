@@ -1,5 +1,6 @@
 ---
 import PostHog from "../components/posthog.astro";
+import { LinkButton } from "@/components/link-button";
 ---
 
 <!doctype html>
@@ -36,22 +37,12 @@ import PostHog from "../components/posthog.astro";
           >
             Gallery
           </a>
-          <a
-            href="https://github.com/farooq-azam-khan/"
-            target="_blank"
-            rel="noopener"
-            class="inline-flex items-center justify-center rounded-base text-sm font-base ring-offset-background transition-all gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 text-button-foreground bg-button border-2 border-border shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none h-9 px-3"
-          >
+          <LinkButton variant="neutral" size="sm" href="https://github.com/farooq-azam-khan/" target="_blank" rel="noopener">
             GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/farooq-khan-46167bb5/"
-            target="_blank"
-            rel="noopener"
-            class="inline-flex items-center justify-center rounded-base text-sm font-base ring-offset-background transition-all gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 text-button-foreground bg-button border-2 border-border shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none h-9 px-3"
-          >
+          </LinkButton>
+          <LinkButton variant="neutral" size="sm" href="https://www.linkedin.com/in/farooq-khan-46167bb5/" target="_blank" rel="noopener">
             LinkedIn
-          </a>
+          </LinkButton>
         </div>
       </div>
     </nav>
