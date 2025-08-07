@@ -267,8 +267,8 @@ const blogs = [
     </section>
     <section class="mt-64 font-heading px-5 md:px-0 md:mx-auto md:max-w-6xl">
       <H2> 🤖 Experiments & Creations </H2>
-      <ol class="px-5 xl:px-0 mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <Card class="relative flex flex-col border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] bg-purple-200 transition-transform duration-200 hover:skew-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,1)]">
+      <ol className="px-5 xl:px-0 mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <Card className="relative flex flex-col border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] bg-purple-200 transition-transform duration-200 hover:skew-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,1)]">
           <div class="absolute top-2 left-2 font-mono font-bold text-lg">01</div>
           <CardHeader>
             <CardTitle>Race Car RL Agent</CardTitle>
@@ -276,13 +276,13 @@ const blogs = [
               Developed a Deep Q-Learning agent in a simulated racing environment (e.g., OpenAI Gym CarRacing) to autonomously navigate tracks by learning from reward feedback.
             </CardDescription>
           </CardHeader>
-          <CardContent class="flex-grow flex items-end">
+          <CardContent className="flex-grow flex items-end">
             <LinkButton href="https://github.com/Farooq-azam-khan/unpublished-papers/blob/main/deep-q-learning.pdf" target="blank_" class="w-full py-2 text-center bg-yellow-300 text-black font-bold">
               Read the Paper →
             </LinkButton>
           </CardContent>
         </Card>
-        <Card class="relative flex flex-col border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] bg-yellow-200 transition-transform duration-200 hover:skew-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,1)]">
+        <Card className="relative flex flex-col border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] bg-yellow-200 transition-transform duration-200 hover:skew-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,1)]">
           <div class="absolute top-2 left-2 font-mono font-bold text-lg">02</div>
           <CardHeader>
             <CardTitle className="line-clamp-2"
@@ -293,14 +293,14 @@ const blogs = [
               enhancing model performance through data augmentation and fine-tuning techniques.
             </CardDescription>
           </CardHeader>
-          <CardContent class="flex-grow" />
-          <CardFooter class="w-full">
+          <CardContent className="flex-grow" />
+          <CardFooter className="w-full">
             <LinkButton href="https://github.com/Farooq-azam-khan/unpublished-papers/blob/main/deep-q-learning.pdf" target="blank_" class="w-full py-2 text-center bg-pink-500 text-white font-bold">
               Read the Paper →
             </LinkButton>
           </CardFooter>
         </Card>
-        <Card class="relative flex flex-col border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] bg-green-200 transition-transform duration-200 hover:skew-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,1)]">
+        <Card className="relative flex flex-col border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] bg-green-200 transition-transform duration-200 hover:skew-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,1)]">
           <div class="absolute top-2 left-2 font-mono font-bold text-lg">03</div>
           <CardHeader>
             <CardTitle className="line-clamp-2"> Haiku Generator</CardTitle>
@@ -309,9 +309,9 @@ const blogs = [
               enforcing syllable constraints and thematic coherence.
             </CardDescription>
           </CardHeader>
-          <CardContent class="flex-grow" />
-          <CardFooter class="w-full flex flex-col space-y-2">
-            <Button disabled class="w-full py-2 bg-gray-300 text-black font-bold">
+          <CardContent className="flex-grow" />
+          <CardFooter className="w-full flex flex-col space-y-2">
+            <Button disabled className="w-full py-2 bg-gray-300 text-black font-bold">
               View App
             </Button>
             <LinkButton href="https://github.com/Farooq-azam-khan/haiku/" target="blank_" class="w-full py-2 text-center bg-pink-500 text-white font-bold">
@@ -319,115 +319,70 @@ const blogs = [
             </LinkButton>
           </CardFooter>
         </Card>
+        <Card className="relative flex flex-col border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] bg-pink-200 transition-transform duration-200 hover:skew-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,1)]">
+        <div class="absolute top-2 left-2 font-mono font-bold text-lg">04</div>
+        <CardHeader>
+          <CardTitle className="line-clamp-2">D3.js Reference Tutorial</CardTitle>
+          <CardDescription className="line-clamp-3">
+            Interactive web guide demonstrating core D3.js features and visualization techniques.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="flex-grow" />
+        <CardFooter className="w-full flex flex-col space-y-2">
+          <LinkButton href="https://github.com/Farooq-azam-khan/d3js-tutorials" target="blank_" className="w-full py-2 text-center bg-pink-500 text-white font-bold">
+            Source Code →
+          </LinkButton>
+          <LinkButton href="https://farooq-azam-khan.github.io/d3js-tutorials/" target="blank_" className="w-full py-2 text-center bg-yellow-300 text-black font-bold">
+            Live Demo →
+          </LinkButton>
+        </CardFooter>
+      </Card>
+        <Card className="relative flex flex-col border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] bg-indigo-200 transition-transform duration-200 hover:skew-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,1)]">
+        <div class="absolute top-2 left-2 font-mono font-bold text-lg">05</div>
+        <CardHeader>
+          <CardTitle>Chat App</CardTitle>
+          <CardDescription>
+            Real-time chat app with WebSocket messaging; Elm frontend and Express.js backend.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="flex-grow" />
+        <CardFooter className="w-full">
+          <LinkButton href="https://github.com/Farooq-azam-khan/chat-app-elm" target="blank_" className="w-full py-2 text-center bg-pink-500 text-white font-bold">
+            Source Code →
+          </LinkButton>
+        </CardFooter>
+      </Card>
+        <Card className="relative flex flex-col border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] bg-purple-200 transition-transform duration-200 hover:skew-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,1)]">
+        <div class="absolute top-2 left-2 font-mono font-bold text-lg">06</div>
+        <CardHeader>
+          <CardTitle className="line-clamp-2">Twitch Python Discord Bot</CardTitle>
+          <CardDescription className="line-clamp-3">
+            Python Discord bot with Twitch API integration for live stream alerts and moderation.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="flex-grow" />
+        <CardFooter className="w-full">
+          <LinkButton href="https://github.com/Farooq-azam-khan/twitch-api-discord-bot" target="blank_" className="w-full py-2 text-center bg-pink-500 text-white font-bold">
+            Source Code →
+          </LinkButton>
+        </CardFooter>
+      </Card>
+        <Card className="relative flex flex-col border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] bg-yellow-200 transition-transform duration-200 hover:skew-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,1)]">
+        <div class="absolute top-2 left-2 font-mono font-bold text-lg">07</div>
+        <CardHeader>
+          <CardTitle className="line-clamp-2">Rust Tauri App</CardTitle>
+          <CardDescription className="line-clamp-3">
+            Cross-platform desktop color picker built with Rust and Tauri, showcasing native UI integration.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="flex-grow" />
+        <CardFooter className="w-full">
+          <LinkButton href="https://github.com/Farooq-azam-khan/color-picker-tauri-test-project" target="blank_" className="w-full py-2 text-center bg-pink-500 text-white font-bold">
+            Source Code →
+          </LinkButton>
+        </CardFooter>
+      </Card>
       </ol>
- <script>
-      window.addEventListener("load", () => {
-        gsap.registerPlugin(ScrollTrigger);
-        const bridgetimeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: "#additional-projects",
-            start: "bottom bottom",
-            end: "bottom top",
-            scrub: 1,
-            // markers: true,
-          },
-        });
-
-        bridgetimeline.fromTo(
-          "#additional-projects",
-          {
-            opacity: 0,
-          },
-          {
-            opacity: 1,
-          },
-        );
-      });
-    </script>
-      <section id="additional-projects" class="mt-32">
-        <H2> Additional Projects </H2>
-        <ol class="mt-5 px-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <Card>
-            <CardHeader>
-              <CardTitle className="line-clamp-2"
-                >D3.js Reference Tutorial
-              </CardTitle>
-              <CardDescription className="line-clamp-3">
-                An interactive web-based guide demonstrating core D3.js features and visualization techniques.
-              </CardDescription>
-            </CardHeader>
-            <CardContent />
-            <CardFooter className="space-x-3">
-              <LinkButton
-                size="icon"
-                href="https://github.com/Farooq-azam-khan/d3js-tutorials"
-                target="blank_">
-                <Github /></LinkButton
-              ><LinkButton
-                size="icon"
-                target="blank_"
-                href="https://farooq-azam-khan.github.io/d3js-tutorials/"
-              >
-                <Link /></LinkButton
-              ></CardFooter
-            >
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Chat App</CardTitle>
-              <CardDescription>
-                A real-time chat application showcasing WebSocket-based bi-directional messaging,
-                built with Elm on the frontend and Express.js on the backend.
-              </CardDescription>
-            </CardHeader>
-            <CardContent />
-            <CardFooter
-              ><LinkButton
-                size="icon"
-                href="https://github.com/Farooq-azam-khan/chat-app-elm"
-                target="blank_"
-                class="rounded-lg"><Github fill="var(--text-button-foreground)" /> </LinkButton
-              ></CardFooter
-            >
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle> Twitch Python Discord Bot </CardTitle>
-              <CardDescription>
-                A Python-powered Discord bot integrating the Twitch API for live stream notifications,
-                custom chat commands, and moderation utilities.
-              </CardDescription>
-            </CardHeader>
-            <CardContent />
-            <CardFooter
-              ><LinkButton
-                size="icon"
-                href="https://github.com/Farooq-azam-khan/twitch-api-discord-bot"
-                target="blank_"
-                class="rounded-lg"><Github fill="var(--text-button-foreground)" /> </LinkButton
-              ></CardFooter
-            >
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle> Rust Tauri App </CardTitle>
-              <CardDescription>
-                A cross-platform desktop color picker utility built with Rust and Tauri,
-                demonstrating native UI integration and performance.
-              </CardDescription>
-            </CardHeader>
-            <CardContent />
-            <CardFooter
-              ><LinkButton
-                size="icon"
-                href="https://github.com/Farooq-azam-khan/color-picker-tauri-test-project"
-                target="blank_"
-                class="rounded-lg"><Github fill="var(--text-button-foreground)" /> </LinkButton
-              ></CardFooter
-            >
-          </Card>
-        </ol>
-      </section>
     </section>
 
     <script>
