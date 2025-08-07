@@ -5,8 +5,13 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <main>
+  <main class="max-w-7xl mx-auto px-6 py-12">
     <Progress value={20} className="w-[60%]" />
-    <div>Coming Soon...</div>
+    <h2 class="mt-8 text-2xl font-semibold text-gray-800">Gallery</h2>
+    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {Array.from({ length: 8 }).map(() => (
+        <div class="w-full h-48 bg-gray-200 rounded-lg animate-pulse" />
+      ))}
+    </div>
   </main>
 </Layout>
