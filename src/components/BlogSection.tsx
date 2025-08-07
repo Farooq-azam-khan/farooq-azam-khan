@@ -28,17 +28,21 @@ export function BlogSectionCarousel({ blogs }: { blogs: Blog[] }) {
   return (
     <Carousel
       plugins={[plugin.current]}
-      className="mx-12  xl:mx-auto xl:max-w-7xl"
+      className="px-4 mx-auto xl:px-0 xl:max-w-7xl"
       orientation="horizontal"
       opts={{
-        align: "start",
+        align: "center",
         loop: true,
+        skipSnaps: false,
       }}
     >
       <CarouselContent>
         {blogs.map((blog, index) => (
-          <CarouselItem className="sm:basis-1/2 " key={index}>
-            <Card className="flex flex-col h-full">
+          <CarouselItem
+            key={index}
+            className="flex-none snap-center w-[80%] sm:w-[60%] md:w-[45%] lg:w-[30%]"
+          >
+            <Card className="flex flex-col h-full hover:shadow-lg transform hover:scale-105 transition duration-300">
               <CardHeader>
                 <CardTitle className="line-clamp-2">{blog.title}</CardTitle>
                 <CardDescription className="line-clamp-3">

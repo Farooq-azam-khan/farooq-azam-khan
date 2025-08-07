@@ -51,26 +51,16 @@ export default {
   			'4': 'hsl(var(--chart-4))',
   			'5': 'hsl(var(--chart-5))'
   		},
+  		// Scrolling marquee animations
   		animation: {
-  			marquee: 'marquee 5s linear infinite',
-  			marquee2: 'marquee2 5s linear infinite'
+  			// Left to right on second row via reverse play
+  			'marquee-left': 'marquee 20s linear infinite',
+  			'marquee-right': 'marquee 20s linear infinite reverse',
   		},
   		keyframes: {
   			marquee: {
-  				'0%': {
-  					transform: 'translateX(0%)'
-  				},
-  				'100%': {
-  					transform: 'translateX(-100%)'
-  				}
-  			},
-  			marquee2: {
-  				'0%': {
-  					transform: 'translateX(100%)'
-  				},
-  				'100%': {
-  					transform: 'translateX(0%)'
-  				}
+  				'0%': { transform: 'translateX(0%)' },
+  				'100%': { transform: 'translateX(-100%)' }
   			}
   		}
   	},
