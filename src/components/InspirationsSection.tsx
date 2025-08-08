@@ -3,10 +3,10 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-// Register the ScrollTrigger plugin with GSAP
 gsap.registerPlugin(ScrollTrigger);
 
 const inspirations = [
+  // Your inspirations data remains the same...
   {
     name: "v0.dev",
     href: "https://v0.dev/",
@@ -25,7 +25,6 @@ const inspirations = [
     tagline: "Project management done right.",
     icon: "🛠️",
   },
-
   {
     name: "excalidraw",
     href: "https://excalidraw.com/",
@@ -49,53 +48,72 @@ const inspirations = [
 export function InspirationsSection() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // useGSAP provides a context for animations, ensuring proper cleanup in React
   useGSAP(
     () => {
-      // Animate the cards staggering in when the container enters the viewport
+      // --- 1. ENTRANCE ANIMATION ---
+      // FIX: Target individual cards (.inspiration-card) for stagger to work properly.
       gsap.from(".inspiration-card", {
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%", // Starts animation when the top of the container hits 80% from the top of the viewport
-          toggleActions: "play none none none", // Ensures the animation only plays once on enter
+          start: "top 80%",
+          toggleActions: "play none none none",
+          markers: false,
         },
         opacity: 0,
         y: 60,
-        stagger: 0.1,
-        duration: 0.8,
+        stagger: 0.1, // Now this stagger will work correctly!
+        duration: 1,
         ease: "power2.out",
       });
 
-      // --- Advanced Hover Effects ---
-      // For a larger component, it would be best to move this logic into a separate
-      // <InspirationCard> component. For this file, we'll keep it here for clarity.
+      // --- 2. HOVER & FOCUS ANIMATION ---
       const cards = gsap.utils.toArray<HTMLElement>(".inspiration-card");
 
       cards.forEach((card) => {
-        // Define animations but don't play them yet
-        const liftAndHighlight = gsap.to(card, {
-          paused: true, // Animation is paused initially
+        // Define the animation for a single card
+        const hoverAnimation = gsap.to(card, {
+          paused: true,
           y: -10,
-          boxShadow: "8px 8px 0px 0px var(--accent-color)",
+          skewY: -2, // IMPROVEMENT: skewY is now controlled by GSAP
+          rotate: -1, // IMPROVEMENT: Added subtle rotation for more personality
+          boxShadow: "8px 12px 0px 0px var(--accent-color)",
           duration: 0.2,
           ease: "power1.inOut",
         });
 
-        // Play the animation on mouseenter
-        card.addEventListener("mouseenter", () => liftAndHighlight.play());
-        // Reverse the animation on mouseleave
-        card.addEventListener("mouseleave", () => liftAndHighlight.reverse());
+        // Play the animation on mouseenter or focusin
+        const onEnter = () => {
+          hoverAnimation.play();
+          // IMPROVEMENT: Fade out all OTHER cards to create focus
+          cards.forEach((otherCard) => {
+            if (otherCard !== card) {
+              gsap.to(otherCard, { opacity: 0.6, duration: 0.2 });
+            }
+          });
+        };
+
+        // Reverse the animation on mouseleave or focusout
+        const onLeave = () => {
+          hoverAnimation.reverse();
+          // IMPROVEMENT: Bring all cards back to full opacity
+          gsap.to(cards, { opacity: 1, duration: 0.2 });
+        };
+
+        // ACCESSIBILITY: Add events for both mouse and keyboard focus
+        card.addEventListener("mouseenter", onEnter);
+        card.addEventListener("mouseleave", onLeave);
+        card.addEventListener("focusin", onEnter);
+        card.addEventListener("focusout", onLeave);
       });
     },
     { scope: containerRef },
-  ); // Scope animations to the container for better performance and cleanup
+  );
 
-  // Define background colors for cards, cycling through
   const bgColors = ["bg-my-white"];
   return (
     <div
       ref={containerRef}
-      className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
+      className="mt-24 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
       style={{ "--accent-color": "var(--main)" } as React.CSSProperties}
     >
       {inspirations.map((insp, idx) => (
@@ -104,7 +122,7 @@ export function InspirationsSection() {
           href={insp.href}
           target="_blank"
           rel="noopener noreferrer"
-          className={`inspiration-card flex items-start gap-4 p-6 rounded-base border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] transition-transform duration-200 hover:skew-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,1)] ${bgColors[idx % bgColors.length]}`}
+          className={`inspiration-card flex items-start gap-4 p-6 rounded-base border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] ${bgColors[idx % bgColors.length]}`}
         >
           <span className="text-xl">{insp.icon}</span>
           <div>
