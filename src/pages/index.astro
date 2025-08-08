@@ -490,56 +490,90 @@ const blogs = [
       </ol>
     </section>
 
-    <script>
-      window.addEventListener("load", () => {
-        gsap.registerPlugin(ScrollTrigger);
-        const roadmapTimeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: "#roadmap",
-            start: "bottom bottom",
-            end: "bottom top",
-            scrub: 1,
-          },
-        });
-        roadmapTimeline.fromTo(
-          "#roadmap",
-          { opacity: 0 },
-          { opacity: 1 }
-        );
-      });
-    </script>
     <section id="roadmap" class="mt-32 px-5 lg:px-0">
       <H2>Roadmap</H2>
-      <div class="mt-8 lg:mt-12 lg:max-w-6xl lg:mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-10">
-        <!-- Left Column: What -->
-        <div class="space-y-10">
-          <h3 class="text-4xl lg:text-5xl font-sans font-bold">APPLIED REINFORCEMENT LEARNING</h3>
-          <h3 class="text-4xl lg:text-5xl font-sans font-bold">HIGH-PERFORMANCE SYSTEMS</h3>
-          <h3 class="text-4xl lg:text-5xl font-sans font-bold">ADVANCED DATA STRUCTURES</h3>
+      <div class="mt-8 lg:mt-12 lg:max-w-6xl lg:mx-auto flex flex-col space-y-8">
+        <!-- Module 1: Applied Reinforcement Learning -->
+        <div class="roadmap-module group flex flex-col lg:flex-row border-2 border-black p-6 gap-x-6 transition-colors duration-200 hover:border-pink-500">
+          <div class="flex-1">
+            <h3 class="text-4xl lg:text-5xl font-sans font-bold">
+              <span>APPLIED</span> <span>REINFORCEMENT</span> <span>LEARNING</span>
+            </h3>
+          </div>
+          <div class="flex-1 flex flex-col space-y-4 leading-relaxed">
+            <p class="detail-line"><span class="text-indigo-500">=&gt;</span> Reading: Reinforcement Learning (Sutton & Barto), Deep Learning (Goodfellow et al.)</p>
+            <p class="detail-line"><span class="text-indigo-500">=&gt;</span> Building with:
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">Rust</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">Python</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">TypeScript</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">MLOps</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">DevOps</span>
+            </p>
+            <p class="detail-line"><span class="text-indigo-500">=&gt;</span> Exploring: <span class="text-indigo-500">{</span> Graph Database, Postgres DB <span class="text-indigo-500">}</span></p>
+            <p class="detail-line"><span class="text-indigo-500">=&gt;</span> Reading: Category Theory for Programmers (Milewski)</p>
+          </div>
         </div>
-        <!-- Right Column: How -->
-        <div class="flex flex-col justify-between space-y-6">
-          <p class="text-lg font-sans">
-            <span class="text-indigo-500">=&gt;</span> Reading: Reinforcement Learning (Sutton & Barto), Deep Learning (Goodfellow et al.)
-          </p>
-          <p class="text-lg font-sans">
-            <span class="text-indigo-500">=&gt;</span> Building with: <span class="text-indigo-500">{</span>
-              Rust (v2: high-performance, multi-processing),
-              Python (ML, scripting, rapid v0/v1 prototyping),
-              TypeScript (robust web applications),
-              MLOps,
-              DevOps
-            <span class="text-indigo-500">}</span>
-          </p>
-          <p class="text-lg font-sans">
-            <span class="text-indigo-500">=&gt;</span> Exploring: <span class="text-indigo-500">{</span> Graph Database, Postgres DB <span class="text-indigo-500">}</span>
-          </p>
-          <p class="text-lg font-sans">
-            <span class="text-indigo-500">=&gt;</span> Reading: Category Theory for Programmers (Milewski)
-          </p>
+        <!-- Module 2: High-Performance Systems -->
+        <div class="roadmap-module group flex flex-col lg:flex-row border-2 border-black p-6 gap-x-6 transition-colors duration-200 hover:border-pink-500">
+          <div class="flex-1">
+            <h3 class="text-4xl lg:text-5xl font-sans font-bold">
+              <span>HIGH-PERFORMANCE</span> <span>SYSTEMS</span>
+            </h3>
+          </div>
+          <div class="flex-1 flex flex-col space-y-4 leading-relaxed">
+            <p class="detail-line"><span class="text-indigo-500">=&gt;</span> Reading: Reinforcement Learning (Sutton & Barto), Deep Learning (Goodfellow et al.)</p>
+            <p class="detail-line"><span class="text-indigo-500">=&gt;</span> Building with:
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">Rust</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">Python</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">TypeScript</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">MLOps</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">DevOps</span>
+            </p>
+            <p class="detail-line"><span class="text-indigo-500">=&gt;</span> Exploring: <span class="text-indigo-500">{</span> Graph Database, Postgres DB <span class="text-indigo-500">}</span></p>
+            <p class="detail-line"><span class="text-indigo-500">=&gt;</span> Reading: Category Theory for Programmers (Milewski)</p>
+          </div>
+        </div>
+        <!-- Module 3: Advanced Data Structures -->
+        <div class="roadmap-module group flex flex-col lg:flex-row border-2 border-black p-6 gap-x-6 transition-colors duration-200 hover:border-pink-500">
+          <div class="flex-1">
+            <h3 class="text-4xl lg:text-5xl font-sans font-bold">
+              <span>ADVANCED</span> <span>DATA</span> <span>STRUCTURES</span>
+            </h3>
+          </div>
+          <div class="flex-1 flex flex-col space-y-4 leading-relaxed">
+            <p class="detail-line"><span class="text-indigo-500">=&gt;</span> Reading: Reinforcement Learning (Sutton & Barto), Deep Learning (Goodfellow et al.)</p>
+            <p class="detail-line"><span class="text-indigo-500">=&gt;</span> Building with:
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">Rust</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">Python</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">TypeScript</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">MLOps</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">DevOps</span>
+            </p>
+            <p class="detail-line"><span class="text-indigo-500">=&gt;</span> Exploring: <span class="text-indigo-500">{</span> Graph Database, Postgres DB <span class="text-indigo-500">}</span></p>
+            <p class="detail-line"><span class="text-indigo-500">=&gt;</span> Reading: Category Theory for Programmers (Milewski)</p>
+          </div>
         </div>
       </div>
     </section>
+
+    <script>
+      window.addEventListener("load", () => {
+        gsap.registerPlugin(ScrollTrigger);
+        document.querySelectorAll(".roadmap-module").forEach((module) => {
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: module,
+              start: "top bottom",
+              toggleActions: "play none none none",
+            },
+          });
+          tl.fromTo(module, { borderColor: "transparent" }, { borderColor: "black", duration: 0.4 });
+          tl.from(module.querySelectorAll("h3 span"), { opacity: 0, y: 10, duration: 0.5, stagger: 0.1 });
+          tl.from(module.querySelectorAll(".detail-line"), { opacity: 0, x: -10, duration: 0.6, stagger: 0.15 });
+          tl.from(module.querySelectorAll(".tech-tag"), { opacity: 0, scale: 0.8, duration: 0.5, stagger: 0.08 });
+        });
+      });
+    </script>
 
     <script>
       window.addEventListener("load", () => {
