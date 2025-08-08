@@ -35,7 +35,7 @@ let groups = Object.values(
   }, {} as Record<string, { year: string; items: typeof photos }>)
 );
 // Sort groups by year ascending (earliest first)
-groups = groups.sort((a, b) => parseInt(a.year) - parseInt(b.year));
+groups = groups.sort((a, b) => parseInt(b.year) - parseInt(a.year));
 ---
 <Layout>
   <section class="font-neo-brutal bg-my-white overflow-hidden">
@@ -45,14 +45,13 @@ groups = groups.sort((a, b) => parseInt(a.year) - parseInt(b.year));
       </h1>
       <div class="mt-8 space-y-12">
         {groups.map((group) => (
-          <div key={group.year}>
+          <div }>
             <h2 class="sticky top-20 z-10 bg-my-white text-2xl font-heading text-my-black border-b-4 border-black inline-block pb-1">
               {group.year}
             </h2>
             <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
               {group.items.map((photo) => (
                 <div
-                  key={photo.id}
                   class={`h-48 ${photo.bg} border-4 border-black shadow-[4px_4px_0_black] hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-transform`}
                 />
               ))}
