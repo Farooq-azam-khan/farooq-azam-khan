@@ -593,28 +593,28 @@ const blogs = [
     </script>
 
     <script>
-      window.addEventListener("load", () => {
-        gsap.registerPlugin(ScrollTrigger);
-        const bridgetimeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: "#inspirations",
-            start: "bottom bottom",
-            end: "bottom top",
-            scrub: 1,
-            // markers: true,
-          },
-        });
+      // window.addEventListener("load", () => {
+      //   gsap.registerPlugin(ScrollTrigger);
+      //   const bridgetimeline = gsap.timeline({
+      //     scrollTrigger: {
+      //       trigger: "#inspirations",
+      //       start: "bottom bottom",
+      //       end: "bottom top",
+      //       scrub: 1,
+      //       // markers: true,
+      //     },
+      //   });
 
-        bridgetimeline.fromTo(
-          "#inspirations",
-          {
-            opacity: 0,
-          },
-          {
-            opacity: 1,
-          },
-        );
-      });
+      //   bridgetimeline.fromTo(
+      //     "#inspirations",
+      //     {
+      //       opacity: 0,
+      //     },
+      //     {
+      //       opacity: 1,
+      //     },
+      //   );
+      // });
     </script>
 
     <section
