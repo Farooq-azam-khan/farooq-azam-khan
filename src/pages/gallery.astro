@@ -1,17 +1,39 @@
 ---
-import { Progress } from "@/components/ui/progress";
-
+import "@fontsource-variable/montserrat";
+import "@/styles/globals.css";
 import Layout from "../layouts/Layout.astro";
----
 
+// List of placeholder colors for gallery items
+const colors = [
+  'bg-red-300',
+  'bg-orange-300',
+  'bg-yellow-300',
+  'bg-green-300',
+  'bg-teal-300',
+  'bg-blue-300',
+  'bg-indigo-300',
+  'bg-purple-300',
+  'bg-pink-300',
+  'bg-gray-300',
+  'bg-rose-300',
+  'bg-lime-300',
+];
+const photos = colors.map((bg, i) => ({ bg, id: i }));
+---
 <Layout>
-  <main class="max-w-7xl mx-auto px-6 py-12">
-    <Progress value={20} className="w-[60%]" />
-    <h2 class="mt-8 text-2xl font-semibold text-gray-800">Gallery</h2>
-    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      {Array.from({ length: 8 }).map(() => (
-        <div class="w-full h-48 bg-gray-200 rounded-lg animate-pulse" />
-      ))}
+  <section class="font-neo-brutal bg-my-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+      <h1 class="inline-block text-4xl font-heading text-my-black border-4 border-black px-4 py-2">
+        Gallery
+      </h1>
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        {photos.map((photo) => (
+          <div
+            key={photo.id}
+            class={`h-48 ${photo.bg} border-4 border-black shadow-[4px_4px_0_black] hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none transition-transform`}
+          />
+        ))}
+      </div>
     </div>
-  </main>
+  </section>
 </Layout>
