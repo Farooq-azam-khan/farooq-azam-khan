@@ -35,7 +35,7 @@ let groups = Object.values(
   }, {} as Record<string, { year: string; items: typeof photos }>)
 );
 // Sort groups by year ascending (earliest first)
-groups = groups.sort((a, b) => parseInt(a.year) - parseInt(b.year));
+groups = groups.sort((a, b) => parseInt(b.year) - parseInt(a.year));
 ---
 <Layout>
   <section class="font-neo-brutal bg-my-white overflow-hidden">
