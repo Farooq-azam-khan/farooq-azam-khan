@@ -31,6 +31,13 @@ const inspirations: Inspiration[] = [
     icon: "🚀",
     bg: "bg-pink-200",
   },
+  {
+    name: "excalidraw",
+    href: "https://excalidraw.com/",
+    tagline: "Virtual whiteboard for sketching diagrams.",
+    icon: "🎨",
+    bg: "bg-yellow-200",
+  },
 ];
 
 export function InspirationsSection() {

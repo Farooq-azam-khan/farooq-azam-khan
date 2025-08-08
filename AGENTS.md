@@ -39,6 +39,11 @@ This document captures the core points and conventions for new developers and an
 - Visual style follows a **neobrutalism** aesthetic: bold outlines, raw edges, high contrast colors.
 - Always adhere to definitions and variables in **src/styles/globals.css** before writing any new style code.
 - Use Tailwind utility classes consistently; extend via `tailwind.config.mjs` only when necessary.
+ 
+## Language & Technology Philosophy
+- Rust: Preferred for high-performance, multi-processing, memory-safe applications. Normally, in v2 of a project—when speed and optimal resource utilization are critical—choose Rust.
+ - Python: Ideal for machine learning, data analysis, and scripting tasks, as well as rapid prototyping of v0/v1 solutions thanks to its readability and extensive ecosystem.
+ - TypeScript: The go-to for building robust web applications, offering strong typing and maintainable code for both front-end (browser) and back-end (Node.js) development.
 
 ## Miscellaneous
 - AGENTS.md: This document (developer/agent reference).

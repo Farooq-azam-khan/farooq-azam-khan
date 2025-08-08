@@ -18,6 +18,7 @@ import {
   Plus,
   Link,
   MoveRight,
+  ChevronsRight,
   Github,
   Linkedin,
   ChevronLeft,
@@ -108,7 +109,7 @@ const blogs = [
       </div>
       <div id="section-1" class="space-y-6 lg:max-w-4xl text-center">
         <div class="font-serif text-6xl md:text-8xl">
-          <div>MLE specializing in</div>
+          <div>Specializing in</div>
           <div>
             <span class="text-indigo-700">delivering scalable</span> AI solutions<span
               class="text-indigo-900">.</span
@@ -490,80 +491,106 @@ const blogs = [
       </ol>
     </section>
 
+    <section id="roadmap" class="mt-32 px-5 lg:px-0">
+      <H2>Roadmap</H2>
+      <div class="mt-8 lg:mt-12 lg:max-w-6xl lg:mx-auto flex flex-col space-y-8">
+        <!-- Module 1: Applied Reinforcement Learning -->
+        <div class="roadmap-module group flex flex-col lg:flex-row border-2 border-transparent p-6 gap-x-6 transition-colors duration-200 hover:border-pink-500">
+          <div class="flex-1">
+            <h3 class="text-4xl lg:text-5xl font-sans font-bold">
+              <span>APPLIED</span> <span>REINFORCEMENT</span> <span>LEARNING</span>
+            </h3>
+          </div>
+          <div class="flex-1 flex flex-col space-y-4 leading-[1.6]">
+            <p class="detail-line inline-flex items-center"><span class="text-indigo-500"><ChevronsRight className="w-6 h-6"/></span> Reading: Reinforcement Learning (Sutton & Barto), Deep Learning (Goodfellow et al.)</p>
+            <p class="detail-line inline-flex items-center"><span class="text-indigo-500"><ChevronsRight className="w-6 h-6"/></span> 
+              <span>Building with:
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-[2px]">Markdown</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-[2px]">Python</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-[2px]">Obsidian</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-[2px]">Pytorch</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-[2px]">Numpy</span>
+              </span>
+            </p>
+            <p class="detail-line inline-flex items-center"><span class="text-indigo-500"><ChevronsRight className="w-6 h-6"/></span> Exploring: <span class="text-indigo-500">
+              </span> RL Algorithms <span class="text-indigo-500"></span></p>
+          </div>
+        </div>
+        <!-- Module 2: High-Performance Systems -->
+        <div class="roadmap-module group flex flex-col lg:flex-row border-2 border-transparent p-6 gap-x-6 transition-colors duration-200 hover:border-pink-500">
+          <div class="flex-1">
+            <h3 class="text-4xl lg:text-5xl font-sans font-bold">
+              <span>HIGH-PERFORMANCE</span> <span>SYSTEMS</span>
+            </h3>
+          </div>
+          <div class="flex-1 flex flex-col space-y-4 leading-[1.6]">
+            <p class="detail-line inline-flex items-center"><span class="text-indigo-500"><ChevronsRight className="w-6 h-6"/></span> Reading: Rust In Action (Tim McNamara
+)</p>
+            <p class="detail-line inline-flex items-center"><span class="text-indigo-500"><ChevronsRight className="w-6 h-6"/></span> <span>Building with:
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1">Rust</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1">TensorRT</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1">Triton</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1">CUDA</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-[2px]">Postgres DB</span>
+            </span>
+            </p>
+            <p class="detail-line inline-flex items-center"><span class="text-indigo-500"><ChevronsRight className="w-6 h-6"/></span> 
+              Exploring: <span class="text-indigo-500"></span> Convex, Distributed Systems <span class="text-indigo-500"></span></p>
+              
+            <p class="detail-line inline-flex items-center"><span class="text-indigo-500"><ChevronsRight className="w-6 h-6"/></span> 
+              <span>Design Philosophy: 
+                <ul class="list-disc">
+                  <li>Prototyping v0/v1 solutions and analyzing data with Python, leveraging its rich ML ecosystem.</li>
+                  <li>Optimizing for speed and memory safety in v2 systems using Rust. Exploring GPU acceleration via CUDA and Triton.</li>
+                  <li>Building robust, full-stack applications with TypeScript for maintainable web code and Rust for performant back-end logic.</li>
+                </ul></span>
+              </p>
+          </div>
+          
+        </div>
+        <!-- Module 3: Advanced Data Structures -->
+        <div class="roadmap-module group flex flex-col lg:flex-row border-2 border-black p-6 gap-x-6 transition-colors duration-200 hover:border-pink-500">
+          <div class="flex-1">
+            <h3 class="text-4xl lg:text-5xl font-sans font-bold">
+              <span>ADVANCED</span> <span>DATA</span> <span>STRUCTURES</span>
+            </h3>
+          </div>
+          <div class="flex-1 flex flex-col space-y-4 leading-relaxed">
+            <!-- <p class="detail-line inline-flex items-center"><span class="text-indigo-500"><ChevronsRight className="w-6 h-6"/></span> Reading: Reinforcement Learning (Sutton & Barto), Deep Learning (Goodfellow et al.)</p> -->
+            <p class="detail-line inline-flex items-center"><span class="text-indigo-500"><ChevronsRight className="w-6 h-6"/></span> 
+              <span>Building with:
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">Rust</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">Python</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">TypeScript</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">MLOps</span>
+              <span class="tech-tag inline-block border border-black rounded px-2 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5">DevOps</span>
+              </span>
+            </p>
+            <p class="detail-line inline-flex items-center"><span class="text-indigo-500"><ChevronsRight className="w-6 h-6"/></span> Exploring: <span class="text-indigo-500">{</span> Graph Database<span class="text-indigo-500">}</span></p>
+            <p class="detail-line inline-flex items-center"><span class="text-indigo-500"><ChevronsRight className="w-6 h-6"/></span> Reading: Category Theory for Programmers (Milewski)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script>
       window.addEventListener("load", () => {
         gsap.registerPlugin(ScrollTrigger);
-        const bridgetimeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: "#goals",
-            start: "bottom bottom",
-            end: "bottom top",
-            scrub: 1,
-            // markers: true,
-          },
+        document.querySelectorAll(".roadmap-module").forEach((module) => {
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: module,
+              start: "top bottom",
+              toggleActions: "play none none none",
+            },
+          });
+          tl.fromTo(module, { borderColor: "transparent" }, { borderColor: "black", duration: 0.4 });
+          tl.from(module.querySelectorAll("h3 span"), { opacity: 0, y: 10, duration: 0.5, stagger: 0.1 });
+          tl.from(module.querySelectorAll(".detail-line"), { opacity: 0, x: -10, duration: 0.6, stagger: 0.15 });
+          tl.from(module.querySelectorAll(".tech-tag"), { opacity: 0, scale: 0.8, duration: 0.5, stagger: 0.08 });
         });
-
-        bridgetimeline.fromTo(
-          "#goals",
-          {
-            opacity: 0,
-          },
-          {
-            opacity: 1,
-          },
-        );
       });
     </script>
-    <section id="goals" class="mt-32">
-      <H2> Goals </H2>
-      <ul class="mt-5 space-y-14 px-5 lg:max-w-6xl lg:mx-auto">
-        <Card className="">
-          <CardHeader><CardTitle>Books</CardTitle></CardHeader><CardContent>
-            <ul class="">
-              <li>
-                <a href="https://www.deeplearningbook.org/"
-                  >Deep Learning (Ian Goodfellow, Yoshua Bengio, and Aaron
-                  Courville)</a
-                >
-              </li>
-              <li>
-                <a href="http://incompleteideas.net/book/the-book-2nd.html"
-                  >Reinforcement Learning: An Introduction (Andrew Barto and
-                  Richard S. Sutton)</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/"
-                  >Category Theory for Programmers (Bartosz Milewski)</a
-                >
-              </li>
-            </ul></CardContent
-          ><CardFooter
-            ><LinkButton
-              className="font-base dark:text-white dark:bg-indigo-500 dark:hover:bg-indigo-600"
-              href="https://www.goodreads.com/user/show/133899873-farooq"
-              target="blank_">Goodreads for other stuff<MoveRight /></LinkButton
-            >
-          </CardFooter></Card
-        >
-        <Card className="">
-          <CardHeader>
-            <CardTitle> Software Engineering </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div class="font-mono">
-              {"{"} TypeScript, Rust, Python {"}"}
-              {"x"}
-              {"{"} Graph Database, Postgres DB {"}"}
-              {"x"}
-              {"{"} MLOps, DevOps {"}"}
-              {"=>"} Solve Problems
-            </div>
-          </CardContent>
-        </Card>
-      </ul>
-    </section>
 
     <script>
       window.addEventListener("load", () => {
