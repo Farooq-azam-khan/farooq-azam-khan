@@ -91,14 +91,7 @@ export function InspirationsSection() {
   ); // Scope animations to the container for better performance and cleanup
 
   // Define background colors for cards, cycling through
-  const bgColors = [
-    'bg-purple-200',
-    'bg-yellow-200',
-    'bg-green-200',
-    'bg-pink-200',
-    'bg-indigo-200',
-    'bg-blue-200',
-  ];
+  const bgColors = ["bg-my-white"];
   return (
     <div
       ref={containerRef}
