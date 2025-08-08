@@ -106,7 +106,7 @@ export function InspirationsSection() {
           rel="noopener noreferrer"
           className={`inspiration-card flex items-start gap-4 p-6 rounded-base border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] transition-transform duration-200 hover:skew-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,1)] ${bgColors[idx % bgColors.length]}`}
         >
-          <span className="text-3xl">{insp.icon}</span>
+          <span className="text-xl">{insp.icon}</span>
           <div>
             <div className="font-semibold text-lg">{insp.name}</div>
             <p className="text-sm text-mtext">{insp.tagline}</p>
