@@ -493,76 +493,46 @@ const blogs = [
     <script>
       window.addEventListener("load", () => {
         gsap.registerPlugin(ScrollTrigger);
-        const bridgetimeline = gsap.timeline({
+        const roadmapTimeline = gsap.timeline({
           scrollTrigger: {
-            trigger: "#goals",
+            trigger: "#roadmap",
             start: "bottom bottom",
             end: "bottom top",
             scrub: 1,
-            // markers: true,
           },
         });
-
-        bridgetimeline.fromTo(
-          "#goals",
-          {
-            opacity: 0,
-          },
-          {
-            opacity: 1,
-          },
+        roadmapTimeline.fromTo(
+          "#roadmap",
+          { opacity: 0 },
+          { opacity: 1 }
         );
       });
     </script>
-    <section id="goals" class="mt-32">
-      <H2> Goals </H2>
-      <ul class="mt-5 space-y-14 px-5 lg:max-w-6xl lg:mx-auto">
-        <Card className="">
-          <CardHeader><CardTitle>Books</CardTitle></CardHeader><CardContent>
-            <ul class="">
-              <li>
-                <a href="https://www.deeplearningbook.org/"
-                  >Deep Learning (Ian Goodfellow, Yoshua Bengio, and Aaron
-                  Courville)</a
-                >
-              </li>
-              <li>
-                <a href="http://incompleteideas.net/book/the-book-2nd.html"
-                  >Reinforcement Learning: An Introduction (Andrew Barto and
-                  Richard S. Sutton)</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/"
-                  >Category Theory for Programmers (Bartosz Milewski)</a
-                >
-              </li>
-            </ul></CardContent
-          ><CardFooter
-            ><LinkButton
-              className="font-base dark:text-white dark:bg-indigo-500 dark:hover:bg-indigo-600"
-              href="https://www.goodreads.com/user/show/133899873-farooq"
-              target="blank_">Goodreads for other stuff<MoveRight /></LinkButton
-            >
-          </CardFooter></Card
-        >
-        <Card className="">
-          <CardHeader>
-            <CardTitle> Software Engineering </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div class="font-mono">
-              {"{"} TypeScript, Rust, Python {"}"}
-              {"x"}
-              {"{"} Graph Database, Postgres DB {"}"}
-              {"x"}
-              {"{"} MLOps, DevOps {"}"}
-              {"=>"} Solve Problems
-            </div>
-          </CardContent>
-        </Card>
-      </ul>
+    <section id="roadmap" class="mt-32 px-5 lg:px-0">
+      <H2>Roadmap</H2>
+      <div class="mt-8 lg:mt-12 lg:max-w-6xl lg:mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-10">
+        <!-- Left Column: What -->
+        <div class="space-y-10">
+          <h3 class="text-4xl lg:text-5xl font-sans font-bold">APPLIED REINFORCEMENT LEARNING</h3>
+          <h3 class="text-4xl lg:text-5xl font-sans font-bold">HIGH-PERFORMANCE SYSTEMS</h3>
+          <h3 class="text-4xl lg:text-5xl font-sans font-bold">ADVANCED DATA STRUCTURES</h3>
+        </div>
+        <!-- Right Column: How -->
+        <div class="flex flex-col justify-between space-y-6">
+          <p class="text-lg font-sans">
+            <span class="text-indigo-500">=&gt;</span> Reading: Reinforcement Learning (Sutton & Barto), Deep Learning (Goodfellow et al.)
+          </p>
+          <p class="text-lg font-sans">
+            <span class="text-indigo-500">=&gt;</span> Building with: <span class="text-indigo-500">{</span> Rust, Python, MLOps, DevOps <span class="text-indigo-500">}</span>
+          </p>
+          <p class="text-lg font-sans">
+            <span class="text-indigo-500">=&gt;</span> Exploring: <span class="text-indigo-500">{</span> Graph Database, Postgres DB <span class="text-indigo-500">}</span>
+          </p>
+          <p class="text-lg font-sans">
+            <span class="text-indigo-500">=&gt;</span> Reading: Category Theory for Programmers (Milewski)
+          </p>
+        </div>
+      </div>
     </section>
 
     <script>
