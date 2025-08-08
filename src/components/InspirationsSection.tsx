@@ -90,32 +90,36 @@ export function InspirationsSection() {
     { scope: containerRef },
   ); // Scope animations to the container for better performance and cleanup
 
+  // Define background colors for cards, cycling through
+  const bgColors = [
+    'bg-purple-200',
+    'bg-yellow-200',
+    'bg-green-200',
+    'bg-pink-200',
+    'bg-indigo-200',
+    'bg-blue-200',
+  ];
   return (
-    <section className="mt-32 px-5 md:px-0 md:mx-auto md:max-w-6xl">
-      {/* Container for the responsive grid and GSAP scope */}
-      <div
-        ref={containerRef}
-        className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
-        style={{ "--accent-color": "#00FF00" } as React.CSSProperties} // Define your accent color here
-      >
-        {inspirations.map((insp, idx) => (
-          <a
-            key={idx}
-            href={insp.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            // The card itself: This is the target for our GSAP animations
-            className="inspiration-card group flex items-start gap-4 border-4 border-black bg-white p-6 transition-colors duration-200"
-            // Use group-hover for simple CSS hover effects on child elements if needed
-          >
-            <span className="text-3xl">{insp.icon}</span>
-            <div>
-              <div className="font-bold text-lg text-black">{insp.name}</div>
-              <p className="text-sm text-gray-700">{insp.tagline}</p>
-            </div>
-          </a>
-        ))}
-      </div>
-    </section>
+    <div
+      ref={containerRef}
+      className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
+      style={{ "--accent-color": "var(--main)" } as React.CSSProperties}
+    >
+      {inspirations.map((insp, idx) => (
+        <a
+          key={idx}
+          href={insp.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`inspiration-card flex items-start gap-4 p-6 rounded-base border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] transition-transform duration-200 hover:skew-y-1 hover:shadow-[6px_6px_0_rgba(0,0,0,1)] ${bgColors[idx % bgColors.length]}`}
+        >
+          <span className="text-3xl">{insp.icon}</span>
+          <div>
+            <div className="font-semibold text-lg">{insp.name}</div>
+            <p className="text-sm text-mtext">{insp.tagline}</p>
+          </div>
+        </a>
+      ))}
+    </div>
   );
 }
